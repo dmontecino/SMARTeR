@@ -121,6 +121,7 @@ data_from_connect<-function(server_url,
                                   query.type))
     
     #open the query data as spatial data
+    if(type=="shp"){
     data = dlshape(shploc=data$response$content, 
                    shpfile=paste0(strsplit(data$response$headers$`content-disposition`, ";|[.]|=")[[1]][3], ".shp"))}
     
