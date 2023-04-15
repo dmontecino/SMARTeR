@@ -21,26 +21,34 @@ In my case i have a query that returns all the data associated with the patrols 
 if I run the "queries_available_per_conservation_area" function, I get something like this: 
 
 
-
+```
 $`conservation area A [SMART]`
+
  [1] "all_patrol_data"                                           "other_query_1"                                             
  [3] "other_query_4"                                             "other_query_3"                                                            
 
 $`conservation area B [SMART]`
+
  [1] "query_1"                                                   "query_2"                              
+```
+
+
 
 
 
 So to load the data as provided in the "all_patrol_data" query:
 
-out<- data_from_connect(server_url = "my_connect_server_url",
-                  user = "my_user", 
-                  password = "my_password",
-                  name_conservation_area = "conservation area A [SMART]",
-                  query_name = "all_patrol_data",  
-                  type = "csv")
-out
+```
+out<- data_from_connect(
+server_url = "my_connect_server_url",
+user = "my_user",
+password = "my_password",
+name_conservation_area = "conservation area A [SMART]",
+query_name = "all_patrol_data",
+type = "csv")
 
+out
+```
 
 
 To see the functions script go to the R folder of this repository.
