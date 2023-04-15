@@ -42,7 +42,7 @@ queries_available_per_conservation_area<-function(
   logged.in.connect = session_submit(session_connect, form.filled) 
   
   # get the set of the queries available with their unique identifier
-  api.queries = session_jump_to(logged.in.connect, paste0(url, "/api/query/tree"))
+  api.queries = session_jump_to(logged.in.connect, paste0(server_url, "/api/query/tree"))
   
   if(length( api.queries$response %>% read_html())==0){
     stop("there are no conservation areas available in connect")}
