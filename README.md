@@ -1,14 +1,47 @@
 # SMARTeR
-A set of functions to load query data from SMART Connect to the R environment. 
+A set of functions to load query data from SMART Connect to the R environment. SMART Connect is a servere extension of the Spatial Monitoring and Reporting Tools (SMART) system (https://smartconservationtools.org/)
 
-These functions use the rvest package to start a SMART Connect session, find the queries available per Conservation Area in your SMART Connect instance, select the query output you want to load in R, in a comma-separated format (.csv) or as a sf object (.shp). 
+These functions use the rvest package to start a SMART Connect session, find the queries available per Conservation Area in your SMART Connect instance, select the query output you want to load in R, and load the data from a selected query in a comma-separated format (.csv) that translates to a tibble or as ".shp" that translates to a sf object. 
 
-The function "data.from.connect" loads data from the conservation area provided in the argument "name.conservation.area" as requested by the query provided in the "query_name" argument. The formats available are "csv" and "shp" and they are selected in the "type" argument (type = "shp" or "csv"). 
+For now, the functions work for the query types: "PatrolQuery" and "PatrolObservationQuery", although if you contact me, it "should" be easy to add other query types. 
 
-For now, the functions woork for quey types: "PatrolQuery" and "PatrolObservationQuery", although if you contact me, it "should" be reallyeasy to add other query types. 
 
-To see the functions script go to the R folder.
+To load the functions in R copy and paste: 
 
-To load the functions: 
+source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/queries_available_per_conservation_area.R")
+source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/data_from_connect.R")
 
-source("https://raw.github.com/")
+First, call the function "queries_available_per_conservation_area". This function has as arguments "server_url", "user", and "password". Provide the connect url in the server_url argument as character (e.g, "https://wcshealth.smartconservationtools.org/server") then your username and password as character in the corresponding arguments. This function will return a list. Each list element provides the conservation areas you have access to that have one query at least. Each element list has is named based on the corresponding conservation areas. Within each list element there is a vector with the queries available for the corresponding conservation area. The list element names and query names within are used in the function to load data as arguments (see next paragraph). 
+
+Secondly, to load data returned by a query, use the function "data_from_connect". This function also has as arguments "server_url", "user", and "password", plus "name_conservation_area", "query_name", and "type". For the "name_conservation_area argument" provide the name of the conservation area holding the query of interest. The "name_conservation_area" is the name of the conservation area as returned by the output of the "queries_available_per_conservation_area" function (the corresponding list element name). The "query_name" is the name of the query as provided in the corresponding element of the list returned by "queries_available_per_conservation_area". The "type" options are "shp" or "csv". If the selection is csv, text is just written as a tibble. If the selection is shp, then a zip is saved as a temporary file, unzipped, and read as an sf object.
+
+In my case i have a query that returns all the data associated with the patrols of the "conservation area A". That query is named "all_patrol_data". 
+
+if I run the "queries_available_per_conservation_area" function, I get something like this: 
+
+
+
+$`conservation area A [SMART]`
+ [1] "all_patrol_data"                                           "other_query_1"                                             
+ [3] "other_query_4"                                             "other_query_3"                                                            
+
+$`conservation area B [SMART]`
+ [1] "query_1"                                                   "query_2"                              
+
+
+
+So to load the data as provided in the "all_patrol_data" query:
+
+out<- data_from_connect(server_url = "my_connect_server_url",
+                  user = "my_user", 
+                  password = "my_password",
+                  name_conservation_area = "conservation area A [SMART]",
+                  query_name = "all_patrol_data",  
+                  type = "csv")
+out
+
+
+
+To see the functions script go to the R folder of this repository.
+
+This project could become a package at some point if more functions are added.
