@@ -9,6 +9,7 @@ For now, the functions work for the query types: "PatrolQuery" and "PatrolObserv
 To load the functions in R copy and paste: 
 
 source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/queries_available_per_conservation_area.R")
+
 source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/data_from_connect.R")
 
 First, call the function "queries_available_per_conservation_area". This function has as arguments "server_url", "user", and "password". Provide the connect url in the server_url argument as character (e.g, "https://wcshealth.smartconservationtools.org/server") then your username and password as character in the corresponding arguments. This function will return a list. Each list element provides the conservation areas you have access to that have one query at least. Each element list has is named based on the corresponding conservation areas. Within each list element there is a vector with the queries available for the corresponding conservation area. The list element names and query names within are used in the function to load data as arguments (see next paragraph). 
