@@ -2,12 +2,10 @@
 library(rvest)
 library(tidyverse)
 library(jsonlite)
-library(janitor)
-library(sf)
 
-# ------------------------------------------ #
-# function to flatten a list a single level  #
-# ------------------------------------------ #
+# --------------------------------------------- #
+# function to flatten a list to a single level  #
+# --------------------------------------------- #
 
 flattenlist <- function(x){  
     morelists <- sapply(x, function(xprime) class(xprime)[1]=="list")
