@@ -35,7 +35,7 @@ queries_available_per_conservation_area<-function(
   form.unfilled = session_connect %>% html_node("form") %>% html_form()
   
   form.filled = form.unfilled %>%
-    html_form_set("j_username" = username,
+    html_form_set("j_username" = user,
                   "j_password" = password)
   
   #login
