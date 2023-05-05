@@ -106,6 +106,7 @@ data_from_connect<-function(server_url,
       case_when(
         query.type == "PatrolQuery" ~ "patrolstart",
         query.type == "PatrolObservationQuery" ~ "waypointdate",
+        query.type =="ObsObservationQuery" ~ "waypointdate",
         .default = as.character(query.type)
       )
     
