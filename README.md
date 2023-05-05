@@ -3,7 +3,7 @@ A set of functions to load query data from SMART Connect to the R environment. S
 
 These functions use the rvest package to start a SMART Connect session, find the queries available per Conservation Area in your SMART Connect instance, select the query output you want to load in R, and load the data from a selected query in a comma-separated format (.csv) that translates to a tibble or as ".shp" that translates to a sf object. 
 
-For now, the functions work for the query types: "PatrolQuery" and "PatrolObservationQuery", although if you contact me, it "should" be easy to add other query types. 
+For now, the functions work for the query types: "PatrolQuery", "PatrolObservationQuery", and "ObsObservationQuery", but if you contact me, it "should" be easy to add other query types. 
 
 
 To load the functions in R copy and paste: 
