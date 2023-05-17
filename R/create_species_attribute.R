@@ -10,7 +10,10 @@ library(stringr)
 # the data model labels are the species common name. 
 # The list of species has to be provided following the format here: 
 
-# the function allows to translate the list of species to a desire language as well
+# the function allows to translate the list of species to a desire language as well.
+# the output is a xml file, that can be merge with a data model:
+# Once the file is built go to Conservatin Area - Data Model - Merge Data Model. 
+# Add the attribute named species_smarter
 
 
 create_data_model_with_translated_species_attribute<-
