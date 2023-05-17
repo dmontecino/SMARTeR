@@ -60,6 +60,6 @@ type = "csv")
 out
 ```
 
-
+The documentation will be improved soon and documentation for the remaining functions will become available soon.
 
 This project could become a package at some point if more functions are added.
