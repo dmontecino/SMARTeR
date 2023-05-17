@@ -9,7 +9,7 @@ library(stringr)
 # are the names of the species. The data model keys are the scientific name whilst
 # the data model labels are the species common name. 
 # The list of species has to be provided following the format here: 
-
+# https://github.com/dmontecino/SMARTeR/blob/main/wildlife_species_list_template.xlsx
 # the function allows to translate the list of species to a desire language as well.
 # the output is a xml file, that can be merge with a data model:
 # Once the file is built go to Conservatin Area - Data Model - Merge Data Model. 
