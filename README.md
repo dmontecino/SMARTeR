@@ -1,5 +1,5 @@
 # SMARTeR
-A set of functions to load query data from SMART Connect to the R environment. SMART Connect is a servere extension of the Spatial Monitoring and Reporting Tools (SMART) system (https://smartconservationtools.org/)
+A set of functions to get the keys of a data model attributes and categories, create a species attribute from an excl sheet, get conservation areas available in a SMART Connect server, andload query data from SMART Connect to the R environment. SMART Connect is a servere extension of the Spatial Monitoring and Reporting Tools (SMART) system (https://smartconservationtools.org/)
 
 These functions use the rvest package to start a SMART Connect session, find the queries available per Conservation Area in your SMART Connect instance, select the query output you want to load in R, and load the data from a selected query in a comma-separated format (.csv) that translates to a tibble or as ".shp" that translates to a sf object. 
 
