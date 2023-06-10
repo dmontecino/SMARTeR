@@ -10,7 +10,8 @@ library(stringr)
 # the data model labels are the species common name. 
 # The list of species has to be provided following the format here: 
 # https://github.com/dmontecino/SMARTeR/blob/main/wildlife_species_list_template.xlsx
-# the function allows to translate the list of species to a desire language as well.
+# the function allows to translate the list of species to a desire language as well following the translations provided in the template above.
+# Once AI translation tools become more available worldwide (such as deepl), I will create a function to translate species.
 # the output is a xml file, that can be merge with a data model:
 # Once the file is built go to Conservatin Area - Data Model - Merge Data Model. 
 # Add the attribute named species_smarter
@@ -19,9 +20,8 @@ library(stringr)
 create_data_model_with_translated_species_attribute<-
   function(path, # path to the excel document with the species
            number_of_sheets, # number of sheets in the excel document. Each sheet represents a taxonomy class.
-           translated_language=NULL, # if you just want to create a species
-           #attribute with english names, then just leave it as NULL
-           species_in_translated_language=NULL){ # how do you spell "species" in the translated language
+           translated_language=NULL, # if you just want to create a species attribute with the english names given in the .xlsx file, then leave it as NULL
+           species_in_translated_language=NULL){ # spell "species" in the language of interest (NULL if english)
 
     
 sheets<-1:number_of_sheets
