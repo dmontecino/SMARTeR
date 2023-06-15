@@ -60,10 +60,6 @@ queries_available_per_conservation_area<-function(
   api.queries.4<-
     
     lapply(api.queries.3, function(x)  
-      # data.frame(
-      #   query_api=unlist(unname(x[grepl(".uuid", names(x), ignore.case = F)])),
-      #   query_name=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+1])),
-      #   query_type=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+2]))))
       data.frame(
         query_api=x$items.uuid,
         query_name=x$items.name,
