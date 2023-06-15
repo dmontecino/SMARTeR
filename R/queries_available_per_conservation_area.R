@@ -89,12 +89,12 @@ queries_available_per_conservation_area<-function(
   pmap(list(api.queries.per.CA, 
      name.queries.per.CA,
      type.queries.per.CA),
-     function(x,y,z) {data.frame(api_query=x, 
-                              name_query=y,
-                              type_query=z)})
+     function(x,y,z) {data.frame(query_api=x, 
+                              query_name=y,
+                              query_type=z)})
       
   #checking if any query is available for any CA    
-  if(all(sapply(sapply(api.queries.4, "[[", "name_query"), length)==0)){
+  if(all(sapply(sapply(api.queries.4, "[[", "query_name"), length)==0)){
     stop("there are no queries available in connect")}
 
   # assign the names of the conservation areas
