@@ -29,48 +29,53 @@ queries_available_per_conservation_area<-function(
      password){ # your connect password
   
   #open connect. The login page
-  session_connect = session(server_url)
+  session_connect <- session(server_url)
   
   #provide the username and password
-  form.unfilled = session_connect %>% html_node("form") %>% html_form()
+  form.unfilled <- session_connect %>% html_node("form") %>% html_form()
   
   form.filled = form.unfilled %>%
     html_form_set("j_username" = user,
                   "j_password" = password)
   
   #login
-  logged.in.connect = session_submit(session_connect, form.filled) 
+  logged.in.connect <- session_submit(session_connect, form.filled) 
   
   # get the set of the queries available with their unique identifier
-  api.queries = session_jump_to(logged.in.connect, paste0(server_url, "/api/query/tree"))
+  api.queries <- session_jump_to(logged.in.connect, paste0(server_url, "/api/query/tree"))
   
   if(length( api.queries$response %>% read_html())==0){
     stop("there are no conservation areas available in connect")}
    
   #queries available 
-  api.queries = api.queries$response %>% read_html() %>% html_text %>% fromJSON(simplifyVector = F)
+  api.queries.2<-api.queries$response %>% read_html() %>% html_text() %>% fromJSON(simplifyVector = F)
   
-  #names of the conservation areas hold by connect and with queries available
-  names.conservation.areas=sapply(api.queries, function(x) x$name)
+  #names of the conservation areas in connect and with queries available
+  names.conservation.areas<-sapply(api.queries.2, function(x) x$name)
   
   # a flatten list of the data for the queries for each conservation area
-  api.queries=lapply(api.queries, flattenlist)
+  api.queries.3<-lapply(api.queries.2, flattenlist)
   
   #queries available per conservation area 
-  api.queries=
+  api.queries.4<-
     
-    lapply(api.queries, function(x)  
+    lapply(api.queries.3, function(x)  
+      # data.frame(
+      #   query_api=unlist(unname(x[grepl(".uuid", names(x), ignore.case = F)])),
+      #   query_name=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+1])),
+      #   query_type=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+2]))))
       data.frame(
-        query_api=unlist(unname(x[grepl(".uuid", names(x), ignore.case = F)])),
-        query_name=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+1])),
-        query_type=unlist(unname(x[which(grepl(".uuid", names(x), ignore.case = F))+2]))))
-
-  if(all(sapply(sapply(api.queries, "[[", "query_name"), length)==0)){
+        query_api=x$items.uuid,
+        query_name=x$items.name,
+        query_type=x$items.type))
+      
+      
+  if(all(sapply(sapply(api.queries.4, "[[", "query_name"), length)==0)){
     stop("there are no queries available in connect")}
 
-  # assign the name of the conservation areas
-  names(api.queries)=names.conservation.areas
+  # assign the names of the conservation areas
+  names(api.queries.4)<-names.conservation.areas
   
-  # see all query data for all the conservation areas that have at least one query
-  return(sapply(api.queries, "[[", "query_name"))}
+  # see all query data for all the conservation areas that have at least one query available
+  return(api.queries.4)}
   
