@@ -132,14 +132,12 @@ data_from_connect<-function(server_url,
     filter(query_name=={{query_name}}) %>% 
     pull(query_type)
   
-  query.type=
-    case_when(
-      query_type == "PatrolQuery" ~ "patrolstart",
-      query_type == "PatrolObservationQuery" ~ "waypointdate",
-      query_type =="ObsObservationQuery" ~ "waypointdate",
-      .default = as.character(query_type)
-    )
+  #patrol query type is important to learn if there is spatial info available and 
+  # therefore, if the .shp is an available option or not.
   
+  if(type_output=="shp" & grepl(pattern = "Summary", query_type)){
+    stop("Summary queries do not have spatial information. 
+         Choose type_output='csv'")}
   
   #go to the api address of the specific query 
   data = session_jump_to(logged.in.connect, 
@@ -148,8 +146,20 @@ data_from_connect<-function(server_url,
                                 query.api.number,
                                 "?format=",
                                 type_output, 
-                                "&date_filter=",
-                                query.type)[1]) #query type for api call
+                                "&date_filter=waypointdate")[1])
+  
+  # https://karukinkaconnect.smartconservationtools.org/server/connect/query/api/
+  #   de879d8d-3491-4418-9a7e-a72b6958372f #api
+  #   ?format=shp& # format
+  #>   date_filter=waypointdate& # filter based on the waypoint date of each incident
+  #>   It could be the patrol start date, Patrol end date, and patrol last modified
+  #>   For incidents, just wypoint date and waypoint date last modified
+  #   start_date=2023-6-1%2000%3A00%3A00& # filter start date
+  #   end_date=2023-6-16%2023%3A59%3A59& # filter end date
+  # srid=4269 # projection used
+  # PatrolSummaryQuery does not have spatial information
+  
+
   
   #open the query data as spatial data
   if(type_output=="shp"){
