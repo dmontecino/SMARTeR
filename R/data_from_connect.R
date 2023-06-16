@@ -29,6 +29,8 @@ dlshape=function(shploc, shpfile) {
   writeBin(shploc, temp)
   unzip(temp) 
   fp <- sf::read_sf(shpfile) 
+  unzipped_files <- list.files(".", pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
+  file.remove(unzipped_files)
   return(fp)} 
 
 
