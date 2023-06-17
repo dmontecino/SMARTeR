@@ -53,16 +53,12 @@ doc <- xml_new_root("DataModel",
 # add firsts child node "languages
 xml_add_child(doc, "languages")
 
+
 #add language(s) of the data model with the species attribute
-children <- xml_children(xml)
-
 for(i in languages){
-children[[1]] %>% 
-  xml_add_child("language") %>%  
-  xml_set_attr("code", i)}
-
-write_xml()
-
+  doc %>% xml_child("languages") %>% 
+    xml_add_child("languages") %>%  
+    xml_set_attr("code", i)}
 
 #add names of the species_smarter attribute (the key is defined in the xml = species_smarter)
 for(i in 1:length(languages)){
