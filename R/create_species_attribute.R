@@ -46,7 +46,12 @@ english_name<-map(df, function(x) x %>% select(class, common_name, species_scien
 translated_name<-map(df, function(x) x %>% 
                       select(grep("class_|common_name_", colnames(x))))
 
+#Start new .xml
+doc <- xml_new_root("DataModel", 
+                    "xmlns"="http://www.smartconservationsoftware.org/xml/1.0/datamodel") 
 
+# add firsts child node "languages
+xml_add_child(doc, "languages")
 
 #add language(s) of the data model with the species attribute
 children <- xml_children(xml)
