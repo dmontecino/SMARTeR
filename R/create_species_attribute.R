@@ -94,8 +94,8 @@ for(i in sheets){
 
 
 
-#add the node "names" and add tha names of the taxonmic classes 
-#in english and translated language
+#add the node "names" and add the names of the taxonmic classes 
+#in english and translated languages
 
 for(i in sheets){
   for(y in seq_along(languages)){
@@ -114,15 +114,14 @@ for(i in sheets){
 
 
 #add the species keys in each class as children nodes
-
 for(i in sheets){
   for(y in 1:nrow(english_name[[i]])){
-
-classes[[i+2]]  %>% 
-    xml_add_child("children") %>% 
-    xml_set_attrs(c(key=gsub(" ", "_", tolower(english_name[[i]]$species_scientific_name[y])),
-                    isactive="1"))}}
-
+    
+    doc %>% xml_child("attributes/attribute")%>% 
+      xml_child(i + length(languages)) %>% 
+      xml_add_child("children") %>% 
+      xml_set_attrs(c(key=gsub(" ", "_", tolower(english_name[[i]]$species_scientific_name[y])),
+                      isactive="1"))}}
 
 
 
