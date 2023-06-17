@@ -124,30 +124,28 @@ for(i in sheets){
                       isactive="1"))}}
 
 
-
-
-
-
-
 #add the names of the species in each language 
-
 for(i in sheets){ # species nodes in each class
-temp_species<-classes[[i+2]] %>% xml_find_all(".//children") 
-
-
-for(y in 1:length(temp_species)){ #within each species
- 
-  for(z in seq_along(languages)){ #add each language
-
-  value<-ifelse(languages[z]=="en",  #the species name in the corresponding language
-               str_to_sentence(gsub("’", "", english_name[[i]]$common_name)[y]),
-               translated_name[[i]]$common_name_translated[y])       
+  temp_species<-doc %>% 
+    xml_child("attributes/attribute")%>% 
+    xml_child(i + length(languages)) %>% 
+    xml_find_all(".//children") 
+  
+  
+  for(y in 1:length(temp_species)){ #within each species
     
-  temp_species[[y]] %>% 
-  xml_add_child("names") %>% 
-  xml_set_attrs(c(language_code=languages[z],
-                  value=value))
-  }}}
+    for(z in seq_along(languages)){ #add each language
+      
+      value<-ifelse(languages[z]=="en",  #the species name in the corresponding language
+                    str_to_sentence(gsub("’", "", english_name[[i]]$common_name)[y]),
+                    translated_name[[i]]$common_name_translated[y])       
+      
+      temp_species[[y]] %>% 
+        xml_add_child("names") %>% 
+        xml_set_attrs(c(language_code=languages[z],
+                        value=value))
+    }}}
+
 
 return(xml)
 
