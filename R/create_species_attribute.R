@@ -147,7 +147,25 @@ for(i in sheets){ # species nodes in each class
     }}}
 
 
-return(xml)
+
+
+# Generate a temporary file name to save the current xml file
+temp_file <- tempfile(fileext = ".xml")
+
+# Save the XML document to the temporary file
+write_xml(doc, temp_file)
+
+# Read the XML content from the temporary file in another format
+xml_text <- readLines(temp_file)
+
+#edit the declaration of the xml
+xml_text[1]<-'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+
+#save the xml with the data model that contains only a species attribute
+writeLines(xml_text, con = "test.xml")
+
+# Remove the temporary file
+file.remove(temp_file)
 
   }
 
