@@ -75,7 +75,8 @@ doc%>% xml_child("attributes/attribute") %>%
     "isrequired"="true",
     "type"="TREE"))
 
-# add the languages for each taxonomic class
+
+# add the languages for the species attribute
 for(i in seq_along(languages)){
   doc %>%
     xml_child("attributes/attribute") %>% 
@@ -85,26 +86,29 @@ for(i in seq_along(languages)){
       "value"=species_attribute_name[i]))}
 
 
+# add a child for each tanoxmic class and crreate the corresponding attributes
+for(i in sheets){
+  doc %>% xml_child("attributes/attribute") %>% 
+    xml_add_child("tree") %>% 
+    xml_set_attrs(c(key=tolower(unique(english_name[[i]]$class)), isactive="1"))} #add classes keys
+
 
 
 #add the names to each class in english and translated language
 
-classes<-
-children[[2]] %>% 
-  xml_children() %>% 
-  xml_children()
-
 for(i in sheets){
   for(y in seq_along(languages)){
-
-value<-ifelse(languages[y]=="en", 
-             unique(english_name[[i]]$class),
-             unique(translated_name[[i]]$class_translated))       
     
-classes[[i+2]] %>% 
-    xml_add_child("names") %>% 
-    xml_set_attrs(c(language_code=languages[y],
-                    value=value))}}
+    value<-ifelse(languages[y]=="en", 
+                  unique(english_name[[i]]$class),
+                  unique(translated_name[[i]]$class_translated))       
+    
+    doc %>% xml_child("attributes/attribute")%>% 
+      xml_child(i + length(languages)) %>% 
+      xml_add_child("names") %>% 
+      xml_set_attrs(c(language_code=languages[y],
+                      value=value))}}
+
 
 
 
