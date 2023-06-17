@@ -94,7 +94,8 @@ for(i in sheets){
 
 
 
-#add the names to each class in english and translated language
+#add the node "names" and add tha names of the taxonmic classes 
+#in english and translated language
 
 for(i in sheets){
   for(y in seq_along(languages)){
