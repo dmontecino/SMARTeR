@@ -48,19 +48,6 @@ translated_name<-map(df, function(x) x %>%
 
 
 
-
-# Create baseline XML
-xml <- read_xml('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DataModel xmlns="http://www.smartconservationsoftware.org/xml/1.0/datamodel">
-  <languages>
-  </languages>
-  <attributes>
-    <attribute key="species_smarter" isrequired="true" type="TREE">
-    </attribute>
-  </attributes>
-</DataModel>')
-
-
 #add language(s) of the data model with the species attribute
 children <- xml_children(xml)
 
@@ -68,6 +55,8 @@ for(i in languages){
 children[[1]] %>% 
   xml_add_child("language") %>%  
   xml_set_attr("code", i)}
+
+write_xml()
 
 
 #add names of the species_smarter attribute (the key is defined in the xml = species_smarter)
