@@ -153,7 +153,7 @@ data_from_connect<-function(server_url,
   #   ?format=shp& # format
   #>   date_filter=waypointdate& # filter based on the waypoint date of each incident
   #>   It could be the patrol start date, Patrol end date, and patrol last modified
-  #>   For incidents, just wypoint date and waypoint date last modified
+  #>   For incidents, just waypoint date and waypoint date last modified
   #   start_date=2023-6-1%2000%3A00%3A00& # filter start date
   #   end_date=2023-6-16%2023%3A59%3A59& # filter end date
   # srid=4269 # projection used
