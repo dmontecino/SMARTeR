@@ -54,32 +54,37 @@ doc <- xml_new_root("DataModel",
 xml_add_child(doc, "languages")
 
 
-#add language(s) of the data model with the species attribute
+#add language(s) of the data model 
 for(i in languages){
   doc %>% xml_child("languages") %>% 
     xml_add_child("languages") %>%  
     xml_set_attr("code", i)}
 
-#add names of the species_smarter attribute (the key is defined in the xml = species_smarter)
-for(i in 1:length(languages)){
-  
-children[[2]] %>% 
-  xml_children() %>% 
-  xml_add_child("names") %>% 
-    xml_set_attrs(c(language_code=languages[i], 
-                    value=species_attribute_name[i]))}
-  
 
 
-#add the classes of the species_smart attribute. the attribute is a tree.
-# the first part of the tree are the classes and then the corresponding species
+#add the species attribute which is a tree.
+# the first part of the tree are the taxonomic classes
+# and the second level correspond tothe species
 # within
 
-for(i in sheets){
-children[[2]] %>% 
-  xml_children() %>% 
-  xml_add_child("tree") %>% 
-  xml_set_attrs(c(key=tolower(unique(english_name[[i]]$class)), isactive="1"))} #add classes keys
+xml_add_child(doc, "attributes")
+doc %>%  xml_child("attributes") %>% xml_add_child("attribute")
+doc%>% xml_child("attributes/attribute") %>% 
+  xml_set_attrs(c(
+    "key"="species_smarter",
+    "isrequired"="true",
+    "type"="TREE"))
+
+# add the languages for each taxonomic class
+for(i in seq_along(languages)){
+  doc %>%
+    xml_child("attributes/attribute") %>% 
+    xml_add_child("names") %>% 
+    xml_set_attrs(c(
+      "language_code"=languages[i],
+      "value"=species_attribute_name[i]))}
+
+
 
 
 #add the names to each class in english and translated language
