@@ -134,11 +134,18 @@ data_from_connect<-function(server_url,
     filter(query_name=={{query_name}}) %>% 
     pull(query_type)
   
-  #patrol query type is important to learn if there is spatial info available and 
+  #query typeKey is important to learn if there is spatial info available and 
   # therefore, if the .shp is an available option or not.
   
-  if(type_output=="shp" & grepl(pattern = "summary", query_type)){
-    stop("Summary queries do not have spatial information. 
+  query_types_with_shp_information<-c("entityobservation", "entitywaypoint","intelligencerecord",  "surveymission",
+                                     "surveymissiontrack", "observationobservation", "observationwaypoint", 
+                                     "patrolobservation", "patrolquery", "patrolwaypoint", 
+                                     "surveyobservation", "surveywaypoint",
+                                     "assetobservation", "assetwaypoint")
+  
+  
+  if(!query_type%in%query_types_with_shp_information){
+    stop("Selected query does not have spatial information. 
          Choose type_output='csv'")}
   
   #go to the api address of the specific query 
