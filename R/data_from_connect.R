@@ -52,9 +52,14 @@ data_from_connect<-function(server_url,
                             end_date=NULL,
                             srid=4326, 
                             UTM_zone=NULL){
-                            
-  if(is.null(type_output)| is.na(type_output)){
-    stop("type_output must be provided")}
+     
+  # if the date_filter is set to null or na     
+  date_filter_per_query_type<-
+  if(is.null(date_filter) | is.na(date_filter)){
+    stop("'date_filter' must be provided")}
+  
+  if(start_date>Sys.Date() | end_date >Sys.Date()){
+    stop("'start_date' and 'end_date' cannot go beyond today")}
                             
   #open connect. The login page
   session_connect <- session(server_url)
