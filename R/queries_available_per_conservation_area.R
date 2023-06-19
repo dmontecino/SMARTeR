@@ -78,7 +78,7 @@ queries_available_per_conservation_area<-function(
   #>"subFolders" and items", and "type" but not "typeKey"
   type.queries.per.CA<-
     map(api.queries.3, 
-        \(x) x[grep("items.*type(?!Key)|subFolders.*items.*type(?!Key)", 
+        \(x) x[grep("items.*typeKey|subFolders.*items.*typeKey", 
                     names(x), 
                     perl = TRUE)]) %>% 
     map(function(y) unlist(y, use.names = F))
