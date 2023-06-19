@@ -113,6 +113,8 @@ queries_available_per_conservation_area<-function(
            'assetsummary', 'assetdeploymentsummary', 'i2_obs_query',
            'i2_entity_summ_query', 'i2_entity_record_query', 
            'i2_record_query', 'i2_record_summ_query')) %>% 
+      
+    # learn if the query hs spatial information
     mutate(spatial_query=query_type%in%
           c("entityobservation", "entitywaypoint","intelligencerecord",  "surveymission",
             "surveymissiontrack", "observationobservation", "observationwaypoint", 
