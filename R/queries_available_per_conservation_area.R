@@ -17,6 +17,8 @@ flattenlist <- function(x){
     }
   }
 
+
+
 # ------------------------------------------------------------------------#
 # function to check the conservation areas in connect you have access to  #
 # and the corresponding queries within that conservation area             #
@@ -97,8 +99,29 @@ queries_available_per_conservation_area<-function(
   if(all(sapply(sapply(api.queries.4, "[[", "query_name"), length)==0)){
     stop("there are no queries available in connect")}
 
-  # assign the names of the conservation areas
-  names(api.queries.4)<-names.conservation.areas
+  #add information about executable queries
+  api.queries.5<-map(api.queries.4,  ~ .x %>%
+        
+    mutate(executable=query_type%in%
+        c('patrolobservation', 'patrolquery', 'patrolwaypoint',
+           'patrolsummary', 'patrolgrid', 'observationobservation',
+           'observationwaypoint', 'observationsummary', 'observationgrid',
+           'entityobservation', 'entitywaypoint', 'entitysummary',
+           'entitygrid', 'surveyobservation', 'surveywaypoint',
+           'surveysummary', 'surveygrid', 'surveymission',
+           'surveymissiontrack', 'assetobservation', 'assetwaypoint',
+           'assetsummary', 'assetdeploymentsummary', 'i2_obs_query',
+           'i2_entity_summ_query', 'i2_entity_record_query', 
+           'i2_record_query', 'i2_record_summ_query')) %>% 
+    mutate(spatial_query=query_type%in%
+          c("entityobservation", "entitywaypoint","intelligencerecord",  "surveymission",
+            "surveymissiontrack", "observationobservation", "observationwaypoint", 
+            "patrolobservation", "patrolquery", "patrolwaypoint", 
+            "surveyobservation", "surveywaypoint",
+            "assetobservation", "assetwaypoint")))
+  
+   # assign the names of the conservation areas
+  names(api.queries.5)<-names.conservation.areas
   
   # see all query data for all the conservation areas that have at least one query available
   return(api.queries.4)}
