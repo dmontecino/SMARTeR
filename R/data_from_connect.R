@@ -47,7 +47,9 @@ data_from_connect<-function(server_url,
                             name_conservation_area,
                             query_name,
                             type_output){
-  
+                            
+                            
+                            
   #open connect. The login page
   session_connect <- session(server_url)
   
@@ -98,7 +100,7 @@ data_from_connect<-function(server_url,
   #>"subFolders" and items", and "type" but not "typeKey"
   type.queries.per.CA<-
     map(api.queries.3, 
-        \(x) x[grep("items.*type(?!Key)|subFolders.*items.*type(?!Key)", 
+        \(x) x[grep("items.*typeKey|subFolders.*items.*typeKey", 
                     names(x), 
                     perl = TRUE)]) %>% 
     map(function(y) unlist(y, use.names = F))
@@ -154,11 +156,13 @@ data_from_connect<-function(server_url,
   #>   date_filter=waypointdate& # filter based on the waypoint date of each incident
   #>   It could be the patrol start date, Patrol end date, and patrol last modified
   #>   For incidents, just waypoint date and waypoint date last modified
-  #   start_date=2023-6-1%2000%3A00%3A00& # filter start date
+  #   start_date=2023-6-1%2000%3A00%3A00& # filter start date, /the %2000%3A00%3A00& seems to be constant
   #   end_date=2023-6-16%2023%3A59%3A59& # filter end date
   # srid=4269 # projection used
   # PatrolSummaryQuery does not have spatial information
   
+  
+ 
 
   
   #open the query data as spatial data
