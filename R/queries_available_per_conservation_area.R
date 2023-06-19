@@ -124,5 +124,5 @@ queries_available_per_conservation_area<-function(
   names(api.queries.5)<-names.conservation.areas
   
   # see all query data for all the conservation areas that have at least one query available
-  return(api.queries.4)}
+  return(api.queries.5)}
   
