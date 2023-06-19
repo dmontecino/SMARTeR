@@ -137,7 +137,7 @@ data_from_connect<-function(server_url,
   #patrol query type is important to learn if there is spatial info available and 
   # therefore, if the .shp is an available option or not.
   
-  if(type_output=="shp" & grepl(pattern = "Summary", query_type)){
+  if(type_output=="shp" & grepl(pattern = "summary", query_type)){
     stop("Summary queries do not have spatial information. 
          Choose type_output='csv'")}
   
