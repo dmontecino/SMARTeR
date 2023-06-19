@@ -46,9 +46,15 @@ data_from_connect<-function(server_url,
                             password, 
                             name_conservation_area,
                             query_name,
-                            type_output){
+                            type_output,
+                            date_filter,
+                            start_date=NULL,
+                            end_date=NULL,
+                            srid=4326, 
+                            UTM_zone=NULL){
                             
-                            
+  if(is.null(type_output)| is.na(type_output)){
+    stop("type_output must be provided")}
                             
   #open connect. The login page
   session_connect <- session(server_url)
@@ -123,55 +129,124 @@ data_from_connect<-function(server_url,
   names(api.queries.4)<-names.conservation.areas
   
   
+  #add information about executable queries
+  api.queries.5<-map(api.queries.4,  ~ .x %>%
+                       
+       mutate(executable=query_type%in%
+                c('patrolobservation', 'patrolquery', 'patrolwaypoint',
+                  'patrolsummary', 'patrolgrid', 'observationobservation',
+                  'observationwaypoint', 'observationsummary', 'observationgrid',
+                  'entityobservation', 'entitywaypoint', 'entitysummary',
+                  'entitygrid', 'surveyobservation', 'surveywaypoint',
+                  'surveysummary', 'surveygrid', 'surveymission',
+                  'surveymissiontrack', 'assetobservation', 'assetwaypoint',
+                  'assetsummary', 'assetdeploymentsummary', 'i2_obs_query',
+                  'i2_entity_summ_query', 'i2_entity_record_query', 
+                  'i2_record_query', 'i2_record_summ_query')) %>% 
+       
+       # learn if the query hs spatial information
+       mutate(spatial_query=query_type%in%
+                c("entityobservation", "entitywaypoint",
+                  "intelligencerecord",  "surveymission",
+                  "surveymissiontrack", "observationobservation", 
+                  "observationwaypoint", 
+                  "patrolobservation", "patrolquery", "patrolwaypoint", 
+                  "surveyobservation", "surveywaypoint",
+                  "assetobservation", "assetwaypoint")))
+
+  
   # select the specific query uuid
-  query.api.number<-api.queries.4[[name_conservation_area]] %>% 
+  query.api.number<-api.queries.5[[name_conservation_area]] %>% 
     dplyr::filter(query_name=={{query_name}}) %>% 
     pull(query_api)
   
   
   # defining the query type of the query requested through the query name
-  query_type=api.queries.4[[name_conservation_area]] %>% 
+  query_type=api.queries.5[[name_conservation_area]] %>% 
     filter(query_name=={{query_name}}) %>% 
     pull(query_type)
   
-  #query typeKey is important to learn if there is spatial info available and 
-  # therefore, if the .shp is an available option or not.
+  query_executable=api.queries.5[[name_conservation_area]] %>% 
+    filter(query_name=={{query_name}}) %>% 
+    pull(executable)
   
-  query_types_with_shp_information<-c("entityobservation", "entitywaypoint","intelligencerecord",  "surveymission",
-                                     "surveymissiontrack", "observationobservation", "observationwaypoint", 
-                                     "patrolobservation", "patrolquery", "patrolwaypoint", 
-                                     "surveyobservation", "surveywaypoint",
-                                     "assetobservation", "assetwaypoint")
-  
-  
-  if(!query_type%in%query_types_with_shp_information){
-    stop("Selected query does not have spatial information. 
-         Choose type_output='csv'")}
-  
-  #go to the api address of the specific query 
-  data = session_jump_to(logged.in.connect, 
-                         paste0(server_url, 
-                                "/connect/query/api/", 
-                                query.api.number,
-                                "?format=",
-                                type_output, 
-                                "&date_filter=waypointdate")[1])
-  
-  # https://karukinkaconnect.smartconservationtools.org/server/connect/query/api/
-  #   de879d8d-3491-4418-9a7e-a72b6958372f #api
-  #   ?format=shp& # format
-  #>   date_filter=waypointdate& # filter based on the waypoint date of each incident
-  #>   It could be the patrol start date, Patrol end date, and patrol last modified
-  #>   For incidents, just waypoint date and waypoint date last modified
-  #   start_date=2023-6-1%2000%3A00%3A00& # filter start date, /the %2000%3A00%3A00& seems to be constant
-  #   end_date=2023-6-16%2023%3A59%3A59& # filter end date
-  # srid=4269 # projection used
-  # PatrolSummaryQuery does not have spatial information
+  query_spatial=api.queries.5[[name_conservation_area]] %>% 
+    filter(query_name=={{query_name}}) %>% 
+    pull(spatial_query)
   
   
- 
+  #> query typeKey is important to learn if they are executable from
+  #> Connect (based on connect functionality) and if there is spatial 
+  #> info available -> If the .shp is an available option or not.
+  # copy from semicolon -> ;view-source:https://karukinkaconnect.smartconservationtools.org/server/connect/query
 
   
+  if(!query_executable){
+    stop("Selected query is not executable by SMART Connect. To assess the
+         queries in your conservation area executable by SMART Connect use the function
+         queries_available_per_conservation_area first and check the 'executable'")}
+    
+  if(!query_spatial){
+    stop("Selected query does not have spatial information. To assess the
+    queries in your conservation area has spatial data by SMART Connect use the function
+    queries_available_per_conservation_area first and check the 'spatial_query'
+    column. You should get data if type_output='csv'")}
+  
+  
+  #----------------------------------------------#
+  # create the api address of the specific query #
+  #----------------------------------------------#
+  
+  #> api without start date or end date specified. UTM_zone is null or assigned 
+  #> so the link will be fine
+  
+  api_address_minimal<-
+    
+    
+    case_when(
+    type_output=="csv" ~
+    paste0(server_url, 
+           "/connect/query/api/", 
+           query.api.number,
+           "?format=",
+           type_output, 
+           "&date_filter=",
+           date_filter)[1], 
+    
+    type_output=="shp" ~
+    paste0(server_url, 
+           "/connect/query/api/", 
+           query.api.number,
+           "?format=",
+           type_output, 
+           "&date_filter=",
+           date_filter,
+           "&srdi",
+           srid,
+           UTM_zone)[1])     
+  
+ 
+  # add the filter dates if provided
+  
+  start_date_full<-if(!is.null(start_date)){ #if null, it remains null
+                    paste0("&start_date=", start_date, "%2000%3A00%3A00")}
+  
+  end_date_full<-if(!is.null(end_date)){
+                    paste0("&end_date=", end_date, "%2023%3A59%3A59")}
+                    
+  
+  api_address <- paste0(api_address_minimal,
+                        start_date_full,
+                        end_date_full)
+  
+  
+  #---------------------------------------------#
+  # go to the api address and download the data #
+  #---------------------------------------------#
+
+  data = session_jump_to(logged.in.connect, api_adress)
+                        
+                      
   #open the query data as spatial data
   if(type_output=="shp"){
     filename<-stringr::str_extract(data$response$headers$`content-disposition`, "(?<=\\=).*")
