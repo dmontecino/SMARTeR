@@ -69,8 +69,10 @@ data_from_connect<-function(server_url,
       stop("'end_date' cannot go beyond today")}}
   
                          
+  # -------------------------------------------------------------------------- #
+  # go to Connect to find information about the requested query and run checks #
+  # -------------------------------------------------------------------------- #
   
-     
   #open connect. The login page
   session_connect <- session(server_url)
   
@@ -159,7 +161,7 @@ data_from_connect<-function(server_url,
                   'i2_entity_summ_query', 'i2_entity_record_query', 
                   'i2_record_query', 'i2_record_summ_query')) %>% 
        
-       # learn if the query hs spatial information
+       # learn if the query has spatial information
        mutate(spatial_query=query_type%in%
                 c("entityobservation", "entitywaypoint",
                   "intelligencerecord",  "surveymission",
@@ -176,15 +178,17 @@ data_from_connect<-function(server_url,
     pull(query_api)
   
   
-  # defining the query type of the query requested through the query name
+  # does the query has date_filter option as provided in the function
   query_type=api.queries.5[[name_conservation_area]] %>% 
     filter(query_name=={{query_name}}) %>% 
     pull(query_type)
   
+  # executable query
   query_executable=api.queries.5[[name_conservation_area]] %>% 
     filter(query_name=={{query_name}}) %>% 
     pull(executable)
   
+  #query with spatial infomration
   query_spatial=api.queries.5[[name_conservation_area]] %>% 
     filter(query_name=={{query_name}}) %>% 
     pull(spatial_query)
@@ -205,7 +209,17 @@ data_from_connect<-function(server_url,
     stop("Selected query does not have spatial information. To assess the
     queries in your conservation area has spatial data by SMART Connect use the function
     queries_available_per_conservation_area first and check the 'spatial_query'
-    column. You should get data if type_output='csv'")}
+    column. In any case, You should get data if type_output='csv'")}
+  
+  date_filter_per_query_type<-date_filters_types_available()
+  
+  if(!date_filter%in%date_filter_per_query_type[[query_type]]){
+    stop("Selected query does not have the date_type option provided. 
+         Run the date_filters_types_available() function to assess the 
+         options available for yout query type. 
+         To assess the query type, use the function
+         queries_available_per_conservation_area first and check the 
+         'query_type' column")
   
   
   #----------------------------------------------#
