@@ -1,4 +1,3 @@
-date_filters_types_available<-function(){
 
 date_filters_types_available = list(
   
@@ -29,8 +28,3 @@ date_filters_types_available = list(
   'surveygrid'= c('waypointdate','missionstartdate','missionenddate','waypointlastmodified'),
   'surveysummary'=  c('waypointdate', 'missionstartdate', 'missionenddate','waypointlastmodified'))
 
- date_filters_types_available<-
-   date_filters_types_available[order(names(date_filters_types_available))] 
- 
- return(date_filters_types_available)
- }
