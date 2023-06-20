@@ -34,6 +34,3 @@ date_filters_types_available = list(
  
  return(date_filters_types_available)
  }
- 
- 
-date_filters_types_available()
