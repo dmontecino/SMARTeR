@@ -304,7 +304,7 @@ data_from_connect<-function(server_url,
 
 # data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server", 
 #                             user = "dmontecino", 
-#                             password = 
+#                             password = password,
 #                             name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
 #                             query_name = "informacion_patrullas",
 #                             type_output = "shp",
