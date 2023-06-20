@@ -48,8 +48,8 @@ data_from_connect<-function(server_url,
                             query_name,
                             type_output,
                             date_filter,
-                            start_date=NULL, #YYYY-MM-DD
-                            end_date=NULL, #YYYY-MM-DD
+                            start_date=NULL, #YYYY-MM-DD as character
+                            end_date=NULL, #YYYY-MM-DD as character
                             srid=4326, 
                             UTM_zone=NULL){
      
@@ -212,14 +212,16 @@ data_from_connect<-function(server_url,
     column. In any case, You should get data if type_output='csv'")}
   
   
-  #date_filter_per_query_type<-date_filters_types_available()
-  source('R/query_type_date_filters_types_available.R')
-  date_filter_per_query_type<-date_filters_types_available()
+  date_filter_types_available_per_query<-
+    source("R/query_type_date_filters_types_available.R")
   
-  if(!date_filter%in%date_filter_per_query_type[[query_type]]){
+  date_filter_types_available_per_query<-
+    date_filter_types_available_per_query$value
+  
+  if(!date_filter%in%date_filter_types_available_per_query[[query_type]]){
     stop("Selected query does not have the date_type option provided. 
          Run the date_filters_types_available() function to assess the 
-         options available for yout query type. 
+         options available for your query type. 
          To assess the query type, use the function
          queries_available_per_conservation_area first and check the 
          'query_type' column")}
@@ -302,15 +304,15 @@ data_from_connect<-function(server_url,
   return(data)}
 
 
-# data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server", 
-#                             user = "dmontecino", 
-#                             password = password,
-#                             name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
-#                             query_name = "informacion_patrullas",
-#                             type_output = "shp",
-#                             date_filter="waypointlastmodified",
-#                             start_date="2020-01-01", #YYYY-MM-DD
-#                             end_date="2023-06-01", #YYYY-MM-DD
-#                             srid=4326, 
-#                             UTM_zone=NULL)
-  
+data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server",
+                            user = "dmontecino",
+                            password = password,
+                            name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
+                            query_name = "informacion_patrullas",
+                            type_output = "shp",
+                            date_filter="waypointlastmodified",
+                            start_date="2020-01-01", #YYYY-MM-DD
+                            end_date="2023-06-01", #YYYY-MM-DD
+                            srid=4326,
+                            UTM_zone=NULL)
+
