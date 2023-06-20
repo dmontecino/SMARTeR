@@ -48,8 +48,8 @@ data_from_connect<-function(server_url,
                             query_name,
                             type_output,
                             date_filter,
-                            start_date=NULL,
-                            end_date=NULL,
+                            start_date=NULL, #YYYY-MM-DD
+                            end_date=NULL, #YYYY-MM-DD
                             srid=4326, 
                             UTM_zone=NULL){
      
@@ -211,6 +211,7 @@ data_from_connect<-function(server_url,
     queries_available_per_conservation_area first and check the 'spatial_query'
     column. In any case, You should get data if type_output='csv'")}
   
+  
   date_filter_per_query_type<-date_filters_types_available()
   
   if(!date_filter%in%date_filter_per_query_type[[query_type]]){
@@ -219,7 +220,7 @@ data_from_connect<-function(server_url,
          options available for yout query type. 
          To assess the query type, use the function
          queries_available_per_conservation_area first and check the 
-         'query_type' column")
+         'query_type' column")}
   
   
   #----------------------------------------------#
@@ -242,6 +243,7 @@ data_from_connect<-function(server_url,
            "&date_filter=",
            date_filter)[1], 
     
+    
     type_output=="shp" ~
     paste0(server_url, 
            "/connect/query/api/", 
@@ -254,14 +256,19 @@ data_from_connect<-function(server_url,
            srid,
            UTM_zone)[1])     
   
+  
  
   # add the filter dates if provided
   
   start_date_full<-if(!is.null(start_date)){ #if null, it remains null
-                    paste0("&start_date=", start_date, "%2000%3A00%3A00")}
+                    paste0("&start_date=", 
+                           str_glue("{year(start_date)}-{month(start_date)}-{day(start_date)}"),
+                          "%2000%3A00%3A00")}
   
   end_date_full<-if(!is.null(end_date)){
-                    paste0("&end_date=", end_date, "%2023%3A59%3A59")}
+                    paste0("&end_date=", 
+                           str_glue("{year(end_date)}-{month(end_date)}-{day(end_date)}"), 
+                           "%2023%3A59%3A59")}
                     
   
   api_address <- paste0(api_address_minimal,
@@ -291,8 +298,3 @@ data_from_connect<-function(server_url,
     data2 = data %>% janitor::clean_names()}
   
   return(data)}
-
-
-
-
-
