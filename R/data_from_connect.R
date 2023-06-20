@@ -212,6 +212,8 @@ data_from_connect<-function(server_url,
     column. In any case, You should get data if type_output='csv'")}
   
   
+  #date_filter_per_query_type<-date_filters_types_available()
+  source('R/query_type_date_filters_types_available.R')
   date_filter_per_query_type<-date_filters_types_available()
   
   if(!date_filter%in%date_filter_per_query_type[[query_type]]){
@@ -280,7 +282,7 @@ data_from_connect<-function(server_url,
   # go to the api address and download the data #
   #---------------------------------------------#
 
-  data = session_jump_to(logged.in.connect, api_adress)
+  data = session_jump_to(logged.in.connect, api_address)
                         
                       
   #open the query data as spatial data
@@ -298,3 +300,17 @@ data_from_connect<-function(server_url,
     data2 = data %>% janitor::clean_names()}
   
   return(data)}
+
+
+# data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server", 
+#                             user = "dmontecino", 
+#                             password = 
+#                             name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
+#                             query_name = "informacion_patrullas",
+#                             type_output = "shp",
+#                             date_filter="waypointlastmodified",
+#                             start_date="2020-01-01", #YYYY-MM-DD
+#                             end_date="2023-06-01", #YYYY-MM-DD
+#                             srid=4326, 
+#                             UTM_zone=NULL)
+  
