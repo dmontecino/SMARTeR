@@ -38,16 +38,64 @@ dlshape=function(shploc, shpfile) {
 # function to get data from connect #
 # ----------------------------------#
 
-# For now it only works for "PatrolQuery" and "PatrolObservationQuery" 
-# but should be easy to solve for other types of queries.
 
+#' Run a SMART query in SMART Connect and open the output in an R session. 
+#' 
+#' @details
+#' Not all SMART queries have spatial information included and different query
+#' types have different properties including day filter options. To learn about
+#' the Conservation Areas available in SMART Connect, the queries available per 
+#' Conservation Area, and their properties such as query type, spatial 
+#' information availability (the type_output parameter of this function), and 
+#' date filter options (the date_filter parameter of this function) use the 
+#' "queries_available_per_conservation_area" function first.
+#'
+#' @param server_url A string with the URL of the SMART Connect server 
+#' (e.g., "https://wcshealth.smartconservationtools.org/server" )
+#' @param user A string with corresponding SMART Connect username 
+#' (e.g., "connect_username")
+#' @param password A string with the corresponding SMART Connect user's password
+#'  (e.g., "my_connect_password")
+#' @param name_conservation_area A string he name of the Conservation Area 
+#' holding the query
+#' @param query_name A string with the name of the SMART query to run 
+#' (e.g., "query_name")
+#' @param type_output Either "csv" or "shp" to load the query data as 
+#' a tibble or sf object. Not all queries have spatial data. See details. 
+#' @param date_filter A string with the field establishing the start and 
+#' end dates of the data of the query's output. Default is "waypointdate". 
+#' See details.
+#' @param start_date A string with the start date filter with the format 
+#' YYYY-MM-DD (e.g, "2000-01-01"). Default is NULL.
+#' @param end_date A string with the end date filter with the format 
+#' YYYY-MM-DD (e.g, "2000-01-01"). Default is NULL.
+#' @param srid An integer with the EPSG code of the projection for a spatial 
+#' output (when "shp" is selected). Default is 4326.
+#' @param UTM_zone An integer to provide the Zone if a Universal Transverse 
+#' Mercator is the srid input. From 1 to 60. 
+#'
+#' @return A tibble or sf object with the data returned by the query run 
+#' in SMART Connect. Columns and rows are returned as defined in the source
+#' query. 
+#' 
+#' @export
+#'
+#' @examples
+#' 
+#' 
+#' @seealso
+#' [queries_available_per_conservation_area()] to learn about the Conservation 
+#' Areas available in SMART Connect, the queries in each Conservation Area, the 
+#' type of each query, spatial data in the queries, and the options available to
+#' filter by date for each query.
+#' ,
 data_from_connect<-function(server_url, 
                             user, 
                             password, 
                             name_conservation_area,
                             query_name,
                             type_output,
-                            date_filter,
+                            date_filter="waypointdate",
                             start_date=NULL, #YYYY-MM-DD as character
                             end_date=NULL, #YYYY-MM-DD as character
                             srid=4326, 
