@@ -4,9 +4,7 @@ A set of functions to prepare data models and configurable models for the Spatia
 
 The package uses the rvest, tibble, jsonlite, janitor, sf, dplyr, plyr, and purrr packages. 
 
-More soon...
-
-To load the functions in R copy and paste: 
+For now the two working functions are
 
 source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/queries_available_per_conservation_area.R")
 
