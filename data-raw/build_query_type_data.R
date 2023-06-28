@@ -59,5 +59,5 @@ date_filter_types_available_per_query_type <-
 #use_data_raw() #creates the data-raw/ folder and lists it in .Rbuildignore. 
 
 
-usethis::use_data(date_filter_types_available_per_query_type)
+#usethis::use_data(date_filter_types_available_per_query_type)
 
