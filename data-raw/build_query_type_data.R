@@ -1,5 +1,10 @@
+library(tibble)
+library(purrr)
+library(dplyr)
+library(devtools)
 
-date_filters_types_available = list(
+
+date_filter_types_available_per_query_type = list(
   
   'surveymissiontrack' = c('missiontrackdate', 'missionstartdate', 'missionenddate'),
   'patrolquery' = c('patrolstart', 'patrolend', 'waypointlastmodified'), 
@@ -27,4 +32,32 @@ date_filters_types_available = list(
   'patrolgrid'= c('waypointdate','patrolstart','patrolend','waypointlastmodified'),
   'surveygrid'= c('waypointdate','missionstartdate','missionenddate','waypointlastmodified'),
   'surveysummary'=  c('waypointdate', 'missionstartdate', 'missionenddate','waypointlastmodified'))
+
+
+
+all_date_filter_options<-
+  sort(
+    unique(
+      unlist(
+        date_filter_types_available_per_query_type, use.names = F)))
+
+date_filter_types_available_per_query_type<-
+  as.data.frame(
+    do.call(rbind, 
+            map(date_filter_types_available_per_query_type, 
+                function(x) all_date_filter_options %in% x)))
+
+
+colnames(date_filter_types_available_per_query_type)<-
+  paste0("date_filter_type", ":", all_date_filter_options)
+
+
+date_filter_types_available_per_query_type <- 
+  date_filter_types_available_per_query_type %>%
+  rownames_to_column(var = "typeKey")
+
+#use_data_raw() #creates the data-raw/ folder and lists it in .Rbuildignore. 
+
+
+usethis::use_data(date_filter_types_available_per_query_type)
 
