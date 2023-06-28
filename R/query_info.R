@@ -1,6 +1,6 @@
 
 library(rvest)
-library(plyr)
+# library(plyr)
 library(dplyr)
 library(tibble)
 library(jsonlite)
