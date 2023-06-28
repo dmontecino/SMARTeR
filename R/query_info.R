@@ -12,7 +12,7 @@ library(purrr)
 # and the corresponding queries within that conservation area             #
 # ------------------------------------------------------------------------#
 
-queries_available_per_conservation_area<-function(
+queries_info<-function(
 
      server_url, # your connect server URL as character (e.g., "https://wcshealth.smartconservationtools.org/server") 
      user,      # your connect username as character. 
@@ -158,10 +158,3 @@ queries_available_per_conservation_area<-function(
   
   # see all query data for all the conservation areas that have at least one query available
   return(api.queries.6)}
-  
-
-server_url<-"https://wcshealth.smartconservationtools.org/server"
-user <-"dmontecino"
-password <- "Pancha176!"
-
-queries_available_per_conservation_area(server_url, user, password)
