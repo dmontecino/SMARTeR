@@ -6,7 +6,7 @@ The package uses the rvest, tibble, jsonlite, janitor, sf, dplyr, plyr, and purr
 
 For now the two working functions are
 
-source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/queries_available_per_conservation_area.R")
+source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/query_info.R")
 
 source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/data_from_connect.R")
 
