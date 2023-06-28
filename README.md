@@ -4,19 +4,21 @@ A set of functions to prepare data models and configurable models for the Spatia
 
 The package uses the rvest, tibble, jsonlite, janitor, sf, dplyr, plyr, and purrr packages. 
 
-For now the two working functions are
+I am currently working to move the set of functions in the R folder to an actual package so stop reading here and wait for news
 
-source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/query_info.R")
 
-source("https://raw.githubusercontent.com/dmontecino/SMARTeR/main/R/data_from_connect.R")
+
+
+
+
+
+
+
 
 First, call the function "query_info". This function has as arguments "server_url", "user", and "password". Provide the connect url in the server_url argument as character (e.g, "https://wcshealth.smartconservationtools.org/server") then your username and password as character in the corresponding arguments. This function will return a list. Each list element provides the conservation areas you have access to that have one query at least. Each element list has is named based on the corresponding conservation areas. Within each list element there is a vector with the queries available for the corresponding conservation area. The list element names and query names within are used in the function to load data as arguments (see next paragraph). 
 
 Secondly, to load data returned by a query, use the function "data_from_connect". This function also has as arguments "server_url", "user", and "password", plus "name_conservation_area", "query_name", and "type". For the "name_conservation_area argument" provide the name of the conservation area holding the query of interest. The "name_conservation_area" is the name of the conservation area as returned by the output of the "queries_available_per_conservation_area" function (the corresponding list element name). The "query_name" is the name of the query as provided in the corresponding element of the list returned by "queries_available_per_conservation_area". The "type" options are "shp" or "csv". If the selection is csv, a tibble is created. If the selection is shp, a .zip file is saved as a temporary file, unzipped, and read as an sf object.
 
-As an example, let'say I want to load all the data provided by the query "all_patrol_data" that belongs to the conservation area named "conservation area A". 
-
-First, I run the "queries_available_per_conservation_area" function 
 
 ```
 queries_available_per_conservation_area(
