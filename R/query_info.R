@@ -1,8 +1,8 @@
 
 library(rvest)
-# library(plyr)
+library(plyr)
 library(dplyr)
-library(tibble)
+# library(tibble)
 library(jsonlite)
 library(purrr)
 
@@ -12,7 +12,7 @@ library(purrr)
 # and the corresponding queries within that conservation area             #
 # ------------------------------------------------------------------------#
 
-queries_info<-function(
+query_info<-function(
 
      server_url, # your connect server URL as character (e.g., "https://wcshealth.smartconservationtools.org/server") 
      user,      # your connect username as character. 
@@ -119,34 +119,6 @@ queries_info<-function(
   
   # add the date filter options for each query
   
-  date_filter_types_available_per_query<-
-    source("R/query_type_date_filters_types_available.R")
-  
-  date_filter_types_available_per_query<-
-    date_filter_types_available_per_query$value
-  
-  all_date_filter_options<-
-  sort(
-    unique(
-      unlist(
-        date_filter_types_available_per_query, use.names = F)))
-  
-  date_filter_types_available_per_query<-
-    as.data.frame(
-      do.call(rbind, 
-              map(date_filter_types_available_per_query, 
-                  function(x) all_date_filter_options %in% x)))
-  
-  
-  colnames(date_filter_types_available_per_query)<-
-    paste0("date_filter_type", ":", all_date_filter_options)
-           
-  
-  date_filter_types_available_per_query <- 
-    date_filter_types_available_per_query %>%
-    rownames_to_column(var = "typeKey")
-  
-  # Perform the left join based on row names
   api.queries.6 <- 
     map(api.queries.5, \(x)
         left_join(x, date_filter_types_available_per_query, by = "typeKey"))
