@@ -119,9 +119,12 @@ query_info<-function(
   
   # add the date filter options for each query
   
+  date_filter_types_available_per_query<-source("data-raw/build_query_type_data.R")
+  # load("data/date_filter_types_available_per_query_type.rda")
+  
   api.queries.6 <- 
     map(api.queries.5, \(x)
-        left_join(x, date_filter_types_available_per_query, by = "typeKey"))
+        left_join(x, date_filter_types_available_per_query$value, by = "typeKey"))
   
   
    # assign the names of the conservation areas
