@@ -1,10 +1,12 @@
 Package: SMARTeR
 Title: WORK WITH THE SPATIAL MONITORING AND REPORTING TOOL (SMART) DATA IN R
 Version: 0.0.0.9000
-Authors@R: 
-    person("Diego", "Montecino-Latorre", , "dmontecino@wcs.org", 
-           role = c("aut", "cre"),
-           comment = c(ORCID = "2-5009-5939"))
+Authors@R: c(
+        person("Diego", "Montecino-Latorre", , "dmontecino@wcs.org", 
+        role = c("aut", "cre"),
+        comment = c(ORCID = "2-5009-5939")),
+        person("Wildlife Conservation Society, WCS", role = "fnd"))   
+    
 Description: A set of functions to prepare data models and configurable models 
     for the Spatial Monitoring and Reporting Tool (SMART; 
     smartconservationtools.org/) Conservation Areas, retrieve data from SMART
