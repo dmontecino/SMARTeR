@@ -6,7 +6,6 @@ Authors@R: c(
         role = c("aut", "cre"),
         comment = c(ORCID = "2-5009-5939")),
         person("Wildlife Conservation Society, WCS", role = "fnd"))   
-    
 Description: A set of functions to prepare data models and configurable models 
     for the Spatial Monitoring and Reporting Tool (SMART; 
     smartconservationtools.org/) Conservation Areas, retrieve data from SMART
@@ -26,3 +25,5 @@ RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10)
 LazyData: true
+URL: https://github.com/dmontecino/SMARTeR
+BugReports: https://github.com/dmontecino/SMARTeR/issues
