@@ -1,13 +1,22 @@
-#' #' Explore the queries available in SMART Connect
+#' #' Data from the queries available in SMART Connect
 #' 
 #' @details
-#' Not all SMART queries have spatial information included and different query
-#' types have different properties including day filter options. To learn about
-#' the Conservation Areas available in SMART Connect, the queries available per 
-#' Conservation Area, and their properties such as query type, spatial 
-#' information availability (the type_output parameter of this function), and 
-#' date filter options (the date_filter parameter of this function) use the 
-#' "queries_available_per_conservation_area" function first.
+#' This function is relevant to load the data from SMART Connect in the R 
+#' session using the "data_from_connect" function. Not all SMART queries have 
+#' the same properties. The query_info function provides the properties of each 
+#' query available for each conservation area. The 'folder' column provides the 
+#' the to the folder where the query is stored in the conservation area. The 
+#' 'query_name' column provides the query name. The 'typeKey' provides the type 
+#' of query. The 'uuid' has an internal SMART identifier for each query relevant 
+#' for the API call to load the output of the query. The 'spatial_query' is a
+#' column with boolean values where TRUE means 'the query has spatial
+#' information' and FALSE otherwise. The following 'date_filter_type' columns 
+#' are also boolean columns showing the referential temporal filters options 
+#' available. For example, 'date_filter_type:waypointdate' equals TRUE indicates 
+#' that waypointdate can be selected as reference for the start and end 
+#' date filters of the data to be included in the query.  The output of this
+#' function is needed to provide the correct arguments to the 
+#' 'data_from_connect' function.
 #' 
 #' @param server_url A string with the URL of the SMART Connect server 
 #' (e.g., "https://wcshealth.smartconservationtools.org/server" )
@@ -16,18 +25,24 @@
 #' @param password A string with the corresponding SMART Connect user's password
 #'  (e.g., "my_connect_password")
 #'  
-#' @return A tibble with the columns .... 
+#' @return A list of tibbles. The length of the list corresponds to the number 
+#' SMART conservation areas the user has access to. Each tibble has the following
+#' columns (see details for an explanation of each one of them): 
+#' folder, query_name, typeKey, uuid,  spatial_query, 
+#' "date_filter_type:assetdeploymentdate", "date_filter_type:missionenddate",
+#' "date_filter_type:missionstartdate", "date_filter_type:missiontrackdate",
+#' "date_filter_type:patrolend", "date_filter_type:patrolstart", 
+#' "date_filter_type:RecordDate", "date_filter_type:waypointdate",
+#' "date_filter_type:waypointlastmodified".
 #' 
 #' @export
 #'
 #' @examples
-#' x<-1
-#' 
-#' @seealso
-#' [queries_available_per_conservation_area()] to learn about the Conservation 
-#' Areas available in SMART Connect, the queries in each Conservation Area, the 
-#' type of each query, spatial data in the queries, and the options available to
-#' filter by date for each query.
+#' user<-"your_smart_connect_user_name"
+#' password<-"your_smart_connect_password"
+#' server_url<-"https://wcshealth.smartconservationtools.org/server"
+#' query_data<-query_info(user=user, password=password, server_url=server_url)
+
 
 # ------------------------------------------------------------------------#
 # function to check the conservation areas in connect you have access to  #
