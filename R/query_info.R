@@ -144,8 +144,8 @@ query_info<-function(
         dplyr::select(-c( type, id, isShared, folderUuid, iconName, isCcaa, conservationArea)) %>% 
         dplyr::rename(query_name=name) %>% 
         dplyr::distinct() %>% 
-        dplyr::filter_all(any_vars(!is.na(.)))
-      
+        dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+
       #create the full path to each query
       api.queries.3[[i]][[counter+1]]$folder<-
         paste0(rep(api.queries.3[[i]][[counter]]$folder,  
@@ -162,7 +162,7 @@ query_info<-function(
   
   #join the data per CA and remove rows wo queries
   api.queries.4<-purrr::map(api.queries.3, \(x) x %>% 
-                              purrr::reduce(full_join) %>%  
+                              purrr::reduce(dplyr::full_join) %>%  
                               dplyr::filter(!is.na(query_name)) %>% 
                               dplyr::select(-caUuid, -subFolders))
   
