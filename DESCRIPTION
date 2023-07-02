@@ -17,8 +17,7 @@ Description: A set of functions to prepare data models and configurable models
     queries available in SMART Connect per Conservation Area, the properties of
     each specific query, and per query folder. This information is necessary to
     properly identify the output options available for each query.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
@@ -27,3 +26,9 @@ Depends:
 LazyData: true
 URL: https://github.com/dmontecino/SMARTeR
 BugReports: https://github.com/dmontecino/SMARTeR/issues
+Imports: 
+    dplyr (>= 1.1.2),
+    jsonlite (>= 1.8.5),
+    purrr (>= 1.0.1),
+    rvest (>= 1.0.3),
+    tidyr (>= 1.3.0)
