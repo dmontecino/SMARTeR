@@ -1,13 +1,4 @@
 
-library(rvest)
-#library(plyr)
-library(dplyr)
-# library(tibble)
-library(jsonlite)
-library(purrr)
-library(tidyr)
-
-
 # ------------------------------------------------------------------------#
 # function to check the conservation areas in connect you have access to  #
 # and the corresponding queries within that conservation area             #
