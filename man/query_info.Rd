@@ -2,7 +2,7 @@
 % Please edit documentation in R/query_info.R
 \name{query_info}
 \alias{query_info}
-\title{#' Explore the queries available in SMART Connect}
+\title{Properties of the queries available in SMART Connect}
 \usage{
 query_info(server_url, user, password)
 }
@@ -17,27 +17,47 @@ query_info(server_url, user, password)
 (e.g., "my_connect_password")}
 }
 \value{
-A tibble with the columns ....
+A list of tibbles. The length of the list corresponds to the number
+SMART conservation areas the user has access to. Each tibble has the following
+columns (see details for an explanation of each one of them):
+folder, query_name, typeKey, uuid,  spatial_query,
+date_filter_type:assetdeploymentdate, date_filter_type:missionenddate,
+date_filter_type:missionstartdate, date_filter_type:missiontrackdate,
+date_filter_type:patrolend, date_filter_type:patrolstart,
+date_filter_type:RecordDate, date_filter_type:waypointdate,
+date_filter_type:waypointlastmodified.
 }
 \description{
-#' Explore the queries available in SMART Connect
+A function to learn about the queries available in SMART Connect and their
+properties. This information is relevant to provide the correct parameters
+for the function 'data_from_connect' and load the corresponding query output
+in the R session.
 }
 \details{
-Not all SMART queries have spatial information included and different query
-types have different properties including day filter options. To learn about
-the Conservation Areas available in SMART Connect, the queries available per
-Conservation Area, and their properties such as query type, spatial
-information availability (the type_output parameter of this function), and
-date filter options (the date_filter parameter of this function) use the
-"queries_available_per_conservation_area" function first.
+Not all SMART queries have the same properties. The 'query_info function'
+provides the properties of the queries in each conservation area
+following the permissions of SMART Connect users.
+The function output is a list of tibbles. The 'folder' column provides the
+query folder of the conservation area where each query is stored.
+The 'query_name' column provides the query name. The 'typeKey' provides the
+type of query. The 'uuid' has an internal SMART identifier for each query
+which is relevant for the API call to load the output of the query.
+The 'spatial_query' is a column with boolean values where TRUE means
+'the query has spatial information' and otherwise if FALSE.
+The following 'date_filter_type:' columns are also boolean showing the
+available temporal filters options. For example, a
+'date_filter_type:waypointdate' equals TRUE means that 'waypointdate' can
+be chosen as the reference for the start and end dates of the data to
+be included in the query.
 }
 \examples{
-x<-1
+user<-"your_smart_connect_user_name"
+password<-"your_smart_connect_password"
+server_url<-"https://wcshealth.smartconservationtools.org/server"
+query_data<-query_info(user=user, password=password, server_url=server_url)
+
 
 }
 \seealso{
-\code{\link[=queries_available_per_conservation_area]{queries_available_per_conservation_area()}} to learn about the Conservation
-Areas available in SMART Connect, the queries in each Conservation Area, the
-type of each query, spatial data in the queries, and the options available to
-filter by date for each query.
+\link{data_from_connect}
 }
