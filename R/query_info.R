@@ -9,8 +9,6 @@
 #' date filter options (the date_filter parameter of this function) use the 
 #' "queries_available_per_conservation_area" function first.
 #' 
-#' @importFrom magrittr %>%
-#'
 #' @param server_url A string with the URL of the SMART Connect server 
 #' (e.g., "https://wcshealth.smartconservationtools.org/server" )
 #' @param user A string with corresponding SMART Connect username 
