@@ -56,8 +56,8 @@ date_filter_types_available_per_query_type <-
   date_filter_types_available_per_query_type %>%
   rownames_to_column(var = "typeKey")
 
-#use_data_raw() #creates the data-raw/ folder and lists it in .Rbuildignore. 
+use_data_raw() #creates the data-raw/ folder and lists it in .Rbuildignore. 
 
 
-#usethis::use_data(date_filter_types_available_per_query_type)
+usethis::use_data(date_filter_types_available_per_query_type)
 
