@@ -1,3 +1,35 @@
+#' #' Explore the queries available in SMART Connect
+#' 
+#' @details
+#' Not all SMART queries have spatial information included and different query
+#' types have different properties including day filter options. To learn about
+#' the Conservation Areas available in SMART Connect, the queries available per 
+#' Conservation Area, and their properties such as query type, spatial 
+#' information availability (the type_output parameter of this function), and 
+#' date filter options (the date_filter parameter of this function) use the 
+#' "queries_available_per_conservation_area" function first.
+#' 
+#' @importFrom magrittr %>%
+#'
+#' @param server_url A string with the URL of the SMART Connect server 
+#' (e.g., "https://wcshealth.smartconservationtools.org/server" )
+#' @param user A string with corresponding SMART Connect username 
+#' (e.g., "connect_username")
+#' @param password A string with the corresponding SMART Connect user's password
+#'  (e.g., "my_connect_password")
+#'  
+#' @return A tibble with the columns .... 
+#' 
+#' @export
+#'
+#' @examples
+#' x<-1
+#' 
+#' @seealso
+#' [queries_available_per_conservation_area()] to learn about the Conservation 
+#' Areas available in SMART Connect, the queries in each Conservation Area, the 
+#' type of each query, spatial data in the queries, and the options available to
+#' filter by date for each query.
 
 # ------------------------------------------------------------------------#
 # function to check the conservation areas in connect you have access to  #
