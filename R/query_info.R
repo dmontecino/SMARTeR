@@ -46,6 +46,39 @@ query_info<-function(
   #queries by conservation area by folder,including folders wo any queries
   api.queries.3<-
     map(seq_along(api.queries.2), function(x){
+      
+      #if there are not queries in the ca folder
+      if(is.na(dplyr::tibble(query=api.queries.2[x]) %>% 
+               tidyr::unnest_wider(query) %>% 
+               dplyr::rename(folder=name) %>% 
+               dplyr::select(-caUuid) %>% 
+               dplyr::pull(items))){
+        
+        
+            list( # list a tibble with query name TypeKey and uuid as NA
+              as_tibble(data.frame(folder=dplyr::tibble(query=api.queries.2[x]) %>% #
+                                     tidyr::unnest_wider(query) %>% 
+                                     dplyr::rename(folder=name) %>% 
+                                     dplyr::pull(folder),# the CA name
+                                   caUuid=dplyr::tibble(query=api.queries.2[x]) %>% 
+                                     tidyr::unnest_wider(query) %>% 
+                                     dplyr::rename(folder=name) %>% 
+                                     dplyr::pull(caUuid), # the CA code
+                                   query_name=NA, 
+                                   typeKey=NA, 
+                                   uuid=NA))
+              
+              %>%  # but add the subfolder data as the last column
+                    # which may contain other folders that might
+                    # contain queries or not
+                bind_cols(dplyr::tibble(query=api.queries.2[x]) %>% 
+                            tidyr::unnest_wider(query) %>% 
+                            dplyr::rename(folder=name) %>% 
+                            dplyr::select(subFolders)))}else{
+                          
+      #otherwise, if the CA folder has queries, list the data of the CA folder
+      # these data includes queries in the folders and other subfolders with 
+      # or wo queries                        
       list(dplyr::tibble(query=api.queries.2[x]) %>% 
              tidyr::unnest_wider(query) %>% 
              dplyr::rename(folder=name) %>% 
@@ -54,19 +87,21 @@ query_info<-function(
              tidyr::unnest_wider(items) %>% 
              dplyr::select(-c( type, id, isShared, folderUuid, iconName, isCcaa, conservationArea)) %>% 
              dplyr::rename(query_name=name) %>% 
-             dplyr::select(folder, caUuid, query_name, typeKey, uuid, subFolders))})
+             dplyr::select(folder, caUuid, query_name, typeKey, uuid, subFolders))}})
   
   
-  
+  #get the data from the queries in the query folders or in folders within query 
+  #folders
   for(i in seq_along(api.queries.3)){
     
     counter <- 1
     
+    # the while understands that there are subfolders nested with data
     while(!all(is.na(api.queries.3[[i]][[counter]]$subFolders) | 
                is.null(api.queries.3[[i]][[counter]]$subFolders))){ 
-      #> if not all subfolders are empty
-      #> if at least one CA has a  subfolder
-
+      #> if not all subfolders are empty or
+      #> if at least one CA has a subfolder
+      
       api.queries.3[[i]][[counter+1]]<-
         #queries per folder
         api.queries.3[[i]][[counter]] %>% 
@@ -83,6 +118,7 @@ query_info<-function(
         dplyr::distinct() %>% 
         dplyr::filter_all(any_vars(!is.na(.)))
       
+      #create the full path to each query
       api.queries.3[[i]][[counter+1]]$folder<-
         paste0(rep(api.queries.3[[i]][[counter]]$folder,  
                    map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
@@ -96,13 +132,15 @@ query_info<-function(
     
   }
   
+  #join the data per CA and remove rows wo queries
   api.queries.4<-map(api.queries.3, \(x) x %>% 
-                 reduce(full_join) %>%  
-                 dplyr::select(-caUuid, -subFolders))
+                       reduce(full_join) %>%  
+                       filter(!is.na(query_name)) %>% 
+                       dplyr::select(-caUuid, -subFolders))
   
   
   #checking if any query is available for any CA    
-  if(all(sapply(sapply(api.queries.4, "[[", "query_name"), length)==0)){
+  if(all(map_vec(sapply(api.queries.4, "[[", "query_name"), length)==0)){
     stop("there are no queries available in connect")}
 
   #add information about spatial queries
@@ -119,12 +157,12 @@ query_info<-function(
   
   # add the date filter options for each query
   
-  date_filter_types_available_per_query<-source("data-raw/build_query_type_data.R")
-  # load("data/date_filter_types_available_per_query_type.rda")
+  # date_filter_types_available_per_query<-source("data-raw/build_query_type_data.R")
+  load("data/date_filter_types_available_per_query_type.rda")
   
   api.queries.6 <- 
     map(api.queries.5, \(x)
-        left_join(x, date_filter_types_available_per_query$value, by = "typeKey"))
+        left_join(x, date_filter_types_available_per_query_type, by = "typeKey"))
   
   
    # assign the names of the conservation areas
