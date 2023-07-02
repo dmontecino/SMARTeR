@@ -1,10 +1,11 @@
 
 library(rvest)
-library(plyr)
+#library(plyr)
 library(dplyr)
 # library(tibble)
 library(jsonlite)
 library(purrr)
+library(tidyr)
 
 
 # ------------------------------------------------------------------------#
@@ -19,33 +20,39 @@ query_info<-function(
      password){ # your connect password
   
   #open connect. The login page
-  session_connect <- session(server_url)
+  session_connect <- rvest::session(server_url)
   
   #provide the username and password
-  form.unfilled <- session_connect %>% html_node("form") %>% html_form()
+  form.unfilled <- session_connect %>% 
+    rvest::html_node("form") %>% 
+    rvest::html_form()
   
   form.filled = form.unfilled %>%
-    html_form_set("j_username" = user,
-                  "j_password" = password)
+    rvest::html_form_set("j_username" = user,
+                         "j_password" = password)
   
   #login
-  logged.in.connect <- session_submit(session_connect, form.filled) 
+  logged.in.connect <- rvest::session_submit(session_connect, form.filled) 
   
   # get the set of the queries available with their unique identifier
-  api.queries <- session_jump_to(logged.in.connect, paste0(server_url, "/api/query/tree"))
+  api.queries <- rvest::session_jump_to(logged.in.connect, 
+                                        paste0(server_url, "/api/query/tree"))
   
-  if(length( api.queries$response %>% read_html())==0){
+  if(length( api.queries$response %>% rvest::read_html())==0){
     stop("there are no conservation areas available in connect")}
    
   #query data
-  api.queries.2<-api.queries$response %>% read_html() %>% html_text() %>% fromJSON(simplifyVector = F)
+  api.queries.2<-api.queries$response %>% 
+    rvest::read_html() %>% 
+    rvest::html_text() %>% 
+    jsonlite::fromJSON(simplifyVector = F)
   
   #names of the conservation areas in connect and with queries available
-  names.conservation.areas<-sapply(api.queries.2, function(x) x$name)
+  names.conservation.areas<-purrr::map_vec(api.queries.2, function(x) x$name)
   
   #queries by conservation area by folder,including folders wo any queries
   api.queries.3<-
-    map(seq_along(api.queries.2), function(x){
+    purrr::map(seq_along(api.queries.2), function(x){
       
       #if there are not queries in the ca folder
       if(is.na(dplyr::tibble(query=api.queries.2[x]) %>% 
@@ -56,7 +63,7 @@ query_info<-function(
         
         
             list( # list a tibble with query name TypeKey and uuid as NA
-              as_tibble(data.frame(folder=dplyr::tibble(query=api.queries.2[x]) %>% #
+              dplyr::as_tibble(data.frame(folder=dplyr::tibble(query=api.queries.2[x]) %>% #
                                      tidyr::unnest_wider(query) %>% 
                                      dplyr::rename(folder=name) %>% 
                                      dplyr::pull(folder),# the CA name
@@ -71,7 +78,7 @@ query_info<-function(
               %>%  # but add the subfolder data as the last column
                     # which may contain other folders that might
                     # contain queries or not
-                bind_cols(dplyr::tibble(query=api.queries.2[x]) %>% 
+                dplyr::bind_cols(dplyr::tibble(query=api.queries.2[x]) %>% 
                             tidyr::unnest_wider(query) %>% 
                             dplyr::rename(folder=name) %>% 
                             dplyr::select(subFolders)))}else{
@@ -133,22 +140,23 @@ query_info<-function(
   }
   
   #join the data per CA and remove rows wo queries
-  api.queries.4<-map(api.queries.3, \(x) x %>% 
-                       reduce(full_join) %>%  
-                       filter(!is.na(query_name)) %>% 
-                       dplyr::select(-caUuid, -subFolders))
+  api.queries.4<-purrr::map(api.queries.3, \(x) x %>% 
+                              purrr::reduce(full_join) %>%  
+                              dplyr::filter(!is.na(query_name)) %>% 
+                              dplyr::select(-caUuid, -subFolders))
   
   
   #checking if any query is available for any CA    
-  if(all(map_vec(sapply(api.queries.4, "[[", "query_name"), length)==0)){
+  if(all(purrr::map_vec(sapply(api.queries.4, "[[", "query_name"), length)==0)){
     stop("there are no queries available in connect")}
 
   #add information about spatial queries
-  api.queries.5<-map(api.queries.4,  ~ .x %>%
+  api.queries.5<-purrr::map(api.queries.4,  ~ .x %>%
   
     # learn if the query hs spatial information
-    mutate(spatial_query=typeKey%in%
-          c("entityobservation", "entitywaypoint","intelligencerecord",  "surveymission",
+    dplyr::mutate(spatial_query=typeKey%in%
+          c("entityobservation", "entitywaypoint","intelligencerecord",  
+            "surveymission",
             "surveymissiontrack", "observationobservation", "observationwaypoint", 
             "patrolobservation", "patrolquery", "patrolwaypoint", 
             "surveyobservation", "surveywaypoint",
@@ -161,8 +169,10 @@ query_info<-function(
   load("data/date_filter_types_available_per_query_type.rda")
   
   api.queries.6 <- 
-    map(api.queries.5, \(x)
-        left_join(x, date_filter_types_available_per_query_type, by = "typeKey"))
+    purrr::map(api.queries.5, \(x)
+        dplyr::left_join(x, 
+                         date_filter_types_available_per_query_type, 
+                         by = "typeKey"))
   
   
    # assign the names of the conservation areas
