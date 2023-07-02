@@ -37,7 +37,7 @@ query_info<-function(
   if(length( api.queries$response %>% read_html())==0){
     stop("there are no conservation areas available in connect")}
    
-  #queries available 
+  #query data
   api.queries.2<-api.queries$response %>% read_html() %>% html_text() %>% fromJSON(simplifyVector = F)
   
   #names of the conservation areas in connect and with queries available
