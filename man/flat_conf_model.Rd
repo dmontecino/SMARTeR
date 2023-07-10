@@ -49,7 +49,7 @@ xml file in your computer. Then run this function providing the corresponding
 path.
 
 Tree attributes of the configurable model are assumed to have roots and options
-((two levels top).
+(two levels top).
 }
 \examples{
 flat_conf_model("your_path/xml_file_name.xml", language_interest)
