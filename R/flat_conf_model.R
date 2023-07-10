@@ -16,10 +16,10 @@
 #' https://meta.wikimedia.org/wiki/Template:List_of_language_names_ordered_by_code 
 #'
 #' @return A tibble. The tibble has the following
-#' columns (see details for an explanation of each one of them): 
-#' "cat_key", "cat_label", "att_key", "att_label", "att_type", "att_option_key",
-#' "att_option_label", "tree_option_key", and "tree_option_label". The "cat", 
-#' "att", and "tree_" strings in the column headers refer to Category, Attribute,
+#' columns: 
+#' "cat_key", "cat_label", "att_type", "att_key", "att_label", 
+#' "root_key", "root_label", "att_option_key", and "att_option_label". The "cat", 
+#' "att", "root" strings in the column headers refer to Category, Attribute,
 #' and Tree data, respectively. The "key", "label", and "option" strings refer to
 #' data regarding the key, the label, and the options available, respectively.
 #' The output only contains active Categories, Attributes, and Options. Keys do 
@@ -43,7 +43,8 @@
 #' xml file in your computer. Then run this function providing the corresponding 
 #' path.
 #' 
-#' Tree attributes of the configurable model are assumed to have two levels top. 
+#' Tree attributes of the configurable model are assumed to have roots and options
+#' ((two levels top).
 
 # -----------------------------------------------------#
 # function to get a configurable model as a flat table #
@@ -512,40 +513,40 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
 # ---------------------------------------------- #
   
   cat_att_data<-cat_data %>% 
-    left_join(att_data, by = c("cat_key"))
+    dplyr::left_join(att_data, by = c("cat_key"))
   
   
   #merge cat and att data with list multilist data
   cat_att_list_data<-cat_att_data %>% 
-    left_join(list_multilist_attributes_options %>% dplyr::bind_rows(), 
+    dplyr::left_join(list_multilist_attributes_options %>% dplyr::bind_rows(), 
               by = c("att_key", "att_conf_id"), 
               relationship = "many-to-many")
   
   #merge cat, att data with tree data
   cat_att_tree_data=cat_att_data %>% 
-    left_join(tree_att_root_options, 
+    dplyr::left_join(tree_att_root_options, 
               by = c("att_key", "att_conf_id" )) 
   
-  # joing the dataset 
-  full_conf_model<-full_join(cat_att_list_data, cat_att_tree_data)
+  # join the datasets
+  full_conf_model<-dplyr::full_join(cat_att_list_data, cat_att_tree_data)
           
   # filter for active atribtues, roots, and options
   full_conf_model<-
   full_conf_model %>% 
-    select(-cat_id, -att_id, -att_conf_id) %>% 
-    filter(is.na(att_active) | att_active !="0.0") %>%
-    filter(is.na(att_option_active) | att_option_active=="true") %>%
-    filter(is.na(root_active) | root_active=="true") %>%
-    select(cat_key, cat_label,
+    dplyr::select(-cat_id, -att_id, -att_conf_id) %>% 
+    dplyr::filter(is.na(att_active) | att_active !="0.0") %>%
+    dplyr::filter(is.na(att_option_active) | att_option_active=="true") %>%
+    dplyr::filter(is.na(root_active) | root_active=="true") %>%
+    dplyr::select(cat_key, cat_label,
            att_type, att_key, att_label, -att_active,
            root_key, root_label, -root_active,
            att_option_key, att_option_label, -att_option_active)
 
-return(dplyr::as_tibble(full_conf_model))
+return(full_conf_model)
 }
 
 
-out<-flat_conf_model(path_conf_model=path_conf_model, 
-                language_interest=language_interest)
+# out<-flat_conf_model(path_conf_model=path_conf_model, 
+#                 language_interest=language_interest)
 
 
