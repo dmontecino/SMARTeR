@@ -44,7 +44,7 @@
 #' path.
 #' 
 #' Tree attributes of the configurable model are assumed to have roots and options
-#' ((two levels top).
+#' (two levels top).
 
 # -----------------------------------------------------#
 # function to get a configurable model as a flat table #
@@ -73,9 +73,9 @@ conf_model<-conf_model %>% xml2::xml_ns_strip()
 #> xml, the node paths are not identified. 
 
 
-# -------------------------------------------- #
-# Get the Categories of the Configurable Model #
-# -------------------------------------------- #
+#### #### #### #### #### #### #### 
+#### GET DATA FROM CATEGORIES ####
+#### #### #### #### #### #### #### 
 
 category_nodes<-xml2::xml_find_all(conf_model, "//nodes/node")
 
@@ -127,35 +127,22 @@ cat_data<-tibble(cat_key=cat_keys,
 
 
 
-# ------------------------#
-# Attributes per Category #
-# ----------------------- #
+#### #### #### #### #### #### #### 
+#### GET DATA FROM ATTRIBUTES ####
+#### #### #### #### #### #### #### 
 
 attributes_per_category<-purrr::map(category_nodes, \(x) x %>% 
                                     xml2::xml_find_all("attribute"))
 
-#> if no category has attributes then create an empty dataset. This would work if there 
+#> if no category has attributes then do not create the att_data object
+#> This could happen if there 
 #> are categories but no attributes in any of them
 
-if(all(purrr::map_vec(attributes_per_category, length)==0)){
-  warning("Categories do not have active or inactive Attributes")
-
-  att_data<- tibble(
-    cat_key=rep(purrr::map_vec(category_nodes, function(x) x %>% 
-                                 xml2::xml_attr("categoryKey")),
-                purrr::map_vec(attributes_per_category, length)),
-    att_key=character(),
-    att_id=character(),
-    att_label=character(),
-    att_active=character(),
-    att_type=character(),
-    att_conf_id=character()
-    )
-  
-  }else{
 
 #> if at least one category has a single attribute then proceed to create the dataframe
 #> of the attribute properties
+if(!all(purrr::map_vec(attributes_per_category, length)>0)){
+  
 
     
 # if at least one category does not have attributes, then warning
@@ -241,12 +228,19 @@ if(!identical(length(att_keys), length(att_labels))){
   att_type=att_type, 
   att_conf_id=att_conf_ids) 
 
-}  
+}else{
+  warning("Categories do not have active or inactive Attributes")}
 
 # att_data %>% filter(att_key=="species_whn")
 
 
+#> The following steps depend on the existence of att_data
 
+if(exists("att_data")){
+  
+#### #### #### #### #### #### #### #### #### #### #### #### 
+#### ADD OPTIONS OF LIST MULTILIST AND TREE ATTRIBUTES ####
+#### #### #### #### #### #### #### #### #### #### #### #### 
 
 # ---------------------------------------#
 # ----- list, multilist attributes-------# 
@@ -254,31 +248,16 @@ if(!identical(length(att_keys), length(att_labels))){
 
 #Find list multilist attributes
 
-#> If there are no list or multilist attributes then dont search for their options
-if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
+#> If there are  list or multilist attributes then search for their options
+if(any(grepl("LIST", att_data$att_type))){
 
-  warning("No list or multilist attributes")
-  
-  # emty data frame for list or multilist attributes
-  list_multilist_attributes_options <- tibble(
-    att_key = character(),
-    att_conf_id= character(),
-    att_option_key = character(),
-    att_option_label = character(),
-    att_option_active = character()
-  )}else{ # if there are list or multilist attributes
-
-  # list_attributes_keys<-att_data %>% 
-  #   dplyr::filter(grepl("LIST", att_type)) %>% 
-  #   dplyr::pull(att_key) 
-  # 
-  
       
   list_attributes_conf_ids<-att_data %>%
     dplyr::filter(grepl("LIST", att_type)) %>%
     dplyr::pull(att_conf_id)
   
-  attributes_conf_nodes<-conf_model %>% xml2::xml_find_all("//attributeConfig")
+  attributes_conf_nodes<-conf_model %>% 
+    xml2::xml_find_all("//attributeConfig")
   
   #>index of the tree attribute node locations. Based on conf ids
   #>tha tells ehat configuraiton of the current attribute is being used in each 
@@ -304,7 +283,7 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
 
   if(!identical(length(att_key), length(att_conf_id))){
     stop("The translation for the selected language is not available for all
-       or none of the list or multilist attributes")}
+       or some of the list or multilist attributes")}
   
   att_option_key<-
     purrr::map(list_nodes, \(x) x %>% 
@@ -313,8 +292,8 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
       dplyr::bind_rows() %>% 
       dplyr::pull("keyRef"))
   
-  if(length(unlist(att_conf_id))==0){
-    warning("List and multilist attributes exists none of them have options")}
+  if(length(unlist(att_option_key))==0){
+    warning("List and multilist attributes exists but none of them have options")}
   
   if(any(purrr::map_vec(att_option_key, length)==0)){
     warning("At least one list or multilist attribute does not have options")}
@@ -338,7 +317,7 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
   if(!identical(purrr::map_vec(att_option_active, length), 
                 purrr::map_vec(att_option_label, length))){
     stop("The translation for the selected language is not available for all
-       or none of the list/multilist attribute options")}
+       or some of the list/multilist attribute options")}
   
   list_multilist_attributes_options<-
   purrr::map(seq_along(list_nodes), \(x)
@@ -349,9 +328,9 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
              att_option_active=att_option_active[[x]])) %>% 
         dplyr::bind_rows()
   
-  } # if there are list or multilist attributes
-    
-
+  }else{ # if there are list or multilist attributes
+    # if there are nor list or multilist attributes
+      warning("No list or multilist attributes")}
 
 
 # ---------------------------------#
@@ -359,30 +338,15 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
 # ---------------------------------#
 
 
-#> If there are no tree attributes then dont search for their options
-  if(nrow(att_data)>0 && all(!grepl("TREE", att_data$att_type))){
+#> If there are tree attributes then search for their options
+  if(any(grepl("TREE", att_data$att_type))){
     
-    warning("No tree attributes")
-    
-    # empty data frame for list or multilist attributes
-    tree_att_root_options <- tibble(
-      att_key = character(),
-      att_conf_id = character(),
-      root_key = character(),
-      root_label = character(),
-      root_active = character(),
-      att_option_key = character(),
-      att_option_label = character(),
-      att_option_active = character())
-    
-}else{  #if there are tree attribuutes, get their data
-
-  
   tree_attributes_conf_ids<-att_data %>%
     dplyr::filter(grepl("TREE", att_type)) %>%
     dplyr::pull(att_conf_id)
   
-  attributes_conf_nodes<-conf_model %>% xml2::xml_find_all("//attributeConfig")
+  attributes_conf_nodes<-conf_model %>% 
+    xml2::xml_find_all("//attributeConfig")
   
   position_tree_nodes<-
     purrr::map(tree_attributes_conf_ids, function(x) 
@@ -434,10 +398,8 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
     stop("The translation for the selected language is not available for all
        or none of the tree roots")}
   
-    dplyr::bind_rows()
-  
     
-    #create the data for the roots of the current tree attribute
+    #create the data for the roots of the tree attributes
     tree_att_root_options<-
       purrr::map(seq_along(tree_nodes), \(x)  
                   dplyr::tibble(att_key=att_key[[x]],
@@ -451,17 +413,28 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
       dplyr::bind_rows() # root options colimuns to add the data in the next section
 
                   
-    # --- Get the options for the yth root data of the current i tree attribute ---
+    # --- Get the options for the roots of each tree attribute ---
     
     tree_nodes_roots<-
     purrr::map(tree_nodes, \(x) x[[1]] %>% 
                  xml2::xml_find_all("treeNode"))
     
+    
     #>for each tree attribute split the roots in lists (each object is the nodeset of 
     #> an root of a tree
     #>
     tree_nodes_roots<-purrr::map(tree_nodes_roots, \(x) split(x, seq_along(x)))
-                 
+       
+    #options available per root per tree
+    tree_nodes_roots_no_options<-
+      purrr::map(tree_nodes_roots, \(x)
+               purrr::map(x, \(y) y %>% 
+                            xml2::xml_find_all("children"))) %>% 
+          purrr::map(\(y) purrr::map_vec(y, \(g) length(g))) %>% 
+          purrr::map(\(z) z %>% magrittr::equals(0) %>% all()) %>% # no option per root
+          purrr::map_vec(all) # if all T then no options per root across tree attributes
+    
+    if(!tree_nodes_roots_no_options){ # if there are root options
     
     root_options_key_temp<-
     purrr::map(tree_nodes_roots, \(x)
@@ -476,26 +449,29 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
                               xml2::xml_find_all("children") %>% 
                               xml2::xml_attr("isActive")))
     
+    
     root_options_label_temp<-
       purrr::map(tree_nodes_roots, \(x)
                  purrr::map(x, \(y) y %>% 
-                              xml2::xml_find_all("children") %>% 
-                              xml2::xml_find_all("name") %>% 
-                              xml2::xml_attrs() %>% 
-                              dplyr::bind_rows())) 
+                          xml2::xml_find_all("children") %>% 
+                          xml2::xml_find_all("name") %>% 
+                          xml2::xml_attrs() %>% 
+                          dplyr::bind_rows())) 
     
-    root_options_label_temp<-purrr::map(root_options_label_temp, \(y)
-                                 purrr::map(y, 
-                                ~ if ("language_code" %in% colnames(.x)){
-                                  dplyr::filter(.x, language_code == "en") %>% 
-                                    dplyr::pull(value)}else as.character()))
     
+    root_options_label_temp<-
+      purrr::map(root_options_label_temp, \(y)
+                 purrr::map(y, 
+                ~ if ("language_code" %in% colnames(.x)){
+                  dplyr::filter(.x, language_code == "en") %>% 
+                    dplyr::pull(value)}else as.character()))
+
     
     tree_att_root_options$att_option_key<-unlist(root_options_key_temp, recursive = F)
     tree_att_root_options$att_option_label<-unlist(root_options_label_temp, recursive = F)
     tree_att_root_options$att_option_active<-unlist(root_options_active_temp, recursive = F)
     
-    
+  
 
     # full tree attributes data frame 
   
@@ -503,9 +479,10 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
                          tidyr::unnest(
                          cols = c(att_option_key, att_option_label, att_option_active),
                          keep_empty = T)
-                         
-} # if thre are trees
   
+    } # if there are options                        
+}else{# if there are nottrees
+  warning("No tree attributes")} 
   
 
 # ---------------------------------------------- #
@@ -516,21 +493,31 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
     dplyr::left_join(att_data, by = c("cat_key"))
   
   
-  #merge cat and att data with list multilist data
+  if(exists("list_multilist_attributes_options")){
+  #>merge cat and att data with list multilist data
+  #> if there are list multilist attributes
   cat_att_list_data<-cat_att_data %>% 
     dplyr::left_join(list_multilist_attributes_options %>% dplyr::bind_rows(), 
               by = c("att_key", "att_conf_id"), 
-              relationship = "many-to-many")
+              relationship = "many-to-many")}else{
   
+  cat_att_list_data<-cat_att_data}
+  
+  
+  
+  if(exists("tree_att_root_options")){
   #merge cat, att data with tree data
   cat_att_tree_data=cat_att_data %>% 
     dplyr::left_join(tree_att_root_options, 
-              by = c("att_key", "att_conf_id" )) 
+              by = c("att_key", "att_conf_id" ))}else{
+    
+  cat_att_tree_data<-cat_att_data}
   
   # join the datasets
   full_conf_model<-dplyr::full_join(cat_att_list_data, cat_att_tree_data)
           
-  # filter for active atribtues, roots, and options
+  # filter for active attributes, roots, and options
+  if(exists("tree_att_root_options") & exists("list_multilist_attributes_options")){
   full_conf_model<-
   full_conf_model %>% 
     dplyr::select(-cat_id, -att_id, -att_conf_id) %>% 
@@ -540,13 +527,40 @@ if(nrow(att_data)>0 && all(!grepl("LIST", att_data$att_type))){
     dplyr::select(cat_key, cat_label,
            att_type, att_key, att_label, -att_active,
            root_key, root_label, -root_active,
-           att_option_key, att_option_label, -att_option_active)
+           att_option_key, att_option_label, -att_option_active)}
 
-return(full_conf_model)
-}
+  if(exists("tree_att_root_options") & !exists("list_multilist_attributes_options")){
+    full_conf_model<-
+      full_conf_model %>% 
+      dplyr::select(-cat_id, -att_id, -att_conf_id) %>% 
+      dplyr::filter(is.na(att_active) | att_active !="0.0") %>%
+      dplyr::filter(is.na(att_option_active) | att_option_active=="true") %>%
+      dplyr::filter(is.na(root_active) | root_active=="true") %>%
+      dplyr::select(cat_key, cat_label,
+                    att_type, att_key, att_label, -att_active,
+                    root_key, root_label, -root_active,
+                    att_option_key, att_option_label, -att_option_active)}
+ 
+  if(!exists("tree_att_root_options") & exists("list_multilist_attributes_options")){
+    full_conf_model<-
+      full_conf_model %>% 
+      dplyr::select(-cat_id, -att_id, -att_conf_id) %>% 
+      dplyr::filter(is.na(att_active) | att_active !="0.0") %>%
+      dplyr::filter(is.na(att_option_active) | att_option_active=="true") %>%
+      # dplyr::filter(is.na(root_active) | root_active=="true") %>%
+      dplyr::select(cat_key, cat_label,
+                    att_type, att_key, att_label, -att_active,
+                    # root_key, root_label, -root_active,
+                    att_option_key, att_option_label, -att_option_active)}
+  
+  
+return(full_conf_model)}else{
+  #full_conf_model}else{
+    return(cat_data)}
+} # end of function
 
 
-# out<-flat_conf_model(path_conf_model=path_conf_model, 
-#                 language_interest=language_interest)
+out<-flat_conf_model(path_conf_model=path_conf_model,
+                language_interest=language_interest)
 
 
