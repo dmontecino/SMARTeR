@@ -45,7 +45,17 @@
 #' @export
 #'
 #' @examples
-#' 
+#'data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server",
+#'                            user = "dmontecino",
+#'                           password = password,
+#'                          name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
+#'                            query_name = "informacion_patrullas",
+#'                            type_output = "shp",
+#'                            date_filter="waypointlastmodified",
+#'                            start_date="2020-01-01", #YYYY-MM-DD
+#'                            end_date="2023-06-01", #YYYY-MM-DD
+#'                          srid=4326,
+#'                          UTM_zone=NULL)
 #' 
 #' @seealso
 #' [queery_info()] to learn about the Conservation 
