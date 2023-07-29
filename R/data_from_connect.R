@@ -3,7 +3,7 @@
 #' A function to load data from queries available in SMART Connect in specific
 #' Conservation Areas. Depending on the type of query, it is possible to load
 #' the data as a spatial object. To learn more about the properties of your
-#' queries, use the function "query_info".
+#' queries, use the function "query_info". 
 #' 
 #' @details
 #' Not all SMART queries have spatial information included. Different query
@@ -40,7 +40,11 @@
 #'
 #' @return A tibble or sf object with the data returned by the query run 
 #' in SMART Connect. Columns and rows are returned as defined in the source
-#' query. 
+#' query. If summary queries are requested, the output does not have adequate
+#' column names and only the very fist header is considered a column. In any case
+#' if you are loading the data in R it is because you want to summarize data here.
+#' This function should be use for queries returning raw data (patrol queries,
+#' patrol observation queries, etc.).
 #' 
 #' @export
 #'
@@ -380,16 +384,3 @@ data_from_connect<-function(server_url,
     data = data %>% janitor::clean_names()}
   
   return(data)}
-
-
-# data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server",
-#                             user = "dmontecino",
-#                             password = password,
-#                             name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
-#                             query_name = "numero_patrullajes_por_individuo_por_mes",
-#                             type_output = "csv",
-#                             date_filter="waypointlastmodified",
-#                             start_date="2020-01-01", #YYYY-MM-DD
-#                             end_date="2023-06-01", #YYYY-MM-DD
-#                             srid=4326,
-#                             UTM_zone=NULL)

@@ -56,7 +56,11 @@ Mercator is the srid input. From 1 to 60.}
 \value{
 A tibble or sf object with the data returned by the query run
 in SMART Connect. Columns and rows are returned as defined in the source
-query.
+query. If summary queries are requested, the output does not have adequate
+column names and only the very fist header is considered a column. In any case
+if you are loading the data in R it is because you want to summarize data here.
+This function should be use for queries returning raw data (patrol queries,
+patrol observation queries, etc.).
 }
 \description{
 A function to load data from queries available in SMART Connect in specific
