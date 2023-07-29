@@ -32,7 +32,7 @@
 #' @return A list with nested tibbles. The length of the list corresponds to the number 
 #' SMART conservation areas the user has access to. The number nested tibbles 
 #' per each list object corresponds to the number of queries available per 
-#' conservation area. Each of these tibbles has the information of each query 
+#' conservation area. Each nested tibble has the information of a query 
 #' shown in two columns: "feature" and "value".
 #' The features are: folder, query_name, typeKey, uuid,  spatial_query, 
 #' date_filter_type:assetdeploymentdate, date_filter_type:missionenddate,
