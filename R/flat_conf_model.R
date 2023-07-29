@@ -561,8 +561,3 @@ return(full_conf_model)}else{
 } # end of function
 
 
-out<-flat_conf_model(path_conf_model=path_conf_model,
-                language_interest=language_interest)
-
-
-
