@@ -52,7 +52,7 @@ The 'date_filter_type:' features are also T/F showing the
 available temporal filters options of the query. For example, a
 'date_filter_type:waypointdate' equals TRUE means that 'waypointdate' can
 be chosen as the reference for the start and end dates of the data to
-be included in the output provided by the function data_from_connect'.
+be included in the query output when using function data_from_connect'.
 }
 \examples{
 user<-"your_smart_connect_user_name"
