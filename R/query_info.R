@@ -226,13 +226,13 @@ query_info<-function(
   for(i in seq_along(api.queries.7)){
     for(y in seq_along(api.queries.7[[i]])){
       
-      temp[[i]][[y]]<-
-        tibble(
+      api.queries.7[[i]][[y]]<-
+        tibble::tibble(
           feature =names(api.queries.7[[i]][[y]]),
           value= as.character(api.queries.7[[i]][[y]][1,]))}
-    names(api.queries.7[[i]])<-map_vec(api.queries.7[[i]], \(x) x %>% 
-                                filter(feature=="query_name") %>% 
-                                pull(value))}
+    names(api.queries.7[[i]])<-purrr::map_vec(api.queries.7[[i]], \(x) x %>% 
+                                dplyr::filter(feature=="query_name") %>% 
+                                dplyr::pull(value))}
   
   
   # see all query data for all the conservation areas that have at least one query available
