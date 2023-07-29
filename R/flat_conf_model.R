@@ -121,7 +121,7 @@ if(!identical(length(cat_ids), length(cat_labels), length(cat_keys))){
        language of interest")}
 
 #category data
-cat_data<-tibble(cat_key=cat_keys,
+cat_data<-tibble::tibble(cat_key=cat_keys,
                  cat_label=cat_labels,
                  cat_id=cat_ids)
 
@@ -141,8 +141,9 @@ attributes_per_category<-purrr::map(category_nodes, \(x) x %>%
 
 #> if at least one category has a single attribute then proceed to create the dataframe
 #> of the attribute properties
-if(!all(purrr::map_vec(attributes_per_category, length)>0)){
-  
+# if(!all(purrr::map_vec(attributes_per_category, length)>0)){
+  if(any(purrr::map_vec(attributes_per_category, length)>0)){
+    
 
     
 # if at least one category does not have attributes, then warning
@@ -217,7 +218,7 @@ if(!identical(length(att_keys), length(att_labels))){
 
 # create attribute data dataframe
  
-  att_data<- tibble(
+  att_data<- tibble::tibble(
   cat_key=rep(purrr::map_vec(category_nodes, function(x) x %>% 
                    xml2::xml_attr("categoryKey")),
               purrr::map_vec(attributes_per_category, length)),
@@ -321,7 +322,7 @@ if(any(grepl("LIST", att_data$att_type))){
   
   list_multilist_attributes_options<-
   purrr::map(seq_along(list_nodes), \(x)
-      dplyr::tibble(att_key=att_key[[x]],
+      tibble::tibble(att_key=att_key[[x]],
              att_conf_id=att_conf_id[[x]],
              att_option_key=att_option_key[[x]],
              att_option_label=att_option_label[[x]],
@@ -402,7 +403,7 @@ if(any(grepl("LIST", att_data$att_type))){
     #create the data for the roots of the tree attributes
     tree_att_root_options<-
       purrr::map(seq_along(tree_nodes), \(x)  
-                  dplyr::tibble(att_key=att_key[[x]],
+                  tibble::tibble(att_key=att_key[[x]],
                                 att_conf_id=att_conf_id[[x]],
                                 root_key= root_key[[x]],
                                 root_label=root_label[[x]],
@@ -558,5 +559,10 @@ return(full_conf_model)}else{
   #full_conf_model}else{
     return(cat_data)}
 } # end of function
+
+
+out<-flat_conf_model(path_conf_model=path_conf_model,
+                language_interest=language_interest)
+
 
 
