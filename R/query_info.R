@@ -221,6 +221,19 @@ query_info<-function(
    # assign the names of the conservation areas
   names(api.queries.6)<-names.conservation.areas
   
+  api.queries.7<-map(api.queries.6, \(x) map(1:nrow(x), \(y) x[y,]))
+  
+  for(i in seq_along(api.queries.7)){
+    for(y in seq_along(api.queries.7[[i]])){
+      
+      temp[[i]][[y]]<-
+        tibble(
+          feature =names(api.queries.7[[i]][[y]]),
+          value= as.character(api.queries.7[[i]][[y]][1,]))}
+    names(api.queries.7[[i]])<-map_vec(api.queries.7[[i]], \(x) x %>% 
+                                filter(feature=="query_name") %>% 
+                                pull(value))}
+  
   
   # see all query data for all the conservation areas that have at least one query available
-  return(api.queries.6)}
+  return(api.queries.7)}
