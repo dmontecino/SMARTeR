@@ -263,32 +263,31 @@ data_from_connect<-function(server_url,
   # select the specific query uuid
   query.api.number<-api.queries.5[[name_conservation_area]] %>% 
     dplyr::filter(query_name=={{query_name}}) %>% 
-    pull(uuid)
+    dplyr::pull(uuid)
   
   
   # does the query has date_filter option as provided in the function
   query_type=api.queries.5[[name_conservation_area]] %>% 
-    filter(query_name=={{query_name}}) %>% 
-    pull(typeKey)
+    dplyr::filter(query_name=={{query_name}}) %>% 
+    dplyr::pull(typeKey)
   
   
-  #query with spatial infomration
+  #query with spatial information
   query_spatial=api.queries.5[[name_conservation_area]] %>% 
-    filter(query_name=={{query_name}}) %>% 
-    pull(spatial_query)
+    dplyr::filter(query_name=={{query_name}}) %>% 
+    dplyr::pull(spatial_query)
   
+  
+  if(!query_spatial &  type_output=="shp"){
+    stop("Selected query does not have spatial information. To assess the
+    queries in your conservation area has spatial data use the function
+    query_info first and check the 'spatial_query'
+    column")}
   
   #> query typeKey is important to learn if they are executable from
   #> Connect (based on connect functionality) and if there is spatial 
   #> info available -> If the .shp is an available option or not.
   # copy from semicolon -> ;view-source:https://karukinkaconnect.smartconservationtools.org/server/connect/query
-  
-  
-  if(!query_spatial){
-    stop("Selected query does not have spatial information. To assess the
-    queries in your conservation area has spatial data by SMART Connect use the function
-    queries_available_per_conservation_area first and check the 'spatial_query'
-    column. In any case, You should get data if type_output='csv'")}
   
   type_key_selected_query<-api.queries.5[[name_conservation_area]] %>% 
     dplyr:: filter(query_name=={{query_name}}) %>% 
@@ -300,10 +299,10 @@ data_from_connect<-function(server_url,
      dplyr::pull()){
     
     stop("Selected query does not have the date_type option provided. 
-         Run the date_filters_types_available() function to assess the 
+         Run the query_info function to assess the 
          options available for your query type. 
          To assess the query type, use the function
-         queries_available_per_conservation_area first and check the 
+         'query_info' first and check the 
          'query_type' column")}
   
   #----------------------------------------------#
@@ -313,10 +312,11 @@ data_from_connect<-function(server_url,
   #> api without start date or end date specified. UTM_zone is null or assigned 
   #> so the link will be fine
   
+
   api_address_minimal<-
     
     
-    case_when(
+    dplyr::case_when(
       type_output=="csv" ~
         paste0(server_url, 
                "/connect/query/api/", 
@@ -345,12 +345,12 @@ data_from_connect<-function(server_url,
   
   start_date_full<-if(!is.null(start_date)){ #if null, it remains null
     paste0("&start_date=", 
-           str_glue("{year(start_date)}-{month(start_date)}-{day(start_date)}"),
+           stringr::str_glue("{lubridate::year(start_date)}-{lubridate::month(start_date)}-{lubridate::day(start_date)}"),
            "%2000%3A00%3A00")}
   
   end_date_full<-if(!is.null(end_date)){
     paste0("&end_date=", 
-           str_glue("{year(end_date)}-{month(end_date)}-{day(end_date)}"), 
+           stringr::str_glue("{lubridate::year(end_date)}-{lubridate::month(end_date)}-{lubridate::day(end_date)}"), 
            "%2023%3A59%3A59")}
   
   
@@ -375,9 +375,9 @@ data_from_connect<-function(server_url,
   #open the query data as tibble
   if(type_output=="csv"){
     
-    data = data$response %>% read_html() %>% html_text()
+    data = data$response %>% rvest::read_html() %>% rvest::html_text()
     data = read.csv(text=data, sep="," )
-    data2 = data %>% janitor::clean_names()}
+    data = data %>% janitor::clean_names()}
   
   return(data)}
 
@@ -386,8 +386,8 @@ data_from_connect<-function(server_url,
 #                             user = "dmontecino",
 #                             password = password,
 #                             name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
-#                             query_name = "informacion_patrullas",
-#                             type_output = "shp",
+#                             query_name = "numero_patrullajes_por_individuo_por_mes",
+#                             type_output = "csv",
 #                             date_filter="waypointlastmodified",
 #                             start_date="2020-01-01", #YYYY-MM-DD
 #                             end_date="2023-06-01", #YYYY-MM-DD
