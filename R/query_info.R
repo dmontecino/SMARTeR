@@ -175,7 +175,7 @@ query_info<-function(
       #create the full path to each query
       api.queries.3[[i]][[counter+1]]$folder<-
         paste0(rep(api.queries.3[[i]][[counter]]$folder,  
-                   map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
+                   purrr::map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
                "/",
                api.queries.3[[i]][[counter+1]]$folder)
       
@@ -225,7 +225,7 @@ query_info<-function(
    # assign the names of the conservation areas
   names(api.queries.6)<-names.conservation.areas
   
-  api.queries.7<-map(api.queries.6, \(x) map(1:nrow(x), \(y) x[y,]))
+  api.queries.7<-purrr::map(api.queries.6, \(x) purrr::map(1:nrow(x), \(y) x[y,]))
   
   for(i in seq_along(api.queries.7)){
     for(y in seq_along(api.queries.7[[i]])){

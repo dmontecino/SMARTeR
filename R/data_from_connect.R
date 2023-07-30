@@ -223,7 +223,7 @@ data_from_connect<-function(server_url,
       #create the full path to each query
       api.queries.3[[i]][[counter+1]]$folder<-
         paste0(rep(api.queries.3[[i]][[counter]]$folder,  
-                   map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
+                   purrr::map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
                "/",
                api.queries.3[[i]][[counter+1]]$folder)
       
