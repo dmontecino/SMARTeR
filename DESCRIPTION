@@ -6,23 +6,20 @@ Authors@R: c(
         role = c("aut", "cre"),
         comment = c(ORCID = "2-5009-5939")),
         person("Wildlife Conservation Society, WCS", role = "fnd"))   
-Description: A set of functions to prepare data models and configurable models 
-    for the Spatial Monitoring and Reporting Tool (SMART; 
-    smartconservationtools.org/) Conservation Areas, retrieve data from SMART
-    data and configurable models (e.g., keys, categories, attribute
-    names, and options per list or multilist attribute), and load the output
-    of queries of specific Conservation Areas that are stored in SMART Connect. 
-    The output of the queries can be loaded as spatial data or csv depending on 
-    the query properties. The package also contains a function to identify the 
-    queries available in SMART Connect per Conservation Area, the properties of
-    each specific query, and per query folder. This information is necessary to
-    properly identify the output options available for each query.
+Description: A set of functions to create a species attribute from a csv, 
+        for the Spatial Monitoring and Reporting Tool (SMART; 
+    smartconservationtools.org/) Conservation Areas, load the output
+    of queries of specific Conservation Areas from SMART Connect, get information
+    of each query in each Conservation Area the uer has access to (this is 
+    necessary to run the query in SMART Connect and get the output), and get the 
+    structure of a Configurable Model as a flat table (with tree attributes up to 
+    two levels for now). 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 
-    R (>= 2.10)
+    R (>= 3.10)
 LazyData: true
 URL: https://github.com/dmontecino/SMARTeR
 BugReports: https://github.com/dmontecino/SMARTeR/issues
