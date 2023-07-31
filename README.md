@@ -213,8 +213,11 @@ like to present as a flat table from the list and then click on "Export".
 Choose the location to save the xml file in your computer. Then run this function
 providing the corresponding path to this file.
 Tree attributes of the configurable model are assumed to have roots and options
-(two levels top).The output only contains active Categories, Attributes, and Options.
-Keys do not change across languages.
+(two levels top).
+
+flat_conf_model("your_path/xml_file_name.xml", language_interest="en") returns
+a tibble with the following headers: "cat_key", "cat_label", "att_type", "att_key", 
+"att_label", "root_key", "root_label", "att_option_key", and "att_option_label".
 
 ```
 # A tibble: 807 × 9
@@ -232,3 +235,9 @@ Keys do not change across languages.
 10 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         farm_whn             Farm  
 
 ```
+
+The "cat", "att", "root" columns refer to Category, Attribute,
+and Tree information, respectively. The "key", "label", and "option" strings 
+refer to the corresponding key, the label, and the options available, respectively.
+The output only contains active Categories, Attributes, and Options. Keys do
+not change across languages.
