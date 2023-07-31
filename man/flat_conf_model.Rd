@@ -9,13 +9,10 @@ flat_conf_model(path_conf_model, language_interest = "en")
 \arguments{
 \item{path_conf_model}{the path to the xml file ending in "/xml_file_name.xml"}
 
-\item{language_interest}{a string code with the language of interest. If the
-configurable model has more than one language, use this function once per
-language. English is the default language ("en"). If you want the English version
-of the configurable model, jsut provide the path_conf_model. If the configurable
-model also has Laotian language then provide the string "lo". For other languages
-see:
-https://meta.wikimedia.org/wiki/Template:List_of_language_names_ordered_by_code}
+\item{language_interest}{a string code with the language of interest. "en"
+is the default value. If configurable model has more than one language, use
+this function once per language. The value for this argument must be consistent
+with one of the languages available for the configurable model.}
 }
 \value{
 A tibble. The tibble has the following
@@ -52,6 +49,6 @@ Tree attributes of the configurable model are assumed to have roots and options
 (two levels top).
 }
 \examples{
-flat_conf_model("your_path/xml_file_name.xml", language_interest)
+flat_conf_model("your_path/xml_file_name.xml", language_interest="en")
 
 }
