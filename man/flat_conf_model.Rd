@@ -37,7 +37,7 @@ and options are NOT included in the result.
 }
 \details{
 Currently, it is not possible to obtain the configurable model directly from
-SMART Connect, so the Configurable Model must be exported from the Conservtion
+SMART Connect, so the Configurable Model must be exported from the Conservation
 Areas in SMART Desktop as an xml file to a known destination in your computer.
 Then provide the path to the xml file in your local computer in the 'path_conf_model'
 attribute of this function.

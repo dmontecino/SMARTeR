@@ -13,7 +13,7 @@ lubridate (>= 1.9.2), magrittr (>= 2.0.3), purrr (>= 1.0.1), rvest (>= 1.0.3),
 sf (>= 1.0.13), stringr (>= 1.5.0), tibble (>= 3.2.1), tidyr (>= 1.3.0), 
 xml2 (>= 1.3.4), zoo (>= 1.8.12) packages. 
 
-# To run a query in SMART Connect and load the output in R:
+# Run a query in SMART Connect and load the output in R:
 
 First, call the function "query_info". This function has as arguments "server_url",
 "user", and "password". Provide the connect url in the server_url argument as 
@@ -63,7 +63,7 @@ password = "my_password")
 
 ```
 
-and I get something like this: 
+The output is something like this: 
 
 ```
 $`WCS Chile - Patrol Monitoring 1.0 [SMART]`
@@ -107,8 +107,8 @@ $`WCS Chile - Patrol Monitoring 1.0 [SMART]`$todo_patrullas
 ```
 
 
-So the "todo_patrullas" query has (spatial_query=TRUE);
-therefore, I can request the output as shp:
+In the example, the "todo_patrullas" query has spatial_query=TRUE;
+therefore, it is possible to request the output as shp:
 
 ```
 data_from_connect(
@@ -127,7 +127,7 @@ UTM_zone=NULL)
 out
 ```
 
-# To create a species attribute:
+# Create a species attribute:
 
 Basically the function 'create_species_function' creates a Data Model that only 
 has a species attribute as a tree with two levels. Then this species attribute-only
