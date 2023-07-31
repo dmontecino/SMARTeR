@@ -191,3 +191,44 @@ the Conservation Area, open the Data Model, find the "Merge Data Model" button
 in the bottom left and select the "species_smarter_attribute.xml" file. Add the 
 attribute to the Category or Categories (search for the attribute usig the key
 provided in 'species_attribute_key').
+
+# Convert your Configurable Model to a flat table:
+
+This is a function to present the Configurable Model with its Categories, Attributes
+and Options as a flat table. It can handle all types of Attributes. Keys and Labels
+for each Category, Attribute, and Options are also given. The attribute type is
+also provided. If the Configurable Model has more than one language, it is possible
+to select the output language using the argument 'language_interest' 
+(e.g., "en", "la") and it must be consistent with one of the languages available 
+for the Configurable Model.
+
+It is not possible to obtain the configurable model directly from
+SMART Connect, so the Configurable Model must be exported from the Conservation
+Areas in SMART Desktop as an xml file to a known destination in your computer. 
+Then provide the path to the xml file in your local computer in the 
+'path_conf_model' attribute of this function. To export a Configurable Model, 
+open SMART Desktop and the corresponding Conservation Area. Go to the Conservation
+Area tab and click on "Configurable Model". Select the Configurable Model you would
+like to present as a flat table from the list and then click on "Export". 
+Choose the location to save the xml file in your computer. Then run this function
+providing the corresponding path to this file.
+Tree attributes of the configurable model are assumed to have roots and options
+(two levels top).The output only contains active Categories, Attributes, and Options.
+Keys do not change across languages.
+
+```
+# A tibble: 807 × 9
+   cat_key             cat_label        att_type att_key             att_label         root_key root_label att_option_key       att_option_label 
+   <chr>               <chr>            <chr>    <chr>               <chr>             <chr>    <chr>      <chr>                <chr>            
+ 1 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         agriculturalland_whn Agricutulral Land
+ 2 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         alpine_whn           Alpine           
+ 3 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         deciduousforest_whn  Deciduous Forest 
+ 4 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         degragdedforest_whn  Degraded Forest  
+ 5 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         evergreenforest_whn  Evergreen Forest 
+ 6 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         clearedforest_whn    Cleared Forest   
+ 7 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         oceanshore_whn       Ocean Shore      
+ 8 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         cave_whn             Cave             
+ 9 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         steppe_whn           Steppe           
+10 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         farm_whn             Farm  
+
+```
