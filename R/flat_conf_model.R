@@ -7,13 +7,10 @@
 #' and options are NOT included in the result.
 #'
 #' @param path_conf_model the path to the xml file ending in "/xml_file_name.xml"
-#' @param language_interest a string code with the language of interest. If the
-#' configurable model has more than one language, use this function once per 
-#' language. English is the default language ("en"). If you want the English version
-#' of the configurable model, jsut provide the path_conf_model. If the configurable
-#' model also has Laotian language then provide the string "lo". For other languages
-#' see: 
-#' https://meta.wikimedia.org/wiki/Template:List_of_language_names_ordered_by_code 
+#' @param language_interest a string code with the language of interest. "en" 
+#' is the default value. If configurable model has more than one language, use 
+#' this function once per language. The value for this argument must be consistent
+#' with one of the languages available for the configurable model. 
 #'
 #' @return A tibble. The tibble has the following
 #' columns: 
@@ -28,7 +25,7 @@
 #' @export
 #'
 #' @examples
-#' flat_conf_model("your_path/xml_file_name.xml", language_interest)
+#' flat_conf_model("your_path/xml_file_name.xml", language_interest="en")
 #' 
 #' @details
 #' Currently, it is not possible to obtain the configurable model directly from
