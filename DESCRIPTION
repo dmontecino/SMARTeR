@@ -27,7 +27,6 @@ Imports:
     dplyr (>= 1.1.2),
     janitor (>= 2.2.0),
     jsonlite (>= 1.8.5),
-    lubridate (>= 1.9.2),
     magrittr (>= 2.0.3),
     purrr (>= 1.0.1),
     rvest (>= 1.0.3),
