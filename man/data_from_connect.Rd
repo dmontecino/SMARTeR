@@ -92,7 +92,7 @@ data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.
 
 }
 \seealso{
-\code{\link[=queery_info]{queery_info()}} to learn about the Conservation
+\code{\link[=query_info]{query_info()}} to learn about the Conservation
 Areas available in SMART Connect, the queries in each Conservation Area, the
 type of each query, spatial data in the queries, and the options available to
 filter by date for each query.
