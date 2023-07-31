@@ -130,11 +130,12 @@ out
 # Create a species attribute:
 
 Basically the function 'create_species_function' creates a Data Model that only 
-has a species attribute as a tree with two levels. Then this species attribute-only
-data model can be merged into the user's Data Model and the attribute becomes available. 
-The species tree attribute can be flattened to a list in SMART Desktop. Check the
-final step lo learn how to merge the species attribute data model created with this
-function with the data model in SMART Desktop at the end of this section.
+has a species attribute as a tree with two taxonomic levels. Then this species 
+attribute-only data model can be merged into the user's Data Model and the attribute
+becomes available to be added to the Categories. The species tree attribute can be
+flattened to a list in SMART Desktop. Check the final step lo learn how to merge 
+the species attribute data model created with this function with the data model in
+SMART Desktop at the end of this section.
 
 The species tree attribute has a key and a label. The key is provided through the
 argument 'species_attribute_key' that cannot have spaces, weird characters, or 
