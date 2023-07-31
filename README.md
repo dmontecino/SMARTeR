@@ -2,7 +2,7 @@
 
 A set of functions to support your work with the Spatial Monitoring and 
 Reporting Tools version 7 (SMART; https://smartconservationtools.org/) Conservation Areas,
-including a preparing a species tree attribute from a csv and load it to a Data Model,
+including preparing a species tree attribute and load it into a Data Model,
 run a query from SMART Connect and load the output in your R session, and convert
 a Configurable model into a flat table with the corresponding Categories, Attributes,
 and options (for multilist, lists, and tree attributes).
@@ -15,23 +15,23 @@ xml2 (>= 1.3.4), zoo (>= 1.8.12) packages.
 
 # Run a query in SMART Connect and load the output in R:
 
-First, call the function "query_info". This function has as arguments "server_url",
-"user", and "password". Provide the connect url in the server_url argument as 
-string (e.g, "https://wcshealth.smartconservationtools.org/server") then your 
+First, call the function "query_info". This function has arguments "server_url",
+"user", and "password". Provide the connect URL in the server_url argument as 
+a string (e.g, "https://wcshealth.smartconservationtools.org/server") then your 
 username and password as string in the corresponding arguments. 
 This function will return a hierarchical list. Each list element at the first 
-level corresponds to each Conservation Area you have access that have at least
+level corresponds to each Conservation Area you have access to at least
 one query. Each list element at the first level is named based on the corresponding
-Conservation Area. Within each list element there are listed two column tibbles. 
+Conservation Area. Within each list element, there are listed two-column tibbles. 
 Each listed tibble has the information of the corresponding query. This information
-is key to properly pass arguments to the 'data_from_connect' function and be able
-load the output of a specific query (see next paragraph). More details in the 
+is key to properly passing arguments to the 'data_from_connect' function and be able
+to load the output of a specific query (see next paragraph). More details in the 
 function documentation.
 
 Secondly, use the function "data_from_connect". This function also has as arguments
 "server_url", "user", and "password", plus "name_conservation_area", "query_name",
 "type_output", "date_filter", "start_date", "end_date", "srid", and "UTM_zone".
-For the "name_conservation_area" argument provide the name of the conservation 
+For the "name_conservation_area" argument, provide the name of the conservation 
 area holding the query of interest. This is the name of the list object at the
 first level returned by the "query_info" function. The "query_name" is the name
 of the listed tibble within the corresponding conservation area list object in the
@@ -39,20 +39,20 @@ output of the "query_info" function. queries_available_per_conservation_area".
 The "type_output" options are "shp" or "csv" for now. If the selection is csv, 
 a tibble is created. If the selection is shp, a .zip file is saved as a temporary
 file, unzipped, and read as an sf object. The "date_filter" is the reference day
-to filter the query output by a "start_date" and "end_date". Not all queries types
-have spatial information and not all query types have all date filters available.
+to filter the query output by a "start_date" and "end_date". Not all query types
+have spatial information, and not all query types have all date filters available.
 The 'query_info' option gives you this information for each query. Finally, 
-'srid' is the spatial projection of the spatial data and if you are using UTM, you
+'srid' is the spatial projection of the spatial data, and if you are using UTM, you
 also have to provide the UTM zone in the argument "UTM_zone".
 
-I suggest to use these functions to load output from patrol queries, 
-observation queries, etc, but not summary queries. Summary queries will be loaded
-but the row names as seen in SMART Desktop query output will be returned as an 
+I suggest using these functions to load output from patrol queries, 
+observation queries, etc., but not summary queries. Summary queries will be loaded, 
+but the row names, as seen in SMART Desktop query output, will be returned as an 
 unnamed column. Also, only the first column header is read as the column names,
-while any secondary column headers are read as data. So, I suggest to create an 
-observation query that returns all the data, load it in R, and start creating 
-summaries, stats, etc here. Summary queries are already summarized data so what's
-the point.
+while any secondary column headers are read as data. So, I suggest creating an 
+observation query that returns all the data, loads it in R, and starts creating 
+summaries, stats, etc., here. Summary queries are already summarized data, so what's
+the point?
 
 
 ```
@@ -129,7 +129,7 @@ out
 
 # Create a species attribute:
 
-Basically the function 'create_species_function' creates a Data Model that only 
+Basically, the function 'create_species_function' creates a Data Model that only 
 has a species attribute as a tree with two taxonomic levels. Then this species 
 attribute-only data model can be merged into the user's Data Model and the attribute
 becomes available to be added to the Categories. The species tree attribute can be
@@ -149,13 +149,13 @@ model in SMART Desktop. If your Conservation Area has as language "english" and
 Data Model on the top-left corner and click on the downward arrow.
 
 The first level of the species tree attribute is a taxonomy level (class, 
-order, family, etc.). The options of these taxonomy level (e.g., 'aves', 
+order, family, etc.). The options of these taxonomy levels (e.g., 'aves', 
 'mammalia, etc.) also have keys and labels. The function gives the same key and
-label for this first taxonomy label. To provide the first level taxonomy use the
-'first_tax_level' argument. Provide a character vector of the same length than 
+label for this first taxonomy label. To provide the first-level taxonomy, use the
+'first_tax_level' argument. Provide a character vector of the same length as 
 in 'species_key' and 'species_label' (see below).
 
-The second level is the species and each one of them also have keys and labels.
+The second level is the species, and each one of them also has keys and labels.
 Provide a character vector with the keys and labels using the 'species_key' and
 'species_label' arguments.
 
@@ -195,7 +195,7 @@ provided in 'species_attribute_key').
 # Convert your Configurable Model to a flat table:
 
 This is a function to present the Configurable Model with its Categories, Attributes
-and Options as a flat table. It can handle all types of Attributes. Keys and Labels
+, and Options as a flat table. It can handle all types of Attributes. Keys and Labels
 for each Category, Attribute, and Options are also given. The attribute type is
 also provided. If the Configurable Model has more than one language, it is possible
 to select the output language using the argument 'language_interest' 
@@ -224,7 +224,7 @@ a tibble with the following headers: "cat_key", "cat_label", "att_type", "att_ke
 # A tibble: 807 × 9
    cat_key             cat_label        att_type att_key             att_label         root_key root_label att_option_key       att_option_label 
    <chr>               <chr>            <chr>    <chr>               <chr>             <chr>    <chr>      <chr>                <chr>            
- 1 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         agriculturalland_whn Agricutulral Land
+ 1 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         agriculturalland_whn Agricultural Land
  2 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         alpine_whn           Alpine           
  3 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         deciduousforest_whn  Deciduous Forest 
  4 sitedescription_whn Site Description MLIST    typeoflandscape_whn Type of Landscape NA       NA         degragdedforest_whn  Degraded Forest  
