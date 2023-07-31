@@ -213,7 +213,8 @@ like to present as a flat table from the list and then click on "Export".
 Choose the location to save the xml file in your computer. Then run this function
 providing the corresponding path to this file.
 Tree attributes of the configurable model are assumed to have roots and options
-(two levels top).
+(two levels top). If there are more than two levels, you will get an output with
+issues for these attributes (to be fixed...).
 
 flat_conf_model("your_path/xml_file_name.xml", language_interest="en") returns
 a tibble with the following headers: "cat_key", "cat_label", "att_type", "att_key", 

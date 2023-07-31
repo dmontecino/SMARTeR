@@ -1,8 +1,9 @@
 #' Create species attribute for SMART Desktop 7's Data Models
-#'
+#' 
 #' Function to create a data model that only has a species attribute as a tree.
 #' Then this data model with just the species tree can be merged to the Conservation
-#' Areas' data model and it becomes available to be added to the Categories.
+#' Areas' data model and it becomes available to be added to the Categories. Do not
+#' use non-ASCII characters in the function arguments!
 #' 
 #' @param language The abbreviation of the language of the attribute as a string.
 #' It must be compatible with the it has to be consistent with the languages 
@@ -25,6 +26,7 @@
 #' @param species_label A character vector to provide the labels of the species 
 #' within each taxonomic group of the first level of the tree (e.g., common local
 #' names).
+#' @param path the path to the folder to save the species attribute-only data model
 #'
 #' @return
 #' xml file named "species_smarter_attribute.xml" saved in your working directory.
@@ -63,23 +65,27 @@
 #'    'Red muntjac',
 #'    'Large-antlered Muntjac')
 #'    
+#' path <- tempdir()  
+#' 
 #' create_species_attribute(
 #' language="en", 
 #' species_attribute_key="species_smarter",
 #' species_in_language="species",
 #' first_tax_level=first_tax_level,
 #' species_key=species_key,
-#' species_label=species_label)
+#' species_label=species_label,
+#' path=path)
 
 
 create_species_attribute<-
   function(language="en", 
            species_attribute_key="species_smarter",
            species_in_language="species",
-           first_tax_level=first_tax_level,
-           species_key=species_key,
-           species_label=species_label){# spell "species" in the language of interest (NULL if english)
-           #path where the data model with the species attibute should be constructed
+           first_tax_level,
+           species_key,
+           species_label,
+           path){
+           
 
     
 #sheets<-1:number_of_sheets
@@ -175,7 +181,7 @@ for(i in seq(sheets)){ # species nodes in each first_tax_level
 
   for(y in 1:length(temp_species)){ #within each species
 
-      value<-stringr::str_to_sentence(gsub("’", 
+      value<-stringr::str_to_sentence(gsub("\\u2019", 
                                            "", 
                                            sheets[[i]][y,"species_label"]))
                     
@@ -203,7 +209,9 @@ xml_text <- readLines(temp_file)
 xml_text[1]<-'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
 
 #save the xml with the data model that contains only a species attribute
-writeLines(xml_text, con = "species_smarter_attribute.xml")
+file_path <- file.path(path, "species_smarter_attribute.xml")
+
+writeLines(xml_text, con = file_path)
 
 # Remove the temporary file
 file.remove(temp_file)

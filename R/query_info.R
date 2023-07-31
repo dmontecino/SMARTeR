@@ -20,7 +20,8 @@
 #' available temporal filters options of the query. For example, a
 #' 'date_filter_type:waypointdate' equals TRUE means that 'waypointdate' can 
 #' be chosen as the reference for the start and end dates of the data to 
-#' be included in the query output when using function data_from_connect'. 
+#' be included in the query output when using function data_from_connect'. Avoid 
+#' empty query folders.
 #' 
 #' @param server_url A string with the URL of the SMART Connect server 
 #' (e.g., "https://wcshealth.smartconservationtools.org/server" )
@@ -46,10 +47,12 @@
 #' @export
 #'
 #' @examples
-#' user<-"your_smart_connect_user_name"
-#' password<-"your_smart_connect_password"
-#' server_url<-"https://wcshealth.smartconservationtools.org/server"
-#' query_data<-query_info(user=user, password=password, server_url=server_url)
+#' user<-Sys.getenv("EXAMPLE_CONNECT_USERNAME")
+#' password<-Sys.getenv("EXAMPLE_CONNECT_PASSWORD")
+#' server_url = Sys.getenv("EXAMPLE_CONNECT_URL")
+#' query_data<-query_info(user=user, 
+#'                        password=password, 
+#'                        server_url=server_url)
 #' 
 #' 
 #' @seealso [data_from_connect]

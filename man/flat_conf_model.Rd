@@ -45,10 +45,13 @@ table from the list and then click on "Export". Choose the location to save the
 xml file in your computer. Then run this function providing the corresponding
 path.
 
-Tree attributes of the configurable model are assumed to have roots and options
-(two levels top).
+For now, tree attributes of the configurable model are assumed to have roots
+and options (two levels top). Otherwise you will get a woring output for tree
+attributes.
 }
 \examples{
-flat_conf_model("your_path/xml_file_name.xml", language_interest="en")
+path_conf_model <- system.file("extdata", "example_configurable_model.xml", package = "SMARTeR")
+
+flat_conf_model(path_conf_model=path_conf_model, language_interest="en")
 
 }

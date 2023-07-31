@@ -8,9 +8,10 @@ create_species_attribute(
   language = "en",
   species_attribute_key = "species_smarter",
   species_in_language = "species",
-  first_tax_level = first_tax_level,
-  species_key = species_key,
-  species_label = species_label
+  first_tax_level,
+  species_key,
+  species_label,
+  path
 )
 }
 \arguments{
@@ -40,6 +41,8 @@ spaces.}
 \item{species_label}{A character vector to provide the labels of the species
 within each taxonomic group of the first level of the tree (e.g., common local
 names).}
+
+\item{path}{the path to the folder to save the species attribute-only data model}
 }
 \value{
 xml file named "species_smarter_attribute.xml" saved in your working directory.
@@ -49,7 +52,8 @@ Conservation Area's Data model and get the species attribute available.
 \description{
 Function to create a data model that only has a species attribute as a tree.
 Then this data model with just the species tree can be merged to the Conservation
-Areas' data model and it becomes available to be added to the Categories.
+Areas' data model and it becomes available to be added to the Categories. Do not
+use non-ASCII characters in the function arguments!
 }
 \details{
 Basically the function 'create_species_function' creates a Data Model that only
@@ -81,11 +85,14 @@ species_label=c('Pied harrier',
    'Red muntjac',
    'Large-antlered Muntjac')
    
+path <- tempdir()  
+
 create_species_attribute(
 language="en", 
 species_attribute_key="species_smarter",
 species_in_language="species",
 first_tax_level=first_tax_level,
 species_key=species_key,
-species_label=species_label)
+species_label=species_label,
+path=path)
 }

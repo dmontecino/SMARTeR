@@ -12,7 +12,7 @@
 #' Conservation Area, and their properties such as query type, spatial 
 #' information availability (the type_output parameter of this function), and 
 #' date filter options (the date_filter parameter of this function) use the 
-#' "query_info" function first.
+#' "query_info" function first. Avoid empty query folders.
 #'
 #' @param server_url A string with the URL of the SMART Connect server 
 #' (e.g., "https://wcshealth.smartconservationtools.org/server" )
@@ -49,15 +49,20 @@
 #' @export
 #'
 #' @examples
-#'data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server",
-#'                            user = "dmontecino",
-#'                           password = password,
-#'                          name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
-#'                            query_name = "informacion_patrullas",
+#' 
+#' server_url <- Sys.getenv("EXAMPLE_CONNECT_URL")
+#' user <- Sys.getenv("EXAMPLE_CONNECT_USERNAME")
+#' password <-Sys.getenv("EXAMPLE_CONNECT_PASSWORD")
+#'                            
+#'data<-data_from_connect(server_url = server_url,
+#'                            user = user, 
+#'                            password = password,
+#'                            name_conservation_area = "Example Conservation Area [SMART]",
+#'                            query_name = "Patrol_query",
 #'                            type_output = "shp",
 #'                            date_filter="waypointlastmodified",
 #'                            start_date="2020-01-01", #YYYY-MM-DD
-#'                            end_date="2023-06-01", #YYYY-MM-DD
+#'                            end_date="2023-07-31", #YYYY-MM-DD
 #'                          srid=4326,
 #'                          UTM_zone=NULL)
 #' 
@@ -102,7 +107,7 @@ data_from_connect<-function(server_url,
   dlshape=function(shploc, shpfile) { 
     temp=tempfile()  
     writeBin(shploc, temp)
-    unzip(temp) 
+    utils::unzip(temp) 
     fp <- sf::read_sf(shpfile) 
     unzipped_files <- list.files(".", pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
     file.remove(unzipped_files)
@@ -349,12 +354,14 @@ data_from_connect<-function(server_url,
   
   start_date_full<-if(!is.null(start_date)){ #if null, it remains null
     paste0("&start_date=", 
-           stringr::str_glue("{lubridate::year(start_date)}-{lubridate::month(start_date)}-{lubridate::day(start_date)}"),
-           "%2000%3A00%3A00")}
+           #stringr::str_glue("{lubridate::year(start_date)}-{lubridate::month(start_date)}-{lubridate::day(start_date)}"),
+           paste(lubridate::year(start_date), lubridate::month(start_date), lubridate::day(start_date),  sep = "-"),
+            "%2000%3A00%3A00")}
   
   end_date_full<-if(!is.null(end_date)){
     paste0("&end_date=", 
-           stringr::str_glue("{lubridate::year(end_date)}-{lubridate::month(end_date)}-{lubridate::day(end_date)}"), 
+           #stringr::str_glue("{lubridate::year(end_date)}-{lubridate::month(end_date)}-{lubridate::day(end_date)}"), 
+           paste(lubridate::year(start_date), lubridate::month(start_date), lubridate::day(start_date),  sep = "-"),
            "%2023%3A59%3A59")}
   
   
@@ -380,7 +387,7 @@ data_from_connect<-function(server_url,
   if(type_output=="csv"){
     
     data = data$response %>% rvest::read_html() %>% rvest::html_text()
-    data = read.csv(text=data, sep="," )
+    data = utils::read.csv(text=data, sep="," )
     data = data %>% janitor::clean_names()}
   
   return(data)}

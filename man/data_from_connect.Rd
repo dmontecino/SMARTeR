@@ -75,18 +75,23 @@ the Conservation Areas available in SMART Connect, the queries available per
 Conservation Area, and their properties such as query type, spatial
 information availability (the type_output parameter of this function), and
 date filter options (the date_filter parameter of this function) use the
-"query_info" function first.
+"query_info" function first. Avoid empty query folders.
 }
 \examples{
-data_from_connect(server_url = "https://karukinkaconnect.smartconservationtools.org/server",
-                           user = "dmontecino",
-                          password = password,
-                         name_conservation_area = "WCS Chile - Patrol Monitoring 1.0 [SMART]",
-                           query_name = "informacion_patrullas",
+
+server_url <- Sys.getenv("EXAMPLE_CONNECT_URL")
+user <- Sys.getenv("EXAMPLE_CONNECT_USERNAME")
+password <-Sys.getenv("EXAMPLE_CONNECT_PASSWORD")
+                           
+data<-data_from_connect(server_url = server_url,
+                           user = user, 
+                           password = password,
+                           name_conservation_area = "Example Conservation Area [SMART]",
+                           query_name = "Patrol_query",
                            type_output = "shp",
                            date_filter="waypointlastmodified",
                            start_date="2020-01-01", #YYYY-MM-DD
-                           end_date="2023-06-01", #YYYY-MM-DD
+                           end_date="2023-07-31", #YYYY-MM-DD
                          srid=4326,
                          UTM_zone=NULL)
 

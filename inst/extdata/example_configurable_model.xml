@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConfigurableModel xmlns="http://www.smartconservationsoftware.org/xml/1.0/dataentry" instantGps="false" photoFirst="false" iconSet="color">
+    <languages>
+        <language code="en" is_default="true"/>
+        <language code="lo" is_default="false"/>
+    </languages>
+    <name language_code="en" value="Example" source="CM"/>
+    <nodes>
+        <node categoryKey="liveanimals" categoryHkey="animals.liveanimals." dmUuid="3b7d6e3f06714396a40c57824a24b549" photoAllowed="false" photoRequired="true" id="a94ab6bf-253e-4c2a-a957-e5dcb2a00e58" collectMultipleObs="false" useSingleGpsPoint="false" imageFile="cn_img1_a94ab6bf253e4c2aa957e5dcb2a00e58.svg" isCustomImage="false">
+            <name language_code="en" value="Wildlife - direct observation" source="DM"/>
+            <attribute attributeKey="threat" dmUuid="a6e5c90fc4bb4e55890ae1656d7f4f67" id="de5432eb-64c7-4f84-81b8-c92367826832" configId="dd48e036-57ce-4cd4-b101-7b9bc310773a" type="TREE" required="false" isCustomImage="false">
+                <name language_code="en" value="Threat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="species" dmUuid="2389593093a14c83855d50771f175f2b" id="b0e82190-7268-41f9-9857-43efea040d4e" configId="e19a6b14-4d6c-4943-a9c7-e023e9563d66" type="TREE" required="false" imageFile="cn_img1_b0e82190726841f9985743efea040d4e.svg" isCustomImage="false">
+                <name language_code="en" value="Species" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="numberofadultmales" dmUuid="9fa038f8287c48edbaa01ca8a0665d81" id="506dfc0a-4676-42e5-a0ba-c4b17b780af7" type="NUMERIC" required="false" imageFile="cn_img1_506dfc0a467642e5a0bac4b17b780af7.svg" isCustomImage="false" minValue="0.0">
+                <name language_code="en" value="Number of Healthy" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="numberofadultfemales" dmUuid="8990345869944c9982feeb5f39b7a6c9" id="444841b2-aafe-4b56-9331-6a0f86499505" type="NUMERIC" required="false" imageFile="cn_img1_444841b2aafe4b5693316a0f86499505.svg" isCustomImage="false" minValue="0.0">
+                <name language_code="en" value="Number of Sick" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="numberofyoung" dmUuid="b6d616ef869a4c27bcb30a64f60b632c" id="43b52ecd-d97b-40fe-9efd-4f12729d1113" type="NUMERIC" required="false" imageFile="cn_img1_43b52ecdd97b40fe9efd4f12729d1113.svg" isCustomImage="false" minValue="0.0">
+                <name language_code="en" value="Number of Young" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="numberofagesexunknown" dmUuid="24d6b047ab5a46a09c321b3e5c586a63" id="765f23a1-8e75-453c-9bee-e4664bbbf714" type="NUMERIC" required="false" isCustomImage="false" minValue="0.0">
+                <name language_code="en" value="Number of Age or Sex Unknown" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="actiontakenliveanimals" dmUuid="309a27eedea9439d8af0437d4de375cf" id="f0b2338f-9e13-4783-8a63-1f31b65f1461" configId="10680ef8-377f-4544-9017-d46d03c979a7" type="LIST" required="false" imageFile="cn_img1_f0b2338f9e1347838a631f31b65f1461.svg" isCustomImage="false">
+                <name language_code="en" value="Action Taken Live Animals" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+        </node>
+        <node categoryKey="sign" categoryHkey="animals.sign." dmUuid="fb8a3046efb84524b3ef071644b42893" photoAllowed="false" photoRequired="true" id="4da56031-ff10-4fc2-a939-21052bfb29a0" collectMultipleObs="false" useSingleGpsPoint="false" imageFile="cn_img1_4da56031ff104fc2a93921052bfb29a0.svg" isCustomImage="false">
+            <name language_code="en" value="Wildlife - indirect sign" source="DM"/>
+            <attribute attributeKey="threat" dmUuid="a6e5c90fc4bb4e55890ae1656d7f4f67" id="2d1bec06-e780-469a-b6c8-b79d64cbc150" configId="dd48e036-57ce-4cd4-b101-7b9bc310773a" type="TREE" required="false" isCustomImage="false">
+                <name language_code="en" value="Threat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="species" dmUuid="2389593093a14c83855d50771f175f2b" id="98d4d0aa-607e-4c79-8a6b-7bb59dd3de14" configId="e19a6b14-4d6c-4943-a9c7-e023e9563d66" type="TREE" required="false" imageFile="cn_img1_98d4d0aa607e4c798a6b7bb59dd3de14.svg" isCustomImage="false">
+                <name language_code="en" value="Species" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="ageofsign" dmUuid="96f397453cfe434f8e41132b97491d40" id="996c9ead-b500-4c72-b8d4-f76eae8efc53" configId="90488e81-bf32-4ae1-8bc2-78270584d861" type="LIST" required="false" imageFile="cn_img1_996c9eadb5004c72b8d4f76eae8efc53.svg" isCustomImage="false">
+                <name language_code="en" value="Age of Sign" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+        </node>
+        <node categoryKey="carcass" categoryHkey="animals.carcass." dmUuid="ddf2041f810e44c18cc334d3ab43cf33" photoAllowed="false" photoRequired="true" id="3ab7d0af-685d-4cda-a761-33c15ea75cc9" collectMultipleObs="false" useSingleGpsPoint="false" imageFile="cn_img1_3ab7d0af685d4cdaa76133c15ea75cc9.svg" isCustomImage="false">
+            <name language_code="en" value="Carcass" source="DM"/>
+            <attribute attributeKey="threat" dmUuid="a6e5c90fc4bb4e55890ae1656d7f4f67" id="a29c951d-6967-492f-b91d-19cea4fe5340" configId="dd48e036-57ce-4cd4-b101-7b9bc310773a" type="TREE" required="false" isCustomImage="false">
+                <name language_code="en" value="Threat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="species" dmUuid="2389593093a14c83855d50771f175f2b" id="2698276f-7bda-4b21-81d1-7c8b2f0b4ba5" configId="e19a6b14-4d6c-4943-a9c7-e023e9563d66" type="TREE" required="false" imageFile="cn_img1_2698276f7bda4b2181d17c8b2f0b4ba5.svg" isCustomImage="false">
+                <name language_code="en" value="Species" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="causeofdeath" dmUuid="b901636ea36a479c9b4e6ec73cd61e04" id="d499ca60-caa7-4fb9-9300-fc4927c8bc40" configId="9d127b82-551d-4b3b-8364-a5e4516bdd6e" type="TREE" required="false" imageFile="cn_img1_d499ca60caa74fb99300fc4927c8bc40.svg" isCustomImage="false">
+                <name language_code="en" value="Cause of Death" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="ageofanimalcarcass" dmUuid="6934e72a59054edda87151db65200e63" id="fa4d67d3-2c84-48d4-a3c0-e6e3e5ced3ed" configId="61728e5e-5b93-4120-bcae-2bdc45b311ee" type="LIST" required="false" imageFile="cn_img1_fa4d67d32c8448d4a3c0e6e3e5ced3ed.svg" isCustomImage="false">
+                <name language_code="en" value="Age of Animal Carcass" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="ageofanimal" dmUuid="994054b7212d442885396c1ff8fbf06d" id="2df42749-7ae3-489e-9ed5-e0c54bd8bf00" configId="82fa2541-e987-4c26-97e8-251a9e010557" type="LIST" required="false" imageFile="cn_img1_2df427497ae3489e9ed5e0c54bd8bf00.svg" isCustomImage="false">
+                <name language_code="en" value="Age of Animal" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="sex" dmUuid="c734b8a1340b4cef925c1ef6579e96f9" id="adbf26a1-a8b1-4adb-9722-3cf34fa3a7ee" configId="30c02581-8626-402c-bf1d-223a879991e7" type="LIST" required="false" imageFile="cn_img1_adbf26a1a8b14adb97223cf34fa3a7ee.svg" isCustomImage="false">
+                <name language_code="en" value="Sex" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="actiontakenrcass" dmUuid="aeae58191c1142b0bbd9a494230a5b40" id="efb561cd-c77b-41ed-af25-affc25f31526" configId="0eb97f55-8e36-4c52-adc4-5d5d0fdbfe06" type="LIST" required="false" imageFile="cn_img1_efb561cdc77b41edaf25affc25f31526.svg" isCustomImage="false">
+                <name language_code="en" value="Action Taken Animals" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="trophymissing" dmUuid="e514e2dfbf02413d909ec197f8433e39" id="c9d3c08e-840f-4d11-bc55-2e657f384df9" configId="17f334ec-1b21-4506-829c-34f9685267eb" type="LIST" required="false" imageFile="cn_img1_c9d3c08e840f4d11bc552e657f384df9.svg" isCustomImage="false">
+                <name language_code="en" value="Trophy missing" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="numberofcarcasses" dmUuid="827cc4cf0ea04b03b3badf426f0ce169" id="951e597c-4dbb-47bc-8295-372c1c7aff14" type="NUMERIC" required="false" isCustomImage="false">
+                <name language_code="en" value="Number Of Carcasses" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="partremoved1" dmUuid="58c0354202864f2ea61ab70c721e3c15" id="b541e955-8bf4-4f86-937d-f97c960a68ce" configId="25e5b956-699c-4fa2-b9b8-78240a5461f0" type="LIST" required="false" imageFile="cn_img1_b541e9558bf44f86937df97c960a68ce.svg" isCustomImage="false">
+                <name language_code="en" value="Part Removed 1" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="partremoved2" dmUuid="7ce9b973073a4860bae6de9b23dbd1e7" id="2b8ba294-a475-4070-83c3-248cf7d3119b" configId="1c34370f-0c82-4374-bac2-f9ea349d0daf" type="LIST" required="false" imageFile="cn_img1_2b8ba294a475407083c3248cf7d3119b.svg" isCustomImage="false">
+                <name language_code="en" value="Part Removed 2" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="partremoved3" dmUuid="54cee9d30409450889776de1fb0d24cc" id="2e8d9674-c457-47b6-9e41-5c1a2656b254" configId="4e40f1ad-9c75-4e96-9558-f88edde0d872" type="LIST" required="false" imageFile="cn_img1_2e8d9674c45747b69e415c1a2656b254.svg" isCustomImage="false">
+                <name language_code="en" value="Part Removed 3" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+        </node>
+        <node categoryKey="trophiesseized" categoryHkey="animals.trophiesseized." dmUuid="135a2de9d7e547ffb934080ebe4700a7" photoAllowed="false" photoRequired="true" id="9af56b9a-3077-41c1-afd5-8f94462c994a" collectMultipleObs="false" useSingleGpsPoint="false" imageFile="cn_img1_9af56b9a307741c1afd58f94462c994a.svg" isCustomImage="false">
+            <name language_code="en" value="Trophies seized" source="DM"/>
+            <attribute attributeKey="threat" dmUuid="a6e5c90fc4bb4e55890ae1656d7f4f67" id="970ac180-6720-420c-8cc9-f450418888b7" configId="dd48e036-57ce-4cd4-b101-7b9bc310773a" type="TREE" required="false" isCustomImage="false">
+                <name language_code="en" value="Threat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="species" dmUuid="2389593093a14c83855d50771f175f2b" id="5ce11cf0-98be-4113-afc1-463c976bff0f" configId="e19a6b14-4d6c-4943-a9c7-e023e9563d66" type="TREE" required="false" imageFile="cn_img1_5ce11cf098be4113afc1463c976bff0f.svg" isCustomImage="false">
+                <name language_code="en" value="Species" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="typeofanimalparts" dmUuid="ea50ebb1c51f40f79e11b54e5ad8c0e0" id="b656210a-7ffd-43ad-9094-2395cea9c403" configId="42c6fd94-16cb-4d92-92ec-253e2dcf9d0c" type="LIST" required="false" imageFile="cn_img1_b656210a7ffd43ad90942395cea9c403.svg" isCustomImage="false">
+                <name language_code="en" value="Type of Trophy" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="numberofanimalparks" dmUuid="5482ed8c7da34713bdc8bf1fa4a4c1f9" id="29c7d726-936d-4f4f-be2e-7be8242e1daf" type="NUMERIC" required="false" isCustomImage="false">
+                <name language_code="en" value="Number of Trophies" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+        </node>
+        <node categoryKey="bushmeat" categoryHkey="animals.bushmeat." dmUuid="7ccbca08c811483e97d4df629d217722" photoAllowed="false" photoRequired="true" id="3423cc61-5ba0-4e3b-aefe-a055c2ae0ab1" collectMultipleObs="false" useSingleGpsPoint="false" imageFile="cn_img1_3423cc615ba04e3baefea055c2ae0ab1.svg" isCustomImage="false">
+            <name language_code="en" value="Bushmeat" source="DM"/>
+            <attribute attributeKey="threat" dmUuid="a6e5c90fc4bb4e55890ae1656d7f4f67" id="95fc214a-7fe3-478c-835f-e2d3083044a0" configId="dd48e036-57ce-4cd4-b101-7b9bc310773a" type="TREE" required="false" isCustomImage="false">
+                <name language_code="en" value="Threat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="species" dmUuid="2389593093a14c83855d50771f175f2b" id="3b57f2da-0646-45f7-a8d7-e579790401d6" configId="e19a6b14-4d6c-4943-a9c7-e023e9563d66" type="TREE" required="false" imageFile="cn_img1_3b57f2da064645f7a8d7e579790401d6.svg" isCustomImage="false">
+                <name language_code="en" value="Species" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="FLATTEN_TREE" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="typeofbushmeat" dmUuid="313c5b0da5864f3eb87e5be1ae847c08" id="1d93ca11-3d8d-48ca-a181-77eb594aa5d5" configId="333c5e58-0e2c-4118-b5df-1ea8575e0b0b" type="LIST" required="false" isCustomImage="false">
+                <name language_code="en" value="Type of bushmeat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="statusofbushmeat" dmUuid="be84b707f1484b248d0b902dfba34bef" id="5933a5fb-3f64-41cd-9e71-1cbda006b8df" configId="2f6f25d9-ab78-4902-9c94-e21ee8bef348" type="LIST" required="false" isCustomImage="false">
+                <name language_code="en" value="Status of bushmeat" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+            <attribute attributeKey="weightkg" dmUuid="f4aa90af40fb4b29a2953a01be681694" id="ea2a25bf-249f-4817-9bc3-f9c2987f4648" type="NUMERIC" required="false" imageFile="cn_img1_ea2a25bf249f48179bc3f9c2987f4648.svg" isCustomImage="false" minValue="0.0">
+                <name language_code="en" value="Weight kg" source="DM"/>
+                <option id="NUMERIC" doubleValue="0.0"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+            </attribute>
+            <attribute attributeKey="actiontakenrcass" dmUuid="aeae58191c1142b0bbd9a494230a5b40" id="d5112ffe-b935-4098-8622-2c07a907726b" configId="0eb97f55-8e36-4c52-adc4-5d5d0fdbfe06" type="LIST" required="false" imageFile="cn_img1_d5112ffeb935409886222c07a907726b.svg" isCustomImage="false">
+                <name language_code="en" value="Action Taken Animals" source="DM"/>
+                <option id="IS_VISIBLE" doubleValue="1.0"/>
+                <option id="MULTISELECT" doubleValue="0.0"/>
+            </attribute>
+        </node>
+    </nodes>
+    <attributeConfig id="eeb5e6af-d2c6-433e-ad79-2d08e7f3e16b" attributeKey="peoplearmed" displayMode="TEXT" isDefault="true" attributeUuid="b1e360e1881645a9a78e4a846ae17f24">
+        <name language_code="en" value="People Armed" source="CM"/>
+        <listItem keyRef="armed" dmUuid="f318dbbb279b453b9b7fc2cc60437814" isActive="true" id="60b29a22-203d-4e67-8e2a-e83009b13b64" imageFile="li_img1_60b29a22203d4e678e2ae83009b13b64.svg" isCustomImage="false">
+            <name language_code="en" value="Armed" source="DM"/>
+        </listItem>
+        <listItem keyRef="unarmed" dmUuid="0ed7bae2ceca43a0ac6e3d3b8b1f87d5" isActive="true" id="eabe889e-b8b0-401a-afca-0a37532198c6" imageFile="li_img1_eabe889eb8b0401aafca0a37532198c6.svg" isCustomImage="false">
+            <name language_code="en" value="Unarmed" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="1cdb5735a1e04f00815d5379496c8948" isActive="true" id="bf4335b1-7e03-4713-b129-c9a2b89219fa" imageFile="li_img1_bf4335b17e034713b129c9a2b89219fa.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="30e4a4d1-0068-4aa1-bc95-e1987f183b4d" attributeKey="placeoforigin" displayMode="TEXT" isDefault="true" attributeUuid="d9f201be868d4de9bc7f0a3287137078">
+        <name language_code="en" value="Place of Origin" source="CM"/>
+        <listItem keyRef="villagea" dmUuid="25f1438309bf498a951022b7a8bc9f4b" isActive="true" id="ef505ea4-6a43-461b-8603-c299560ec97f" isCustomImage="false">
+            <name language_code="en" value="Village A" source="DM"/>
+        </listItem>
+        <listItem keyRef="villageb" dmUuid="479bf3310a9f43d8baf116eb7e78717d" isActive="true" id="3a6b66af-8d20-4f12-87ad-fc7605a9f957" isCustomImage="false">
+            <name language_code="en" value="Village B" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="b718a635-642d-4131-a1d5-edd54a00b51f" attributeKey="sex" displayMode="TEXT" isDefault="true" attributeUuid="c734b8a1340b4cef925c1ef6579e96f9">
+        <name language_code="en" value="Sex" source="CM"/>
+        <listItem keyRef="female" dmUuid="9bb327023ef142db8b77f15542cdec9b" isActive="true" id="5145ff95-f5c2-4de8-8c87-17aac55f86b3" imageFile="li_img1_5145ff95f5c24de88c8717aac55f86b3.svg" isCustomImage="false">
+            <name language_code="en" value="Female" source="DM"/>
+        </listItem>
+        <listItem keyRef="male" dmUuid="8342db9f2e884de5b385af77c4fbbc6a" isActive="true" id="071efa04-4724-4418-b790-7ec4034520d7" imageFile="li_img1_071efa0447244418b7907ec4034520d7.svg" isCustomImage="false">
+            <name language_code="en" value="Male" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="85ab1cdc9eac4c2ea9fb82446fadd474" isActive="true" id="4c3c46a6-da4e-47c9-bcf7-dec1e9547f35" imageFile="li_img1_4c3c46a6da4e47c9bcf7dec1e9547f35.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="9032c899-8dc4-4a0f-8838-859930138db9" attributeKey="actiontakenpeople" displayMode="TEXT" isDefault="true" attributeUuid="7e44d077ba7d43f3afb8bbd1e8e009b0">
+        <name language_code="en" value="Action Taken People" source="CM"/>
+        <listItem keyRef="observedonly" dmUuid="7b7a6a1259e9471ba6f561b7de8e8a51" isActive="true" id="e7b70528-faf2-406c-b9b8-46ec588c2b98" imageFile="li_img1_e7b70528faf2406cb9b846ec588c2b98.svg" isCustomImage="false">
+            <name language_code="en" value="Observed Only" source="DM"/>
+        </listItem>
+        <listItem keyRef="unsuccessfulpursuit" dmUuid="c86b347f17814a8eac6b648f8069a7e6" isActive="true" id="0a2b2384-79da-4544-9387-282ad8b77688" imageFile="li_img1_0a2b238479da45449387282ad8b77688.svg" isCustomImage="false">
+            <name language_code="en" value="Unsuccessful Pursuit" source="DM"/>
+        </listItem>
+        <listItem keyRef="arrested" dmUuid="b9dadff06507419cbd82f5b085208e9e" isActive="true" id="85a39302-e76b-4f75-a012-b0a9d4b48b56" imageFile="li_img1_85a39302e76b4f75a012b0a9d4b48b56.svg" isCustomImage="false">
+            <name language_code="en" value="Arrested" source="DM"/>
+        </listItem>
+        <listItem keyRef="verbalwarning" dmUuid="f95a300cbb9e4d5f9a67d7491acf3067" isActive="true" id="16f49174-7bf7-4536-bb5a-8189c7ec0c2b" imageFile="li_img1_16f491747bf74536bb5a8189c7ec0c2b.svg" isCustomImage="false">
+            <name language_code="en" value="Verbal Warning" source="DM"/>
+        </listItem>
+        <listItem keyRef="writtenwarning" dmUuid="4035f17f73bd4795b714a0b3283971ce" isActive="true" id="2c86e9ec-b36e-4fb1-9df8-10d3911f9fa9" imageFile="li_img1_2c86e9ecb36e4fb19df810d3911f9fa9.svg" isCustomImage="false">
+            <name language_code="en" value="Written Warning" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="64be29a5-fe2e-462c-92d3-593fbadbf4d2" attributeKey="typeofhumansign" displayMode="TEXT" isDefault="true" attributeUuid="5d278df840484c638cebe2bcf04a24a7">
+        <name language_code="en" value="Type of Human Sign" source="CM"/>
+        <listItem keyRef="trail" dmUuid="5a408b8bde624056a2004bb9d117bcd1" isActive="true" id="9f785ad0-c495-4e5e-9220-1ff1051026cf" imageFile="li_img1_9f785ad0c4954e5e92201ff1051026cf.svg" isCustomImage="false">
+            <name language_code="en" value="Trail" source="DM"/>
+        </listItem>
+        <listItem keyRef="footprint" dmUuid="0e9add8f502e46b2a5fe055b21e5cea9" isActive="true" id="75257001-9f20-4d01-8bda-dcac77072ebd" imageFile="li_img1_752570019f204d018bdadcac77072ebd.svg" isCustomImage="false">
+            <name language_code="en" value="Footprint" source="DM"/>
+        </listItem>
+        <listItem keyRef="machetecut" dmUuid="60f29ea3d6f34f8194efbb15d33e1e50" isActive="true" id="6b89b46d-196d-40de-9dff-3fb7cdd34faa" imageFile="li_img1_6b89b46d196d40de9dff3fb7cdd34faa.svg" isCustomImage="false">
+            <name language_code="en" value="Machete Cut" source="DM"/>
+        </listItem>
+        <listItem keyRef="litter" dmUuid="003f23eb667e45809e9aeb2ef044a8a3" isActive="true" id="78b8d7a6-5b0e-4e7c-98e0-d35472c96916" imageFile="li_img1_78b8d7a65b0e4e7c98e0d35472c96916.svg" isCustomImage="false">
+            <name language_code="en" value="Litter" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="b1523f1045cc4669ba562abcd355fe6f" isActive="true" id="ce554eca-7752-4690-ae2b-1e79a97e8dda" imageFile="li_img1_ce554eca77524690ae2b1e79a97e8dda.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="94c08e20-5bed-4432-9984-97ecf38d6be1" attributeKey="ageofsign" displayMode="TEXT" isDefault="true" attributeUuid="96f397453cfe434f8e41132b97491d40">
+        <name language_code="en" value="Age of Sign" source="CM"/>
+        <listItem keyRef="fresh" dmUuid="3817ef13f895479dbdbbbb950fec351e" isActive="true" id="db10ca2b-6bf8-4d69-a0c2-d0c89f067818" imageFile="li_img1_db10ca2b6bf84d69a0c2d0c89f067818.svg" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+        <listItem keyRef="recent" dmUuid="3295265656df4d5dac81db8cf00a045d" isActive="true" id="3426df67-4f2a-40f7-acb8-001b036ce6ca" imageFile="li_img1_3426df674f2a40f7acb8001b036ce6ca.svg" isCustomImage="false">
+            <name language_code="en" value="Recent" source="DM"/>
+        </listItem>
+        <listItem keyRef="old" dmUuid="df2a76f72b194606a271188ed1cc094f" isActive="true" id="efc342de-6cdc-49eb-9686-206ae009e26c" imageFile="li_img1_efc342de6cdc49eb9686206ae009e26c.svg" isCustomImage="false">
+            <name language_code="en" value="Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="veryold" dmUuid="bdb89b2c89124eda9b1c079d75344559" isActive="true" id="3a469a15-5fba-499c-9a94-79c4d7f4ce61" imageFile="li_img1_3a469a155fba499c9a9479c4d7f4ce61.svg" isCustomImage="false">
+            <name language_code="en" value="Very old" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="a04a8004a68744b2ad5bf874db3b41aa" isActive="true" id="f5282931-f5fb-45ee-b167-0923e3cb33ad" imageFile="li_img1_f5282931f5fb45eeb1670923e3cb33ad.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="9049eab1-2afb-4478-9867-16c243c18455" attributeKey="status" displayMode="TEXT" isDefault="true" attributeUuid="0f1c8cd1e37f44d185fa3a63c5c13b5d">
+        <name language_code="en" value="Status" source="CM"/>
+        <listItem keyRef="abandoned" dmUuid="45019a7bf91f4bbc900e3858e5d0f515" isActive="true" id="907959d6-482b-4b87-b384-1eead1890cc7" imageFile="li_img1_907959d6482b4b87b3841eead1890cc7.svg" isCustomImage="false">
+            <name language_code="en" value="Abandoned" source="DM"/>
+        </listItem>
+        <listItem keyRef="active" dmUuid="486b5fc59a604666ab198c889f38ee8b" isActive="true" id="dd3b86be-84ca-48bd-a953-e8e3577b969b" imageFile="li_img1_dd3b86be84ca48bda953e8e3577b969b.svg" isCustomImage="false">
+            <name language_code="en" value="Active" source="DM"/>
+        </listItem>
+        <listItem keyRef="inactive" dmUuid="7454f39c0b32454cbc7bf05a3edb72c2" isActive="true" id="66e05c3d-24fa-4596-9bc8-c7b7c1e84d46" imageFile="li_img1_66e05c3d24fa45969bc8c7b7c1e84d46.svg" isCustomImage="false">
+            <name language_code="en" value="InActive" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="70fff9096dff4b0a95e1b560fe817967" isActive="true" id="aabd4a8c-159a-4ccb-b0ba-29f6fe1e6c8b" imageFile="li_img1_aabd4a8c159a4ccbb0ba29f6fe1e6c8b.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="e119a793-d094-4418-a31d-12366160bfa0" attributeKey="sheltercapacity" displayMode="TEXT" isDefault="true" attributeUuid="da5351faee804a1cb487a0884942d9a0">
+        <name language_code="en" value="Camp Capacity" source="CM"/>
+        <listItem keyRef="small" dmUuid="b82fbb6c6fc94ceaab51dbbd18915f79" isActive="true" id="9907a8c8-5e56-4959-acb7-840e7c4b0c65" imageFile="li_img1_9907a8c85e564959acb7840e7c4b0c65.svg" isCustomImage="false">
+            <name language_code="en" value="Small" source="DM"/>
+        </listItem>
+        <listItem keyRef="medium" dmUuid="9fe9fcf638444855bfb53d9533551169" isActive="true" id="1949f9dc-f870-4835-acbc-bb1ac9ea2fdf" imageFile="li_img1_1949f9dcf8704835acbcbb1ac9ea2fdf.svg" isCustomImage="false">
+            <name language_code="en" value="Medium" source="DM"/>
+        </listItem>
+        <listItem keyRef="large" dmUuid="35463917b456471ab73d3a6e68d92625" isActive="true" id="adf9f6bf-8248-4d5a-93ba-e9ac382c2108" imageFile="li_img1_adf9f6bf82484d5a93bae9ac382c2108.svg" isCustomImage="false">
+            <name language_code="en" value="Large" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="a80e647c-4543-447f-8df5-82226f20f0c7" attributeKey="actiontakencamp" displayMode="TEXT" isDefault="true" attributeUuid="b331de8aa26a481bb0b8dfb3248a45c2">
+        <name language_code="en" value="Action Taken Camp" source="CM"/>
+        <listItem keyRef="observedonly" dmUuid="6bb5bb665f31439a9c4c51bd5c0f6821" isActive="true" id="faa38ad1-a3ea-493f-840f-56538edf8523" imageFile="li_img1_faa38ad1a3ea493f840f56538edf8523.svg" isCustomImage="false">
+            <name language_code="en" value="Observed Only" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="62feed1fd0a749e18fd867d44ad332f9" isActive="true" id="2fec8247-8c6f-44f8-8709-5e7323f8ac21" imageFile="li_img1_2fec82478c6f44f887095e7323f8ac21.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="aac4e305-8397-43a2-8450-c74e39dccb03" attributeKey="typeoftrap" displayMode="TEXT" isDefault="true" attributeUuid="e8faac523c354f96b062a5aa9c08e9b3">
+        <name language_code="en" value="Type of Trap" source="CM"/>
+        <listItem keyRef="pittrap" dmUuid="a038465090604a32b1751c1da8f4c6ea" isActive="true" id="76bbbb1f-961a-4620-b5dc-cce7299ac64a" imageFile="li_img1_76bbbb1f961a4620b5dccce7299ac64a.svg" isCustomImage="false">
+            <name language_code="en" value="Pit Trap" source="DM"/>
+        </listItem>
+        <listItem keyRef="wiresnare" dmUuid="2f0b737cd6f9420ca4f402a077605a33" isActive="true" id="786abd96-51bd-4fcb-a6cf-6bbfaf072333" imageFile="li_img1_786abd9651bd4fcba6cf6bbfaf072333.svg" isCustomImage="false">
+            <name language_code="en" value="Wire Snare" source="DM"/>
+        </listItem>
+        <listItem keyRef="jawtrap" dmUuid="e4ec0c82b3a1450894ed5083d320b932" isActive="true" id="ad7c689f-fb84-4375-80b9-1c084cf51bb5" imageFile="li_img1_ad7c689ffb84437580b91c084cf51bb5.svg" isCustomImage="false">
+            <name language_code="en" value="Jaw Trap" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="1e9533aac4dd4901bc7ff3c2538f857b" isActive="true" id="859d942a-ddff-47f8-ad4a-30559888397d" imageFile="li_img1_859d942addff47f8ad4a30559888397d.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="4b56a707-1535-4297-9946-88320d3b3e02" attributeKey="typeoffirearm" displayMode="TEXT" isDefault="true" attributeUuid="b532056401e0440cb39f13461f5eaf5c">
+        <name language_code="en" value="Type of Firearm" source="CM"/>
+        <listItem keyRef="semiautomatic" dmUuid="59986f1cacbf428688712fab5e8711c2" isActive="true" id="d3803aef-800c-4ec7-bcbb-563a0c96c1c7" imageFile="li_img1_d3803aef800c4ec7bcbb563a0c96c1c7.svg" isCustomImage="false">
+            <name language_code="en" value="Semi Automatic" source="DM"/>
+        </listItem>
+        <listItem keyRef="shotgun" dmUuid="45739182b31e4bcbb3c4880ef6f44f8e" isActive="true" id="823b3a4b-d21a-45fd-896c-55f83ca7914b" imageFile="li_img1_823b3a4bd21a45fd896c55f83ca7914b.svg" isCustomImage="false">
+            <name language_code="en" value="Shotgun" source="DM"/>
+        </listItem>
+        <listItem keyRef="muzzleloader" dmUuid="9a3b8a1a4b8a482fb003a12cbbef5c93" isActive="true" id="626104c1-8300-4053-bdac-1a7b7e73d8b1" imageFile="li_img1_626104c183004053bdac1a7b7e73d8b1.svg" isCustomImage="false">
+            <name language_code="en" value="Muzzle Loader" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="695c9a2c466348729b5a6aa4ed59d969" isActive="true" id="28f4752c-7b21-4337-99a3-7cb6bb8a6ffa" imageFile="li_img1_28f4752c7b21433799a37cb6bb8a6ffa.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="97b228db-e4f6-4e11-b068-175945ffafec" attributeKey="caliber" displayMode="TEXT" isDefault="true" attributeUuid="507e9f9cb4d648ca904da8f5004895de">
+        <name language_code="en" value="Caliber" source="CM"/>
+        <listItem keyRef="no556" dmUuid="84fde8190cf34911bf6115df868bb05d" isActive="true" id="7c1b4604-7543-4fd9-84f9-7da79cb17c2c" isCustomImage="false">
+            <name language_code="en" value="5 56" source="DM"/>
+        </listItem>
+        <listItem keyRef="no762" dmUuid="c668eb4698c74e6d8149d89ac350784a" isActive="true" id="17fae731-0397-40bb-8afb-c3f98cba26f2" isCustomImage="false">
+            <name language_code="en" value="7 62" source="DM"/>
+        </listItem>
+        <listItem keyRef="no12guage" dmUuid="672d4bd070f542e2a1596864dcbf23aa" isActive="true" id="5984478b-1173-47a9-b476-02364ae78766" isCustomImage="false">
+            <name language_code="en" value="12 gauge" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="f2bfff895c57425fa36a225d77a9ef30" isActive="true" id="f51406b0-2e30-453f-82a1-00102b44b64b" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="1009a188-1834-4175-a7cb-6dad580628a4" attributeKey="ammunitiontype" displayMode="TEXT" isDefault="true" attributeUuid="d42539a4206c48f3bdfaaf65723abd21">
+        <name language_code="en" value="Type of Ammunition" source="CM"/>
+        <listItem keyRef="typea" dmUuid="30cf5b77b66c4b37916faa7381864d67" isActive="true" id="2b3b1516-ccc1-4513-89f2-19cbb9a8b7d2" isCustomImage="false">
+            <name language_code="en" value="Type A" source="DM"/>
+        </listItem>
+        <listItem keyRef="typeb" dmUuid="02773c93f6d44244a3f81eb7a1deb379" isActive="true" id="3fdb77be-59a3-4f3a-af94-458f2fa3e601" isCustomImage="false">
+            <name language_code="en" value="Type B" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="c042d0ac-166f-4ecf-9090-6dbf6d32485e" attributeKey="typeofcuttingtool" displayMode="TEXT" isDefault="true" attributeUuid="4ab65ffc1ab9454bbde37a02d5c5daaf">
+        <name language_code="en" value="Type of Cutting Tool" source="CM"/>
+        <listItem keyRef="chainsaw" dmUuid="608bf2ae60bc428a95fa86907d9a089d" isActive="true" id="f95b8543-65cc-4763-b7ac-d4cf4092da7c" imageFile="li_img1_f95b854365cc4763b7acd4cf4092da7c.svg" isCustomImage="false">
+            <name language_code="en" value="Chainsaw" source="DM"/>
+        </listItem>
+        <listItem keyRef="machete" dmUuid="9c8be0fd59024cc6aad215992910abba" isActive="true" id="d0613e0a-9e8a-4310-9aa3-e0dcbccda034" imageFile="li_img1_d0613e0a9e8a43109aa3e0dcbccda034.svg" isCustomImage="false">
+            <name language_code="en" value="Machete" source="DM"/>
+        </listItem>
+        <listItem keyRef="knife" dmUuid="c2bd33c232254f9b920d344ccbaf5d1a" isActive="true" id="223f5605-e226-452e-b03a-a64280be5555" imageFile="li_img1_223f5605e226452eb03aa64280be5555.svg" isCustomImage="false">
+            <name language_code="en" value="Knife" source="DM"/>
+        </listItem>
+        <listItem keyRef="axe" dmUuid="00eb7ecf11324778b1de522844b68800" isActive="true" id="075fb24c-58d7-4841-82dc-c46de66eec6f" imageFile="li_img1_075fb24c58d7484182dcc46de66eec6f.svg" isCustomImage="false">
+            <name language_code="en" value="Axe" source="DM"/>
+        </listItem>
+        <listItem keyRef="handsaw" dmUuid="b44dbe92f2354ce89f567f05722eb23e" isActive="true" id="67e4af52-ea3e-46cd-8bef-72b1403aa834" imageFile="li_img1_67e4af52ea3e46cd8bef72b1403aa834.svg" isCustomImage="false">
+            <name language_code="en" value="Handsaw" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="94655c78944e4cc2acea437f63e3aabf" isActive="true" id="1e06a86f-3d38-4446-8a5c-21720d067a25" imageFile="li_img1_1e06a86f3d3844468a5c21720d067a25.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="fa8b0e27-8f99-48b8-ac73-aef34c8e051c" attributeKey="typeoftraditionalweapon" displayMode="TEXT" isDefault="true" attributeUuid="64de24fb2b154f1ab8ce37e326a1de43">
+        <name language_code="en" value="Type of Traditional Weapon" source="CM"/>
+        <listItem keyRef="bows" dmUuid="958e99a7eba44ccc8e410e3eb16021ac" isActive="true" id="20064d06-d0f8-4700-a4a5-4653ad296de2" imageFile="li_img1_20064d06d0f84700a4a54653ad296de2.svg" isCustomImage="false">
+            <name language_code="en" value="Bows" source="DM"/>
+        </listItem>
+        <listItem keyRef="spear" dmUuid="70402959cb1248399d9ca5965300cc76" isActive="true" id="b7428922-06c4-410d-b21d-1c5f56975d04" imageFile="li_img1_b742892206c4410db21d1c5f56975d04.svg" isCustomImage="false">
+            <name language_code="en" value="Spear" source="DM"/>
+        </listItem>
+        <listItem keyRef="slingshot" dmUuid="28fca9ca299940c1a872fe4605f23d32" isActive="true" id="9ef2f6ea-cce4-4445-9098-88cbdbb16361" isCustomImage="false">
+            <name language_code="en" value="Slingshot" source="DM"/>
+        </listItem>
+        <listItem keyRef="club" dmUuid="0d6c4b549eb34bd8bf5ce2d3f1c0b53a" isActive="true" id="669d539b-599d-46b7-b0bc-e158f782bb17" imageFile="li_img1_669d539b599d46b7b0bce158f782bb17.svg" isCustomImage="false">
+            <name language_code="en" value="Club" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="cb864a2466f641e39cb2908a1e72d0dd" isActive="true" id="d8fa3fd1-60fc-4acc-b2b9-b083e342ca5a" imageFile="li_img1_d8fa3fd160fc4accb2b9b083e342ca5a.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="7620694b-a8e5-4110-8f3e-71fdb9e0152f" attributeKey="typeoffishingequipment" displayMode="TEXT" isDefault="true" attributeUuid="416478a3f1154890a953d6642cf59583">
+        <name language_code="en" value="Type of Fishing Equipment" source="CM"/>
+        <listItem keyRef="rod" dmUuid="ae909d98219c4b428460cc5d1c539702" isActive="true" id="1361caea-e47d-457e-955e-294497683d1e" imageFile="li_img1_1361caeae47d457e955e294497683d1e.svg" isCustomImage="false">
+            <name language_code="en" value="Rod" source="DM"/>
+        </listItem>
+        <listItem keyRef="net" dmUuid="45052c2183664882896687df2914ffcf" isActive="true" id="40398b92-48c3-4b55-aad7-b1b3bfdc3548" imageFile="li_img1_40398b9248c34b55aad7b1b3bfdc3548.svg" isCustomImage="false">
+            <name language_code="en" value="Net" source="DM"/>
+        </listItem>
+        <listItem keyRef="fishtrap" dmUuid="e154ccc671a247c08a89d8b5ac19cb5f" isActive="true" id="d492dc41-306c-4c9d-be0c-616d4139feb4" imageFile="li_img1_d492dc41306c4c9dbe0c616d4139feb4.svg" isCustomImage="false">
+            <name language_code="en" value="Fish Trap" source="DM"/>
+        </listItem>
+        <listItem keyRef="spears" dmUuid="a4c0a241a1474200a46dffd625c4ff06" isActive="true" id="596ca18e-4d4f-4c54-a59e-1a8c71366da6" imageFile="li_img1_596ca18e4d4f4c54a59e1a8c71366da6.svg" isCustomImage="false">
+            <name language_code="en" value="Spears" source="DM"/>
+        </listItem>
+        <listItem keyRef="electricrod" dmUuid="5f13d9c2f5d34f468a1f519625d92356" isActive="true" id="07956030-7254-4aa6-8238-7cde40a85d3e" isCustomImage="false">
+            <name language_code="en" value="Electric rod" source="DM"/>
+        </listItem>
+        <listItem keyRef="dynamite" dmUuid="989bcadb99f14ec3bbb1c909d1940736" isActive="true" id="a1201d1f-6681-4b29-a4f1-2dc17b52bda9" imageFile="li_img1_a1201d1f66814b29a4f12dc17b52bda9.svg" isCustomImage="false">
+            <name language_code="en" value="Dynamite" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="90d9c14bfdb945ff8ac742989b86a2ba" isActive="true" id="eb89f928-8f25-41cf-a359-22d65c68d2b5" imageFile="li_img1_eb89f9288f2541cfa35922d65c68d2b5.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="fb1b4103-c929-4adc-84ca-14f466d47a0c" attributeKey="typeofequipment" displayMode="TEXT" isDefault="true" attributeUuid="2e510fda5cbe41fa9cb6089a2c999168">
+        <name language_code="en" value="Type of Equipment" source="CM"/>
+        <listItem keyRef="tents" dmUuid="70c18a4f91cd40a0914ef3d624b4d7bb" isActive="true" id="16be63a7-358d-4126-970f-37426e19728d" imageFile="li_img1_16be63a7358d4126970f37426e19728d.svg" isCustomImage="false">
+            <name language_code="en" value="Tents" source="DM"/>
+        </listItem>
+        <listItem keyRef="cookingpot" dmUuid="0cd4fcaa683a4ac8a566fe910d140e97" isActive="true" id="b62903a8-98a8-473a-ab0e-f5889163a471" imageFile="li_img1_b62903a898a8473aab0ef5889163a471.svg" isCustomImage="false">
+            <name language_code="en" value="Cooking Pot" source="DM"/>
+        </listItem>
+        <listItem keyRef="tarp" dmUuid="7bfbe75da8f84168b2cce45259656623" isActive="true" id="b0aaa340-aaa2-4642-a9cb-3234639cb47b" imageFile="li_img1_b0aaa340aaa24642a9cb3234639cb47b.svg" isCustomImage="false">
+            <name language_code="en" value="Tarp" source="DM"/>
+        </listItem>
+        <listItem keyRef="object" dmUuid="51a9666fc1274a4cb8189f3e507cd146" isActive="true" id="c0d3670c-a7f6-4b81-86c1-2e5bc78c067d" imageFile="li_img1_c0d3670ca7f64b8186c12e5bc78c067d.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="0e87717d-aa75-41d0-81b3-562a7ca80b2f" attributeKey="typeofpoison" displayMode="TEXT" isDefault="true" attributeUuid="c37cbb20e15447a898bc976a5cc5a624">
+        <name language_code="en" value="Type of Poison" source="CM"/>
+        <listItem keyRef="chemical" dmUuid="4cd32577c7c443a9b9c6fffe62138e49" isActive="true" id="eeed776c-e6b4-46f0-b5ce-549392915902" imageFile="li_img1_eeed776ce6b446f0b5ce549392915902.svg" isCustomImage="false">
+            <name language_code="en" value="Chemical" source="DM"/>
+        </listItem>
+        <listItem keyRef="natural" dmUuid="4a108a972cd2477ea654375699fc0fa2" isActive="true" id="6f8f9e70-0b82-402a-a720-a4ee9c29970c" imageFile="li_img1_6f8f9e700b82402aa720a4ee9c29970c.svg" isCustomImage="false">
+            <name language_code="en" value="Natural" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="fb84fcf9053b4ccc864fe351c88e8659" isActive="true" id="2d689128-c8ae-4f0c-b917-e36df90e079e" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="f0e667f5ee434974a11c1ca3c8b9fb52" isActive="true" id="058018e7-c04f-4801-ab9f-db206cb43985" imageFile="li_img1_058018e7c04f4801ab9fdb206cb43985.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="09503620-b9e4-4a5c-9604-f2e20461f5ef" attributeKey="methodadministration" displayMode="TEXT" isDefault="true" attributeUuid="2f24042c80bf4d9e9f931862b4ebffda">
+        <name language_code="en" value="Method of Administration" source="CM"/>
+        <listItem keyRef="darts" dmUuid="f57195960283493abd99631ac0f0f72d" isActive="true" id="692b2291-772d-4dbc-bfc8-6bfcd10e988b" isCustomImage="false">
+            <name language_code="en" value="Darts" source="DM"/>
+        </listItem>
+        <listItem keyRef="fruit" dmUuid="a39835b7128748e1a690c606e0292dce" isActive="true" id="3d9e3b89-e6aa-4dbe-aa62-3999c2dd80f7" isCustomImage="false">
+            <name language_code="en" value="Fruit" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="59d6951f636448308f53941093cb36bd" isActive="true" id="cc77e04e-7e79-42ae-beb1-008f3a5865d9" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="water" dmUuid="f7870bd78e134a449db303389dd64cd0" isActive="true" id="7d8b0921-5cda-4256-9719-0fdd6a31e86a" isCustomImage="false">
+            <name language_code="en" value="Water" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="e709c8ed796147fdb1072b39a1f7fca8" isActive="true" id="f906c086-e3bb-4832-b3b5-aa4d2ef9d054" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="d773e7e425594edcb0ef643cd9a66348" isActive="true" id="b262ba69-28f3-4257-8799-e1658b9e2790" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="2632cf3b-59aa-4fa2-a567-0f1a1eb586d9" attributeKey="typeoftransportation" displayMode="TEXT" isDefault="true" attributeUuid="3ae1519f16f24c3bb087c3334bb1e1a5">
+        <name language_code="en" value="Type of Transportation" source="CM"/>
+        <listItem keyRef="raft" dmUuid="bc5ddd64565d46baa3584d843fa6341a" isActive="true" id="f6813e38-cb5a-4042-a2e8-aab12913e498" imageFile="li_img1_f6813e38cb5a4042a2e8aab12913e498.svg" isCustomImage="false">
+            <name language_code="en" value="Raft" source="DM"/>
+        </listItem>
+        <listItem keyRef="motorbike" dmUuid="8c9222d0cc814a188dba4abc730b54fb" isActive="true" id="b58b3cb6-00c8-4b39-ad5a-32359c089879" imageFile="li_img1_b58b3cb600c84b39ad5a32359c089879.svg" isCustomImage="false">
+            <name language_code="en" value="Motorbike" source="DM"/>
+        </listItem>
+        <listItem keyRef="cart" dmUuid="7b18fc74f8ff48d093c6f305f027c8ba" isActive="true" id="aff81e22-d152-4a76-bc91-09fa4dfab680" imageFile="li_img1_aff81e22d1524a76bc9109fa4dfab680.svg" isCustomImage="false">
+            <name language_code="en" value="Cart" source="DM"/>
+        </listItem>
+        <listItem keyRef="car" dmUuid="e8d985fe37984ec7adf21884de30d17d" isActive="true" id="8676b3c6-3b22-428d-bde1-7a36c5fc5008" imageFile="li_img1_8676b3c63b22428dbde17a36c5fc5008.svg" isCustomImage="false">
+            <name language_code="en" value="Car" source="DM"/>
+        </listItem>
+        <listItem keyRef="boat" dmUuid="a6ad28b29a7642a58a2c03bacf6b7193" isActive="true" id="8df12f5f-ef86-46fe-8301-c54c5e711f2c" imageFile="li_img1_8df12f5fef8646fe8301c54c5e711f2c.svg" isCustomImage="false">
+            <name language_code="en" value="Boat" source="DM"/>
+        </listItem>
+        <listItem keyRef="bicycle" dmUuid="3b4355283c734095804add2bfd581802" isActive="true" id="14bd70e6-6bd8-4f68-a974-d66a89c26e36" imageFile="li_img1_14bd70e66bd84f68a974d66a89c26e36.svg" isCustomImage="false">
+            <name language_code="en" value="Bicycle" source="DM"/>
+        </listItem>
+        <listItem keyRef="truck" dmUuid="3faee246d60f4893b890200889b4d361" isActive="true" id="a656923c-4491-40ca-a61f-f63b48ea3d21" imageFile="li_img1_a656923c449140caa61ff63b48ea3d21.svg" isCustomImage="false">
+            <name language_code="en" value="Truck" source="DM"/>
+        </listItem>
+        <listItem keyRef="horse" dmUuid="3803e6f4fc6f42f1a046e1de400821a1" isActive="true" id="eba34895-5833-4841-9bfa-32c7d2eec873" imageFile="li_img1_eba34895583348419bfa32c7d2eec873.svg" isCustomImage="false">
+            <name language_code="en" value="Horse" source="DM"/>
+        </listItem>
+        <listItem keyRef="camel" dmUuid="5abe1486a374428781a52679a548146f" isActive="true" id="dafcdcf5-8e0c-4acd-9097-c9be08821319" imageFile="li_img1_dafcdcf58e0c4acd9097c9be08821319.svg" isCustomImage="false">
+            <name language_code="en" value="Camel" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="6df34d976e8f4d388fba758dfe10a8c5" isActive="true" id="0ae42818-d336-45ac-99af-b66901693290" imageFile="li_img1_0ae42818d33645ac99afb66901693290.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="97370f5a-9b44-444c-bd51-ffe47328e588" attributeKey="actiontakenitems" displayMode="TEXT" isDefault="true" attributeUuid="303082d003e84f498607bac7580c6519">
+        <name language_code="en" value="Action Taken Items" source="CM"/>
+        <listItem keyRef="observedonly" dmUuid="fa73fbee0e2b476b8e38c188efc7e269" isActive="true" id="b79c993a-cdcd-4bd5-ace6-fb5965df74d8" imageFile="li_img1_b79c993acdcd4bd5ace6fb5965df74d8.svg" isCustomImage="false">
+            <name language_code="en" value="Observed Only" source="DM"/>
+        </listItem>
+        <listItem keyRef="confiscated" dmUuid="571730d7623b43fbb34ccde737cef409" isActive="true" id="9a36b040-34c1-4bfa-b886-b8dd3b2d8e33" imageFile="li_img1_9a36b04034c14bfab886b8dd3b2d8e33.svg" isCustomImage="false">
+            <name language_code="en" value="Confiscated" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="7fb65ac5838f4780a1de41098a425661" isActive="true" id="3a731af2-3afc-4a51-94bd-ef114516718c" imageFile="li_img1_3a731af23afc4a5194bdef114516718c.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+        <listItem keyRef="heardonly" dmUuid="9130cc51374a4151b3d9040ea70db276" isActive="true" id="c67aa299-c7de-4020-858c-65aec50b1fbc" imageFile="li_img1_c67aa299c7de4020858c65aec50b1fbc.svg" isCustomImage="false">
+            <name language_code="en" value="Heard Only" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="fc654e37-254c-436d-a098-0c2bd72c924f" attributeKey="treespecies_timber" displayMode="TEXT" isDefault="true" attributeUuid="826c4a35143940beb8c43e80ce43b803">
+        <name language_code="en" value="Timber Tree Species" source="CM"/>
+        <listItem keyRef="ebony" dmUuid="4efb01b8e549452eb2de63441730ea97" isActive="true" id="186c95db-b0db-449f-8405-eda50eb0a517" imageFile="li_img1_186c95dbb0db449f8405eda50eb0a517.svg" isCustomImage="false">
+            <name language_code="en" value="Ebony" source="DM"/>
+        </listItem>
+        <listItem keyRef="rosewood" dmUuid="5ec102ef703b445e86d27818942fa425" isActive="true" id="1b9e46bd-3ea9-43a1-9621-065f40007a6d" imageFile="li_img1_1b9e46bd3ea943a19621065f40007a6d.svg" isCustomImage="false">
+            <name language_code="en" value="Rosewood" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="32a174c99b7840768e8239295d361fbc" isActive="true" id="f783f2fe-6906-4d9f-a550-662087d4eee9" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="1d1dfc84d0ed47ae8112c2d6888eabee" isActive="true" id="1665b9fb-1ffb-41d7-9781-c9a26923faff" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="74b039ce-06b4-41e0-b5e1-a1db72a4ba96" attributeKey="typeofforestproduct" displayMode="TEXT" isDefault="true" attributeUuid="337de5abfa1e4c4e95dddaec4e12c069">
+        <name language_code="en" value="Type of Forest Product" source="CM"/>
+        <listItem keyRef="honey" dmUuid="7a95983d43a744bbb147724734e1b751" isActive="true" id="11749122-3e9e-44f5-a36e-9ee20ff20047" imageFile="li_img1_117491223e9e44f5a36e9ee20ff20047.svg" isCustomImage="false">
+            <name language_code="en" value="Honey" source="DM"/>
+        </listItem>
+        <listItem keyRef="mushroom" dmUuid="4996171dc8734186a1245bf632cd63ce" isActive="true" id="728309f0-cc63-4f30-80ad-16e7ed4363c8" imageFile="li_img1_728309f0cc634f3080ad16e7ed4363c8.svg" isCustomImage="false">
+            <name language_code="en" value="Mushroom" source="DM"/>
+        </listItem>
+        <listItem keyRef="orchid" dmUuid="22a9a745f29e455cb4d9a5cee32b8975" isActive="true" id="5f015329-bf81-44df-97fc-78d4f5489bfa" imageFile="li_img1_5f015329bf8144df97fc78d4f5489bfa.svg" isCustomImage="false">
+            <name language_code="en" value="Orchid" source="DM"/>
+        </listItem>
+        <listItem keyRef="ratan" dmUuid="4f42c712dffa4863b3875379a93471da" isActive="true" id="ed2e6fef-106d-4375-949c-41f49e74a219" imageFile="li_img1_ed2e6fef106d4375949c41f49e74a219.svg" isCustomImage="false">
+            <name language_code="en" value="Ratan" source="DM"/>
+        </listItem>
+        <listItem keyRef="bamboo" dmUuid="e1bc57be068c4202bc0854dafa21cf08" isActive="true" id="52c187e3-4b9e-4807-ad44-f202d7a75cf4" imageFile="li_img1_52c187e34b9e4807ad44f202d7a75cf4.svg" isCustomImage="false">
+            <name language_code="en" value="Bamboo" source="DM"/>
+        </listItem>
+        <listItem keyRef="caterpiller" dmUuid="0346a6c35d964d0c98d273e134e25672" isActive="true" id="21368992-d02e-4ef9-a4a9-2df77f0eee02" imageFile="li_img1_21368992d02e4ef9a4a92df77f0eee02.svg" isCustomImage="false">
+            <name language_code="en" value="Caterpiller" source="DM"/>
+        </listItem>
+        <listItem keyRef="wildfruit" dmUuid="6f42da8d1c814ecda9136b739aded535" isActive="true" id="a7897d23-dba4-4f7c-95cb-666d9c54c345" imageFile="li_img1_a7897d23dba44f7c95cb666d9c54c345.svg" isCustomImage="false">
+            <name language_code="en" value="Wild Fruit" source="DM"/>
+        </listItem>
+        <listItem keyRef="medicinalplants" dmUuid="6efe9f7ddc4c411daaeefce9d5815ee1" isActive="true" id="1909b654-599c-4d6f-9ee5-2c679d8dc713" imageFile="li_img1_1909b654599c4d6f9ee52c679d8dc713.svg" isCustomImage="false">
+            <name language_code="en" value="Medicinal Plants" source="DM"/>
+        </listItem>
+        <listItem keyRef="latax" dmUuid="8f7e041bf6bc41c8a166af92e2f263a4" isActive="true" id="20bace50-2c1e-4b55-baba-db83205fd6ed" isCustomImage="false">
+            <name language_code="en" value="Latex" source="DM"/>
+        </listItem>
+        <listItem keyRef="resin" dmUuid="2c63bc33aee44af98fc370830527b050" isActive="true" id="a12c5225-5a35-4ca3-863c-51665b1de5c3" imageFile="li_img1_a12c52255a354ca3863c51665b1de5c3.svg" isCustomImage="false">
+            <name language_code="en" value="Resin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="550f58507a5c4f43ba5c718fa766d84e" isActive="true" id="3244c2b0-45c8-461b-8aa9-f1be297a6132" imageFile="li_img1_3244c2b045c8461b8aa9f1be297a6132.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="10c6b6fb-244f-4c18-ba43-f64c5adf2d33" attributeKey="units" displayMode="TEXT" isDefault="true" attributeUuid="86a16f62e26645dd8779ff79d491cb78">
+        <name language_code="en" value="Units" source="CM"/>
+        <listItem keyRef="m3" dmUuid="83f7a86a7e954a0588a37e16ad3e4269" isActive="true" id="3301b289-d2a1-44cd-8f93-7dd13f11ffc3" imageFile="li_img1_3301b289d2a144cd8f937dd13f11ffc3.svg" isCustomImage="false">
+            <name language_code="en" value="m3" source="DM"/>
+        </listItem>
+        <listItem keyRef="kg" dmUuid="ebe2c64a5be84ed79c8d3a7287e21ca8" isActive="true" id="eed0cc88-4583-4d04-80a6-b40c3883a933" imageFile="li_img1_eed0cc8845834d0480a6b40c3883a933.svg" isCustomImage="false">
+            <name language_code="en" value="kg" source="DM"/>
+        </listItem>
+        <listItem keyRef="meter" dmUuid="5e30e61f5689418eba96e4ccdf01e1e5" isActive="true" id="980baab0-996f-4bfd-b6a5-527b40ae124a" imageFile="li_img1_980baab0996f4bfdb6a5527b40ae124a.svg" isCustomImage="false">
+            <name language_code="en" value="meter" source="DM"/>
+        </listItem>
+        <listItem keyRef="bags" dmUuid="008e9c1498d54074b6c09f70e7f4d892" isActive="true" id="3d56ecce-c829-4b6a-8b7c-7f74236f4e39" imageFile="li_img1_3d56eccec8294b6a8b7c7f74236f4e39.svg" isCustomImage="false">
+            <name language_code="en" value="bags" source="DM"/>
+        </listItem>
+        <listItem keyRef="bundles" dmUuid="186c7074f70c42dd9bca7199dbb9ea00" isActive="true" id="adaa811c-6fa8-44e3-bd11-e36310d3b89e" imageFile="li_img1_adaa811c6fa844e3bd11e36310d3b89e.svg" isCustomImage="false">
+            <name language_code="en" value="bundles" source="DM"/>
+        </listItem>
+        <listItem keyRef="pieces" dmUuid="79e4738f84f14661a6dafd8e0fa08c5b" isActive="true" id="a1eea132-f388-4a35-9eb6-bfbd3a3b8206" imageFile="li_img1_a1eea132f3884a359eb6bfbd3a3b8206.svg" isCustomImage="false">
+            <name language_code="en" value="pieces" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="185b1461-4e5f-4ad2-a45c-3a5e4a684ee7" attributeKey="typeofdomesticanimal" displayMode="TEXT" isDefault="true" attributeUuid="b1368307031a40d084d8af82294d8959">
+        <name language_code="en" value="Type of Domestic Animal" source="CM"/>
+        <listItem keyRef="dog" dmUuid="5167c5aee5d64919bb45efa46091cb97" isActive="true" id="4af24ce6-7f4e-4559-8ceb-1bfd92aac147" imageFile="li_img1_4af24ce67f4e45598ceb1bfd92aac147.svg" isCustomImage="false">
+            <name language_code="en" value="Dog" source="DM"/>
+        </listItem>
+        <listItem keyRef="cat" dmUuid="34c350b0f59c4dd8bf09fcb255b3f276" isActive="true" id="37fd73c3-02bf-423b-a0d7-f46732327e06" imageFile="li_img1_37fd73c302bf423ba0d7f46732327e06.svg" isCustomImage="false">
+            <name language_code="en" value="Cat" source="DM"/>
+        </listItem>
+        <listItem keyRef="elephant" dmUuid="47fbdd355ff14df499a030f901e31814" isActive="true" id="5f5aba51-3ab7-4a50-992a-834d9b65c065" imageFile="li_img1_5f5aba513ab74a50992a834d9b65c065.svg" isCustomImage="false">
+            <name language_code="en" value="Elephant" source="DM"/>
+        </listItem>
+        <listItem keyRef="goat" dmUuid="8910076f7ab64cd2a07aae029f4fb239" isActive="true" id="ad918a2a-c071-4218-be3f-1728fba7bdb1" imageFile="li_img1_ad918a2ac0714218be3f1728fba7bdb1.svg" isCustomImage="false">
+            <name language_code="en" value="Goat" source="DM"/>
+        </listItem>
+        <listItem keyRef="cow" dmUuid="1878ddefe9274fbdb3ed2f8ce9aff9e1" isActive="true" id="f47ab726-f808-40a4-b829-853930a44444" imageFile="li_img1_f47ab726f80840a4b829853930a44444.svg" isCustomImage="false">
+            <name language_code="en" value="Cow" source="DM"/>
+        </listItem>
+        <listItem keyRef="buffalo" dmUuid="89224e9b34f342fb897631eabbda33f5" isActive="true" id="e9866dbe-4eda-4db9-8cb1-710581758484" imageFile="li_img1_e9866dbe4eda4db98cb1710581758484.svg" isCustomImage="false">
+            <name language_code="en" value="Buffalo" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="599331fa2b3b49a9bad782436f0eac05" isActive="true" id="c3e6fb9e-0ae9-465c-a7c2-27d4289c3a41" imageFile="li_img1_c3e6fb9e0ae9465ca7c227d4289c3a41.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="b9bbbc79-4c18-4a5d-a501-6d77dbefd498" attributeKey="typeofinfrastructure" displayMode="TEXT" isDefault="true" attributeUuid="b5067a28a29a43f7a701678fe8025795">
+        <name language_code="en" value="Type of Infrastructure" source="CM"/>
+        <listItem keyRef="road" dmUuid="e39cb157dcd14fa4b244df7a3ead8f22" isActive="true" id="fa7fea55-d64f-4b4f-9c68-abb99c47fbbc" imageFile="li_img1_fa7fea55d64f4b4f9c68abb99c47fbbc.svg" isCustomImage="false">
+            <name language_code="en" value="Road" source="DM"/>
+        </listItem>
+        <listItem keyRef="sawmill" dmUuid="e49576933eaa4ab7ac5a771ddb75fc38" isActive="true" id="ce2bd2db-5cc8-4d03-b1b3-08cbf8eda344" imageFile="li_img1_ce2bd2db5cc84d03b1b308cbf8eda344.svg" isCustomImage="false">
+            <name language_code="en" value="Sawmill" source="DM"/>
+        </listItem>
+        <listItem keyRef="mine" dmUuid="1d598e9699304f289a538099464f8cce" isActive="true" id="6b9333e4-16c3-42e6-a90a-81403bd6b986" imageFile="li_img1_6b9333e416c342e6a90a81403bd6b986.svg" isCustomImage="false">
+            <name language_code="en" value="Mine" source="DM"/>
+        </listItem>
+        <listItem keyRef="dock" dmUuid="f16fdefa100544708d76b0fdef9ec9ea" isActive="true" id="f62c09d4-3eb2-4c8e-b16b-6cd538c15432" imageFile="li_img1_f62c09d43eb24c8eb16b6cd538c15432.svg" isCustomImage="false">
+            <name language_code="en" value="Dock" source="DM"/>
+        </listItem>
+        <listItem keyRef="bridge" dmUuid="5759cd71bb464e63963d0ce319914956" isActive="true" id="e45a354d-9358-46e9-ac38-f77719bf1391" imageFile="li_img1_e45a354d935846e9ac38f77719bf1391.svg" isCustomImage="false">
+            <name language_code="en" value="Bridge" source="DM"/>
+        </listItem>
+        <listItem keyRef="extractiveindustrybasecamp" dmUuid="7badbc00ecb54349bf9e8c858779a7c4" isActive="true" id="aead6d8e-2f92-442d-9cce-952093ad2a58" imageFile="li_img1_aead6d8e2f92442d9cce952093ad2a58.svg" isCustomImage="false">
+            <name language_code="en" value="Extractive Industry Basecamp" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="3565da97c6e942569a4d8fa79d1f1297" isActive="true" id="fe932619-f709-4fd3-8616-1a76a0c0d113" imageFile="li_img1_fe932619f7094fd386161a76a0c0d113.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="41607412-d2f1-468d-8f0f-dc9e7dd9e827" attributeKey="infrastructuresize" displayMode="TEXT" isDefault="true" attributeUuid="05bc933c6e804dc5871accd81329131a">
+        <name language_code="en" value="Infrastructure Size" source="CM"/>
+        <listItem keyRef="small" dmUuid="4528f6ae124a4d4fa6b6afa15ab528c1" isActive="true" id="88e4777f-5ece-47e1-be2e-21426fdcfbb7" imageFile="li_img1_88e4777f5ece47e1be2e21426fdcfbb7.svg" isCustomImage="false">
+            <name language_code="en" value="Small" source="DM"/>
+        </listItem>
+        <listItem keyRef="medium" dmUuid="f2bf8edecca54e7599acefc69c47dabf" isActive="true" id="94655a6c-0f54-4be7-a120-ec3f94402001" imageFile="li_img1_94655a6c0f544be7a120ec3f94402001.svg" isCustomImage="false">
+            <name language_code="en" value="Medium" source="DM"/>
+        </listItem>
+        <listItem keyRef="large" dmUuid="518cd3bb4b334c129a0de5113a884088" isActive="true" id="d4e14dfe-1497-4954-8457-1b5b0410aff5" imageFile="li_img1_d4e14dfe1497495484571b5b0410aff5.svg" isCustomImage="false">
+            <name language_code="en" value="Large" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="b8d50aaa-7f1f-4037-823c-3adf7a386080" attributeKey="typeofpollution" displayMode="TEXT" isDefault="true" attributeUuid="c992581c1d2c48a8a4d90fc3eb91da97">
+        <name language_code="en" value="Type of Pollution" source="CM"/>
+        <listItem keyRef="garbage" dmUuid="1f6d43b67dc4465e915bd5d63e8787c8" isActive="true" id="23dd16ae-93c3-47f3-ba7f-f2b1309b7e75" imageFile="li_img1_23dd16ae93c347f3ba7ff2b1309b7e75.svg" isCustomImage="false">
+            <name language_code="en" value="Garbage" source="DM"/>
+        </listItem>
+        <listItem keyRef="chemical" dmUuid="c6900763ea4d4db4a6b2660867dba812" isActive="true" id="9a31b8c9-1f6c-4e4f-af3f-89a5b8087a13" imageFile="li_img1_9a31b8c91f6c4e4faf3f89a5b8087a13.svg" isCustomImage="false">
+            <name language_code="en" value="Chemical" source="DM"/>
+        </listItem>
+        <listItem keyRef="biological" dmUuid="bdd9fa44aca74c5fb57d62749f3f9b91" isActive="true" id="9670800f-a163-45d9-b150-89ce9c3fbdb8" isCustomImage="false">
+            <name language_code="en" value="Biological" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="7124634627484ab1b703150c4b23ea87" isActive="true" id="42df6cf0-4d30-43dd-8e6d-0853148f6241" imageFile="li_img1_42df6cf04d3043dd8e6d0853148f6241.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="b4799c056efc4eb1961c1a8248a7afc9" isActive="true" id="5f6ce171-b9dc-48a4-8399-75dac1597582" imageFile="li_img1_5f6ce171b9dc48a4839975dac1597582.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="cc98e09e-803e-4524-a7af-36ddedc39692" attributeKey="species" displayMode="TEXT" isDefault="true" attributeUuid="2389593093a14c83855d50771f175f2b">
+        <treeNode keyRef="chordata_rl" hkeyRef="chordata_rl." dmUuid="a8aa8fcb53ae4e50a00c6b079ecfa48e" isActive="true" id="46609b2e-72ac-4a93-8340-69cbed44e42e" isCustomImage="false">
+            <name language_code="en" value="CHORDATA" source="DM"/>
+            <children keyRef="mammalia_rl" hkeyRef="chordata_rl.mammalia_rl." dmUuid="54db0e557d9041079e630822a2b49f2b" isActive="true" id="25a68342-8850-4ef5-9d74-92509d62f837" imageFile="tn_img1_25a6834288504ef59d7492509d62f837.svg" isCustomImage="false">
+                <name language_code="en" value="MAMMALIA" source="DM"/>
+                <children keyRef="cetartiodactyla_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl." dmUuid="b03123ec32884b1c97a001493f66cb13" isActive="true" id="4da73891-fac7-45d4-981e-c1c02fa007fc" imageFile="tn_img1_4da73891fac745d4981ec1c02fa007fc.svg" isCustomImage="false">
+                    <name language_code="en" value="CETARTIODACTYLA" source="DM"/>
+                    <children keyRef="bovidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl." dmUuid="7dd83c4065674344a77e28dc771b0a18" isActive="true" id="376fd328-23a4-4958-a2af-5433e4c3f1fa" imageFile="tn_img1_376fd32823a44958a2af5433e4c3f1fa.svg" isCustomImage="false">
+                        <name language_code="en" value="BOVIDAE" source="DM"/>
+                        <children keyRef="cephalophus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl." dmUuid="49314616277a4208b1260e848e009dda" isActive="true" id="98d22ce2-c5fe-44f2-bdc8-197d6e622b6b" imageFile="tn_img1_98d22ce2c5fe44f2bdc8197d6e622b6b.svg" isCustomImage="false">
+                            <name language_code="en" value="Cephalophus" source="DM"/>
+                            <children keyRef="cephalophusdorsalis_rl4139" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusdorsalis_rl4139." dmUuid="246ac7441d41463f988b14179e30bc82" isActive="true" id="94614271-5617-4d4e-ab0e-170c61ea06c2" imageFile="tn_img1_9461427156174d4eab0e170c61ea06c2.svg" isCustomImage="false">
+<name language_code="en" value="Cephalophus dorsalis (Bay Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophusleucogaster_rl4141" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusleucogaster_rl4141." dmUuid="a03013f9029d444cb60c7317704a2693" isActive="true" id="393a8095-8812-43b9-a5ed-15eb6ec0c197" isCustomImage="false">
+<name language_code="en" value="Cephalophus leucogaster (White-bellied Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophusnigrifrons_rl4146" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusnigrifrons_rl4146." dmUuid="431dd3d54b134787a006e6b1e60d141b" isActive="true" id="61bba754-0763-4856-9677-b376f14bb50f" isCustomImage="false">
+<name language_code="en" value="Cephalophus nigrifrons (Black-fronted Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophussilvicultor_rl4150" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophussilvicultor_rl4150." dmUuid="94f8d882d7854e7cb3c03723ae80ed11" isActive="true" id="87b68954-0466-475f-a5d3-2170fa8bad4c" imageFile="tn_img1_87b689540466475fa5d32170fa8bad4c.svg" isCustomImage="false">
+<name language_code="en" value="Cephalophus silvicultor (Yellow-backed Duiker)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="syncerus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.syncerus_rl." dmUuid="42c3b6307e7e4908aa83c5e98fd8a7d7" isActive="true" id="f599a821-08dc-49e7-996c-40cd9291f62b" isCustomImage="false">
+                            <name language_code="en" value="Syncerus" source="DM"/>
+                            <children keyRef="synceruscaffer_rl21251" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.syncerus_rl.synceruscaffer_rl21251." dmUuid="76dbc46ab9d548adaf9d309161a58a97" isActive="true" id="23ff89e2-1740-4698-b7e3-d9a7d74f33cb" imageFile="tn_img1_23ff89e217404698b7e3d9a7d74f33cb.svg" isCustomImage="false">
+<name language_code="en" value="Syncerus caffer (African Buffalo)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="eudorcas_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.eudorcas_rl." dmUuid="ec2fcae9f94449eca5cfd2326184bd18" isActive="true" id="0b47d1a2-f48e-44c4-8f81-65f968ecc458" isCustomImage="false">
+                            <name language_code="en" value="Eudorcas" source="DM"/>
+                            <children keyRef="eudorcasthomsonii_rl8982" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.eudorcas_rl.eudorcasthomsonii_rl8982." dmUuid="2151e8876ee2438e8a8ceef9237fae0d" isActive="true" id="94f03649-dc4d-49dc-ba65-d386a13ae743" isCustomImage="false">
+<name language_code="en" value="Eudorcas thomsonii (Thomson's Gazelle)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="suidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl." dmUuid="fce34470ea8648fc929da745f4d55ace" isActive="true" id="58c42474-cc0c-4f94-afd8-5fe04662f2d0" imageFile="tn_img1_58c42474cc0c4f94afd85fe04662f2d0.svg" isCustomImage="false">
+                        <name language_code="en" value="SUIDAE" source="DM"/>
+                        <children keyRef="potamochoerus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl." dmUuid="468b90954c0045679d6b58135088fa9e" isActive="true" id="671fc24a-f75b-4b54-98a5-2db419d183bd" isCustomImage="false">
+                            <name language_code="en" value="Potamochoerus" source="DM"/>
+                            <children keyRef="potamochoerusporcus_rl41771" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl.potamochoerusporcus_rl41771." dmUuid="989851148e424446bf544fa05edbcef0" isActive="true" id="709c83e3-2381-48c2-ba1c-e86542ffb597" imageFile="tn_img1_709c83e3238148c2ba1ce86542ffb597.svg" isCustomImage="false">
+<name language_code="en" value="Potamochoerus porcus (Red River Hog)" source="DM"/>
+                            </children>
+                            <children keyRef="potamochoeruslarvatus_rl41770" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl.potamochoeruslarvatus_rl41770." dmUuid="3f10b88645fc492993712ee230d0faa5" isActive="true" id="18b853d5-ab8a-4b42-9d46-a7eb1626e64b" imageFile="tn_img1_18b853d5ab8a4b429d46a7eb1626e64b.svg" isCustomImage="false">
+<name language_code="en" value="Potamochoerus larvatus (Bushpig)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="hippopotamidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl." dmUuid="7b9995c66f3646c6b74472c336b03ddb" isActive="true" id="39aa6a91-d0cc-40cb-9179-ec999f7ab447" imageFile="tn_img1_39aa6a91d0cc40cb9179ec999f7ab447.svg" isCustomImage="false">
+                        <name language_code="en" value="HIPPOPOTAMIDAE" source="DM"/>
+                        <children keyRef="hippopotamus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl.hippopotamus_rl." dmUuid="e0279bc8d76f4630bdc21fb029b5306d" isActive="true" id="3b26d124-8631-41bd-9c76-50417a07c996" imageFile="tn_img1_3b26d124863141bd9c7650417a07c996.svg" isCustomImage="false">
+                            <name language_code="en" value="Hippopotamus" source="DM"/>
+                            <children keyRef="hippopotamusamphibius_rl10103" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl.hippopotamus_rl.hippopotamusamphibius_rl10103." dmUuid="c2d0988fe9fe43f4a2a6597eb45b088a" isActive="true" id="68f456c3-9960-4337-ac62-d11228893823" imageFile="tn_img1_68f456c399604337ac62d11228893823.svg" isCustomImage="false">
+<name language_code="en" value="Hippopotamus amphibius (Common Hippopotamus, Hippopotamus, Large Hippo)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="giraffidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl." dmUuid="83f40679368e4e5192ded2202fed6485" isActive="true" id="36221b76-6e68-4143-aeed-ac6ee568dc90" imageFile="tn_img1_36221b766e684143aeedac6ee568dc90.svg" isCustomImage="false">
+                        <name language_code="en" value="GIRAFFIDAE" source="DM"/>
+                        <children keyRef="giraffa_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl.giraffa_rl." dmUuid="9d7a857d87e7437ea32e0eba4f7b46b4" isActive="true" id="e33109ba-9de4-473b-89b5-887403d10f8c" imageFile="tn_img1_e33109ba9de4473b89b5887403d10f8c.svg" isCustomImage="false">
+                            <name language_code="en" value="Giraffa" source="DM"/>
+                            <children keyRef="giraffacamelopardalis_rl9194" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl.giraffa_rl.giraffacamelopardalis_rl9194." dmUuid="4ed91a68d9f14f1da10c56d2822e89dd" isActive="true" id="02c402fa-6ef6-41a4-9f7f-680549504f55" imageFile="tn_img1_02c402fa6ef641a49f7f680549504f55.svg" isCustomImage="false">
+<name language_code="en" value="Giraffa camelopardalis (Giraffe)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="primates_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl." dmUuid="5c7b31ee245e4ed38e8cac880a8cb6aa" isActive="true" id="9e25b152-5493-4b49-a47b-09da9646757f" imageFile="tn_img1_9e25b15254934b49a47b09da9646757f.svg" isCustomImage="false">
+                    <name language_code="en" value="PRIMATES" source="DM"/>
+                    <children keyRef="cercopithecidae_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl." dmUuid="682610e075f446b8b6acb76dea0351ab" isActive="true" id="9d594c60-c1b6-4609-9182-3152dda98cee" imageFile="tn_img1_9d594c60c1b6460991823152dda98cee.svg" isCustomImage="false">
+                        <name language_code="en" value="CERCOPITHECIDAE" source="DM"/>
+                        <children keyRef="cercopithecus_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl.cercopithecus_rl." dmUuid="eb7324079d9e4d3884311656f3a05258" isActive="true" id="bd343cdf-78c8-4c34-8afa-0dddb5b12344" isCustomImage="false">
+                            <name language_code="en" value="Cercopithecus" source="DM"/>
+                            <children keyRef="cercopithecusnictitans_rl4224" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl.cercopithecus_rl.cercopithecusnictitans_rl4224." dmUuid="a1204f85c1804fa3b56891c4220a53bf" isActive="true" id="17ef5cea-0f16-4f38-ae9d-1decac1cb391" isCustomImage="false">
+<name language_code="en" value="Cercopithecus nictitans (Putty-nosed Monkey, Greater Spot-nosed Guenon, Greater White-nosed Monkey, Spot-nosed Guenon, White-nosed Guenon)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="hominidae_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl." dmUuid="6b617ba2541e490db9e8e0f688c3bdd4" isActive="true" id="356d22ce-45c0-4f11-b8d3-516157df778b" imageFile="tn_img1_356d22ce45c04f11b8d3516157df778b.svg" isCustomImage="false">
+                        <name language_code="en" value="HOMINIDAE" source="DM"/>
+                        <children keyRef="gorilla_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl." dmUuid="80da41eb49c5485b938b1cc43769d4df" isActive="true" id="ee2861be-147a-4768-ad2e-1b54410c63c2" imageFile="tn_img1_ee2861be147a4768ad2e1b54410c63c2.svg" isCustomImage="false">
+                            <name language_code="en" value="Gorilla" source="DM"/>
+                            <children keyRef="gorillaberingeisspberingei_rl39999" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingeisspberingei_rl39999." dmUuid="1fa6a703dca94ef39cb090105902adf7" isActive="true" id="e5a223cb-9ff7-4a96-8f99-30cc65ecdd00" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei ssp. beringei (Mountain Gorilla)" source="DM"/>
+                            </children>
+                            <children keyRef="gorillaberingeisspgraueri_rl39995" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingeisspgraueri_rl39995." dmUuid="8d1e9147689542338742fb3c089e32d6" isActive="true" id="2e610dfc-f2ad-4946-96ce-24ae6d0714d3" imageFile="tn_img1_2e610dfcf2ad494696ce24ae6d0714d3.svg" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei ssp. graueri (Eastern Lowland Gorilla, Grauer's Gorilla)" source="DM"/>
+                            </children>
+                            <children keyRef="gorillaberingei_rl39994" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingei_rl39994." dmUuid="46a58d178be94d5a905a1b412aceab7d" isActive="true" id="657c6097-4407-49d9-9221-3b1729541112" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei (Eastern Gorilla, Mountain Gorilla)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="pan_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl." dmUuid="58b48468e00a4b428463dd0534352756" isActive="true" id="d4480937-4c1d-4aa2-a5a4-a12ad383893e" imageFile="tn_img1_d44809374c1d4aa2a5a4a12ad383893e.svg" isCustomImage="false">
+                            <name language_code="en" value="Pan" source="DM"/>
+                            <children keyRef="pantroglodytessspschweinfurthii_rl15937" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl.pantroglodytessspschweinfurthii_rl15937." dmUuid="6ca0fd6236064900973005e56fe5a037" isActive="true" id="cc6f9b69-4cd9-4b81-92d1-2c66e8c99415" isCustomImage="false">
+<name language_code="en" value="Pan troglodytes ssp. schweinfurthii (Eastern Chimpanzee)" source="DM"/>
+                            </children>
+                            <children keyRef="pantroglodytes_rl15933" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl.pantroglodytes_rl15933." dmUuid="368b7b2c7f534ac89fde6bc69aa10436" isActive="true" id="4154dbda-bff7-4538-96db-878b3476806e" imageFile="tn_img1_4154dbdabff7453896db878b3476806e.svg" isCustomImage="false">
+<name language_code="en" value="Pan troglodytes (Chimpanzee, Common Chimpanzee, Robust Chimpanzee)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="proboscidea_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl." dmUuid="bf18b0bfd9584a1a982d11d064494100" isActive="true" id="997196d4-46ca-4c7b-a5d5-5870f09dea8a" imageFile="tn_img1_997196d446ca4c7ba5d55870f09dea8a.svg" isCustomImage="false">
+                    <name language_code="en" value="PROBOSCIDEA" source="DM"/>
+                    <children keyRef="elephantidae_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl." dmUuid="c319eb4be30647448755721019e7a95d" isActive="true" id="4aee8039-5821-41ff-9df0-3692d1ae2a47" imageFile="tn_img1_4aee8039582141ff9df03692d1ae2a47.svg" isCustomImage="false">
+                        <name language_code="en" value="ELEPHANTIDAE" source="DM"/>
+                        <children keyRef="loxodonta_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl.loxodonta_rl." dmUuid="d407b33514f142699ff213cfc6887375" isActive="true" id="71a617cc-cf38-4512-9f52-bb59fdb711bb" imageFile="tn_img1_71a617cccf3845129f52bb59fdb711bb.svg" isCustomImage="false">
+                            <name language_code="en" value="Loxodonta" source="DM"/>
+                            <children keyRef="loxodontaafricana_rl12392" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl.loxodonta_rl.loxodontaafricana_rl12392." dmUuid="9ba2799b83574166ada7add649bc9d51" isActive="true" id="0fc4d1ce-9941-418e-aeb0-1791631864b0" imageFile="tn_img1_0fc4d1ce9941418eaeb01791631864b0.svg" isCustomImage="false">
+<name language_code="en" value="Loxodonta africana (African Elephant)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="carnivora_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl." dmUuid="0ed65bbde0ac4853913c1b900a5a7b5e" isActive="true" id="027fe44c-2deb-4aaa-9d22-f22fcd58251d" imageFile="tn_img1_027fe44c2deb4aaa9d22f22fcd58251d.svg" isCustomImage="false">
+                    <name language_code="en" value="CARNIVORA" source="DM"/>
+                    <children keyRef="felidae_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl." dmUuid="03e2d39e28c14328b91cfdb40e772e7e" isActive="true" id="b2f68879-fb86-472d-a4d5-1017614db3a7" imageFile="tn_img1_b2f68879fb86472da4d51017614db3a7.svg" isCustomImage="false">
+                        <name language_code="en" value="FELIDAE" source="DM"/>
+                        <children keyRef="panthera_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl.panthera_rl." dmUuid="15c27c0dbb1e425482631b180c63245d" isActive="true" id="f7146e1d-1b0a-4796-9dcd-001080b9ca10" isCustomImage="false">
+                            <name language_code="en" value="Panthera" source="DM"/>
+                            <children keyRef="pantherapardus_rl15954" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl.panthera_rl.pantherapardus_rl15954." dmUuid="eedad7508cb848728a853f13db5fad1d" isActive="true" id="a2b8b5ad-ea69-4324-9b4e-210edece43a1" imageFile="tn_img1_a2b8b5adea6943249b4e210edece43a1.svg" isCustomImage="false">
+<name language_code="en" value="Panthera pardus (Leopard)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="perissodactyla_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl." dmUuid="b984585a358e485ba4ae7e262ed88c52" isActive="true" id="12193fd9-d1c6-4eb2-a7c9-9eb0a58700f4" imageFile="tn_img1_12193fd9d1c64eb2a7c99eb0a58700f4.svg" isCustomImage="false">
+                    <name language_code="en" value="PERISSODACTYLA" source="DM"/>
+                    <children keyRef="rhinocerotidae_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl." dmUuid="eb436d39dd934ea681c8bf6d994a4dc5" isActive="true" id="17a12e1e-1ee2-4767-b54b-80c385334349" imageFile="tn_img1_17a12e1e1ee24767b54b80c385334349.svg" isCustomImage="false">
+                        <name language_code="en" value="RHINOCEROTIDAE" source="DM"/>
+                        <children keyRef="diceros_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl.diceros_rl." dmUuid="cef7102bb6ce4900853e940b3962c5bc" isActive="true" id="b302e06e-834e-468a-b9b3-1f3b9b469c4c" isCustomImage="false">
+                            <name language_code="en" value="Diceros" source="DM"/>
+                            <children keyRef="dicerosbicornis_rl6557" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl.diceros_rl.dicerosbicornis_rl6557." dmUuid="0c89827983e74cc89e0563748c680ee3" isActive="true" id="5496e2b2-73e1-4f5d-990d-574fd49dee29" imageFile="tn_img1_5496e2b273e14f5d990d574fd49dee29.svg" isCustomImage="false">
+<name language_code="en" value="Diceros bicornis (Black Rhinoceros, Hook-lipped Rhinoceros)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+            </children>
+        </treeNode>
+    </attributeConfig>
+    <attributeConfig id="41f59898-3996-4a2e-b411-416a9d4845ce" attributeKey="actiontakenliveanimals" displayMode="TEXT" isDefault="true" attributeUuid="309a27eedea9439d8af0437d4de375cf">
+        <name language_code="en" value="Action Taken Live Animals" source="CM"/>
+        <listItem keyRef="confiscated" dmUuid="fad04fadf57845e8b24cf76de8994312" isActive="true" id="7e7eafa3-9bc6-4507-9f90-4f5c625f162e" imageFile="li_img1_7e7eafa39bc645079f904f5c625f162e.svg" isCustomImage="false">
+            <name language_code="en" value="Confiscated" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="1f2c5535f6b3429a92792effb24188d3" isActive="true" id="f7ed5549-f51a-49eb-87ec-628a1f35a2cd" imageFile="li_img1_f7ed5549f51a49eb87ec628a1f35a2cd.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+        <listItem keyRef="observedonly" dmUuid="407064951c8f47df8eb5486fc67c8fb8" isActive="true" id="b0258a67-b4a0-4076-a8ed-1e95c4e7ee81" imageFile="li_img1_b0258a67b4a04076a8ed1e95c4e7ee81.svg" isCustomImage="false">
+            <name language_code="en" value="Observed Only" source="DM"/>
+        </listItem>
+        <listItem keyRef="released" dmUuid="5a8711dc15e8426fba1b6b598b7a95ec" isActive="true" id="e84b4d57-3875-4cb9-918c-0c36b9fae88c" isCustomImage="false">
+            <name language_code="en" value="Released" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="74b7f7ea-dec2-4fe8-a903-ac2b13ae63ab" attributeKey="causeofdeath" displayMode="TEXT" isDefault="true" attributeUuid="b901636ea36a479c9b4e6ec73cd61e04">
+        <treeNode keyRef="natural" hkeyRef="natural." dmUuid="d36a1ceb96e44f789389a4fda54c6083" isActive="true" id="e5d82a66-4b70-46c1-a256-d9cc09ae9e2b" imageFile="tn_img1_e5d82a664b7046c1a256d9cc09ae9e2b.svg" isCustomImage="false">
+            <name language_code="en" value="Natural" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="legal" hkeyRef="legal." dmUuid="ebf8a5b05c9140a0b429f295bc27e03a" isActive="true" id="3e70a92c-fbba-48ef-b221-3db4b9341b1d" imageFile="tn_img1_3e70a92cfbba48efb2213db4b9341b1d.svg" isCustomImage="false">
+            <name language_code="en" value="Legal" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="illegal" hkeyRef="illegal." dmUuid="03bb6b4ea540471d9fef3f8b80782b9a" isActive="true" id="2dae90b8-dc76-4c4e-be48-511b44b6c3c1" imageFile="tn_img1_2dae90b8dc764c4ebe48511b44b6c3c1.svg" isCustomImage="false">
+            <name language_code="en" value="Illegal" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="unknown" hkeyRef="unknown." dmUuid="4c031cf63cf3417aabfaa0c6422baf3a" isActive="true" id="cf745b84-1e88-408b-ae3b-91f99a7d33fc" imageFile="tn_img1_cf745b841e88408bae3b91f99a7d33fc.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </treeNode>
+    </attributeConfig>
+    <attributeConfig id="056d0b77-cf6a-4ff8-865c-919d18ec0cbf" attributeKey="ageofanimalcarcass" displayMode="TEXT" isDefault="true" attributeUuid="6934e72a59054edda87151db65200e63">
+        <name language_code="en" value="Age of Animal Carcass" source="CM"/>
+        <listItem keyRef="fresh" dmUuid="5d90d95421234f4d8977f0ffc3955bca" isActive="true" id="0bac290b-655f-4d2f-a583-9b5c6328fa3d" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+        <listItem keyRef="recent" dmUuid="89a8e2e94a8b482f9c67f3d15e97a07c" isActive="true" id="d8eb0b91-9f27-4a58-95a8-d65de3a61472" isCustomImage="false">
+            <name language_code="en" value="Recent" source="DM"/>
+        </listItem>
+        <listItem keyRef="old" dmUuid="5836289bc2fd4f63b9c430f0c168a5a6" isActive="true" id="4942137e-5635-40c1-863b-a47199213e04" isCustomImage="false">
+            <name language_code="en" value="Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="veryold" dmUuid="e5e0005b6c0a4ec5a6f2f99b6f251700" isActive="true" id="b3ffeb16-6cfc-433e-a5ec-bc17abc9ea4a" isCustomImage="false">
+            <name language_code="en" value="Very Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="70427a99240441448577651db72157b1" isActive="true" id="e56bd4b7-f21b-4ab2-803a-93bda6a94b2b" imageFile="li_img1_e56bd4b7f21b4ab2803a93bda6a94b2b.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="a24a8d89-18bb-44be-95e8-aaec038473aa" attributeKey="ageofanimal" displayMode="TEXT" isDefault="true" attributeUuid="994054b7212d442885396c1ff8fbf06d">
+        <name language_code="en" value="Age of Animal" source="CM"/>
+        <listItem keyRef="adult" dmUuid="a89a9e51d2554de295deff608e1177c3" isActive="true" id="df908357-c9ac-4909-b9f4-09128534a3e0" imageFile="li_img1_df908357c9ac4909b9f409128534a3e0.svg" isCustomImage="false">
+            <name language_code="en" value="Adult" source="DM"/>
+        </listItem>
+        <listItem keyRef="subadult" dmUuid="b6755899ba7248db9bb3cb6e016c80d5" isActive="true" id="dd8eacae-2678-4c2d-bbd9-68ece958d404" imageFile="li_img1_dd8eacae26784c2dbbd968ece958d404.svg" isCustomImage="false">
+            <name language_code="en" value="Sub-Adult" source="DM"/>
+        </listItem>
+        <listItem keyRef="juvenile" dmUuid="4335b3359101460cae2aad5ef56b792b" isActive="true" id="05074c5d-4545-4f7b-8b8c-b2748581b1de" imageFile="li_img1_05074c5d45454f7b8b8cb2748581b1de.svg" isCustomImage="false">
+            <name language_code="en" value="Juvenile" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="09d733a7e3c9488da052e2c806cdc072" isActive="true" id="3dce32c5-ac3a-448b-96c2-3011dc8a5632" imageFile="li_img1_3dce32c5ac3a448b96c23011dc8a5632.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="6968c2ed-2059-4116-801d-c8cb342b4196" attributeKey="actiontakenrcass" displayMode="TEXT" isDefault="true" attributeUuid="aeae58191c1142b0bbd9a494230a5b40">
+        <name language_code="en" value="Action Taken Animals" source="CM"/>
+        <listItem keyRef="confiscated" dmUuid="672350400f354965831a4d781bd86dde" isActive="true" id="4b2a9dbf-e419-4773-94ec-b16b16cb63b5" imageFile="li_img1_4b2a9dbfe419477394ecb16b16cb63b5.svg" isCustomImage="false">
+            <name language_code="en" value="Confiscated" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="e0e1e3c06b524e7b87b72cf6f9fb0902" isActive="true" id="3df532b7-0b9a-4a6d-b04e-93d43acec23a" imageFile="li_img1_3df532b70b9a4a6db04e93d43acec23a.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+        <listItem keyRef="collected" dmUuid="7fc05f12eb744d71a7d468c3d3f9f38e" isActive="true" id="d9221431-052c-4aae-9f3e-20b7fe9c320a" imageFile="li_img1_d9221431052c4aae9f3e20b7fe9c320a.svg" isCustomImage="false">
+            <name language_code="en" value="Collected" source="DM"/>
+        </listItem>
+        <listItem keyRef="leftatscene" dmUuid="e000997dbdc7488493de7b026e8459bb" isActive="true" id="eb77e423-4741-42ab-b341-34d73f7a83a8" imageFile="li_img1_eb77e423474142abb34134d73f7a83a8.svg" isCustomImage="false">
+            <name language_code="en" value="Left At Scene" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="83a5b3e8-597b-41ed-81ed-798f6beb84d2" attributeKey="trophymissing" displayMode="TEXT" isDefault="true" attributeUuid="e514e2dfbf02413d909ec197f8433e39">
+        <name language_code="en" value="Trophy missing" source="CM"/>
+        <listItem keyRef="none" dmUuid="0db732d057604b3eb1ae550ba2ce8120" isActive="true" id="cf0ddc2e-c438-482b-9b9e-9b1e98728a54" isCustomImage="false">
+            <name language_code="en" value="None" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="eef8746af1714760ba52d89b87c5abed" isActive="true" id="52bf5dce-0ae6-4936-9a5e-38bfad9cb84e" imageFile="li_img1_52bf5dce0ae649369a5e38bfad9cb84e.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="8ac6c363d5754702ad6e33bab7c75b32" isActive="true" id="19b67fee-37d6-4776-915c-677bacb81b31" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="3101089f4a264618b90a86c988ecac40" isActive="true" id="7dc7016a-2046-4427-800f-3d870919c956" imageFile="li_img1_7dc7016a20464427800f3d870919c956.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="9dcd8d15eba3440a919a9da44d33d2a7" isActive="true" id="549bd913-14a0-4e38-b4a6-217391fdbca8" imageFile="li_img1_549bd91314a04e38b4a6217391fdbca8.svg" isCustomImage="false">
+            <name language_code="en" value="Horn or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2cf2937ec44344289bad88c470a80e23" isActive="true" id="9198f917-6d1f-402f-a296-1b376ce6b146" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="0a99f37075804a8ba0f66d52a399c06a" isActive="true" id="1bb855cd-4e70-49e2-aa38-2022ee5e3fe4" imageFile="li_img1_1bb855cd4e7049e2aa382022ee5e3fe4.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="feba0a67-69b6-4c33-a641-67f29b25639b" attributeKey="partremoved1" displayMode="TEXT" isDefault="true" attributeUuid="58c0354202864f2ea61ab70c721e3c15">
+        <name language_code="en" value="Part Removed 1" source="CM"/>
+        <listItem keyRef="horn" dmUuid="08d71b069b1c45ab971ea80536d0c529" isActive="true" id="798c2e06-c095-450f-9ad9-3994b64fb845" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="98c99579086645acbc1e48847c6e1961" isActive="true" id="4980a8e6-1214-4085-9f09-aa5067a9257b" imageFile="li_img1_4980a8e6121440859f09aa5067a9257b.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="606eb5c4f26842cd8ae031153535d774" isActive="true" id="1a3f6933-5baf-40ec-b607-61e454b6b33d" imageFile="li_img1_1a3f69335baf40ecb60761e454b6b33d.svg" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="69488b3799e6446cbc5cff2573caa8f7" isActive="true" id="46c2038b-ca1d-42e8-9ad6-a7bb6da4f93f" imageFile="li_img1_46c2038bca1d42e89ad6a7bb6da4f93f.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="e3410dd4fece499bb41c4a3a79a24e1d" isActive="true" id="5ff18f27-3782-45dc-aa9d-0af20671028b" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="5bb1fb29948e443b8e29e3fcdd2ac3e2" isActive="true" id="85b3cdd5-b738-4b41-b379-2f619617328a" imageFile="li_img1_85b3cdd5b7384b41b3792f619617328a.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="8df977ff-6994-460f-85a1-d1607cf9faa6" attributeKey="partremoved2" displayMode="TEXT" isDefault="true" attributeUuid="7ce9b973073a4860bae6de9b23dbd1e7">
+        <name language_code="en" value="Part Removed 2" source="CM"/>
+        <listItem keyRef="horn" dmUuid="0209969d5a42432e9964d2972245b3a5" isActive="true" id="ca7d5e42-6c58-499e-87ee-a6e3bb5bae64" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="6495cf80215f441787692ffb5eaae3b5" isActive="true" id="4e0efe97-094f-4631-b002-79449864171f" imageFile="li_img1_4e0efe97094f4631b00279449864171f.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="mea" dmUuid="74351a6ee8b34c50818a2ea79ab8f860" isActive="true" id="8ef1fd8f-d42d-4909-a7be-4bb9f273f0ed" isCustomImage="false">
+            <name language_code="en" value="Mea" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="1e114832f9c0456880d404052ec987b9" isActive="true" id="34b9ee23-40e0-4113-a693-82d1e9d17147" imageFile="li_img1_34b9ee2340e04113a69382d1e9d17147.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2e9a55c048a743fca654f2e01d98063b" isActive="true" id="f4ed54bf-91ff-407a-8378-8d9fb268c0a7" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="41f9f7d3b7ba4b5c9dc41dadef312ba3" isActive="true" id="ef7b13db-fd51-4228-91a7-2561868829b1" imageFile="li_img1_ef7b13dbfd51422891a72561868829b1.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="3a6b8284-7a11-45ef-bc4d-cae0cc748093" attributeKey="partremoved3" displayMode="TEXT" isDefault="true" attributeUuid="54cee9d30409450889776de1fb0d24cc">
+        <name language_code="en" value="Part Removed 3" source="CM"/>
+        <listItem keyRef="horn" dmUuid="f43d1a4d32f54966a7d3ccaa48069fe5" isActive="true" id="b2f7d2a3-e15b-4d60-8dcb-fda2364cc48c" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="2e61af2e5e2e49ccacb664a2857638aa" isActive="true" id="ac74ea29-c276-43e9-8a7f-22b3a63de1aa" imageFile="li_img1_ac74ea29c27643e98a7f22b3a63de1aa.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="2f0afe11b0054a90a5cd581fd4246588" isActive="true" id="4a356f4f-a76e-4ba0-8942-c479d02503a7" imageFile="li_img1_4a356f4fa76e4ba08942c479d02503a7.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="f5cd34919c5646509763c94e9f9131d7" isActive="true" id="77c3f21b-d5bb-4b5d-84c0-e206c4777c8a" imageFile="li_img1_77c3f21bd5bb4b5d84c0e206c4777c8a.svg" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="4135c8a12e6c4e9794d881dc60224270" isActive="true" id="884e0b10-c383-48cc-aaa4-8647c6257ffc" imageFile="li_img1_884e0b10c38348ccaaa48647c6257ffc.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2018228d3c16462ab395ccdc1d196a79" isActive="true" id="aed186a7-572d-44d4-be91-a09ffea2278d" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="5fec3136ae1543b493f2e53956c0ad08" isActive="true" id="5659ce95-fc09-48c9-8bf2-24370ac2f1d2" imageFile="li_img1_5659ce95fc0948c98bf224370ac2f1d2.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="73ba602f-a950-4e6b-81f3-a562853451ac" attributeKey="typeofanimalparts" displayMode="TEXT" isDefault="true" attributeUuid="ea50ebb1c51f40f79e11b54e5ad8c0e0">
+        <name language_code="en" value="Type of Trophy" source="CM"/>
+        <listItem keyRef="tusks" dmUuid="4a1541fdff27457e8bcf6b0d32da6c14" isActive="true" id="14bbf312-def0-457e-ac0c-c2be3a3fc6f5" imageFile="li_img1_14bbf312def0457eac0cc2be3a3fc6f5.svg" isCustomImage="false">
+            <name language_code="en" value="Tusks" source="DM"/>
+        </listItem>
+        <listItem keyRef="horns" dmUuid="23bad49b3afa42a09a3dfb305d8b08b1" isActive="true" id="b1069cb2-97c6-43f0-abbe-5b399ee4e22c" imageFile="li_img1_b1069cb297c643f0abbe5b399ee4e22c.svg" isCustomImage="false">
+            <name language_code="en" value="Horns" source="DM"/>
+        </listItem>
+        <listItem keyRef="canines" dmUuid="355d5c2c0b7d4d849d4b74494fc0642b" isActive="true" id="4e59201f-2b0e-4d56-bb11-a87f3f42566f" imageFile="li_img1_4e59201f2b0e4d56bb11a87f3f42566f.svg" isCustomImage="false">
+            <name language_code="en" value="Canines" source="DM"/>
+        </listItem>
+        <listItem keyRef="paws" dmUuid="023b0f0dcb354567ac747b36e0283b93" isActive="true" id="58e5848d-e1ba-49a3-b27c-c6247c49cf07" imageFile="li_img1_58e5848de1ba49a3b27cc6247c49cf07.svg" isCustomImage="false">
+            <name language_code="en" value="Paws" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="10cdf6f856194b1d9d627cc91b6fdf2d" isActive="true" id="c0a42cb4-4f3a-4e72-be02-6233624a7123" imageFile="li_img1_c0a42cb44f3a4e72be026233624a7123.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="bb865b2e-3f40-48d9-aa3e-f1fb402ae5bd" attributeKey="typeofbushmeat" displayMode="TEXT" isDefault="true" attributeUuid="313c5b0da5864f3eb87e5be1ae847c08">
+        <name language_code="en" value="Type of bushmeat" source="CM"/>
+        <listItem keyRef="whole" dmUuid="915a10ba39634567b3b67cc2362b78d3" isActive="true" id="2b3684de-47ed-4e5b-813c-f896826430f0" imageFile="li_img1_2b3684de47ed4e5b813cf896826430f0.svg" isCustomImage="false">
+            <name language_code="en" value="Whole animal" source="DM"/>
+        </listItem>
+        <listItem keyRef="piece" dmUuid="5e18e6683d5c4f178664c9c31980ac48" isActive="true" id="cd0af132-0b0a-4a11-b4a4-8571df8436cd" imageFile="li_img1_cd0af1320b0a4a11b4a48571df8436cd.svg" isCustomImage="false">
+            <name language_code="en" value="Piece" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="740a9710-803a-4059-8c87-5fa8bff2c773" attributeKey="statusofbushmeat" displayMode="TEXT" isDefault="true" attributeUuid="be84b707f1484b248d0b902dfba34bef">
+        <name language_code="en" value="Status of bushmeat" source="CM"/>
+        <listItem keyRef="smoked" dmUuid="683d867397f940188b2f90583cead86c" isActive="true" id="35d6d38c-0ccf-476f-87bb-419b9222bd80" imageFile="li_img1_35d6d38c0ccf476f87bb419b9222bd80.svg" isCustomImage="false">
+            <name language_code="en" value="Smoked" source="DM"/>
+        </listItem>
+        <listItem keyRef="fresh" dmUuid="9238073325504a5ea479efd577086733" isActive="true" id="235a9045-b053-49ba-b968-677bddb2b2ac" imageFile="li_img1_235a9045b05349bab968677bddb2b2ac.svg" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="121851c9-b3a3-4f85-b87b-5a70f8fccc69" attributeKey="treespecies_fruitnut" displayMode="TEXT" isDefault="true" attributeUuid="90cd57d395ae49fea10e2757be45b9c8">
+        <name language_code="en" value="Fruit or Nut Tree Species" source="CM"/>
+        <listItem keyRef="fig" dmUuid="763b4993ea8e40b28e2fb045bd6af4c7" isActive="true" id="bb615280-4e4f-4c41-bd21-cc1af93d918f" isCustomImage="false">
+            <name language_code="en" value="Fig" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="167959af-c9b4-4a8b-85c0-488ab045c935" attributeKey="figfruit" displayMode="TEXT" isDefault="true" attributeUuid="d0c716cf9aee4b0f9391426b8c0d0e29">
+        <name language_code="en" value="Fruiting Status" source="CM"/>
+        <listItem keyRef="ripe" dmUuid="e92af4c9ac424c9689b9bd8cafc31059" isActive="true" id="452d8148-b5ef-418a-9069-248a42fbdaf2" isCustomImage="false">
+            <name language_code="en" value="Ripe" source="DM"/>
+        </listItem>
+        <listItem keyRef="unripe" dmUuid="8137b1745f44489281b450f3ccaf972e" isActive="true" id="332806a0-1f10-4d71-8a5c-d78b5233ded1" isCustomImage="false">
+            <name language_code="en" value="Unripe" source="DM"/>
+        </listItem>
+        <listItem keyRef="nofruit" dmUuid="bd80b8d2e16f49d7a72b316033521369" isActive="true" id="51ac1c2a-3721-45a8-9fee-00ef5b7334e2" isCustomImage="false">
+            <name language_code="en" value="No Fruit" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="30288cbc-5169-4e3b-a063-73ce4917b27f" attributeKey="typeofsaltlick" displayMode="TEXT" isDefault="true" attributeUuid="797a8f10fdb6453d8ea4a0d89e2b7159">
+        <name language_code="en" value="Type of Salt Lick" source="CM"/>
+        <listItem keyRef="landbased" dmUuid="0de91077b23f4846b147b4c73f64cdf3" isActive="true" id="06b8cfff-1820-475d-8fb1-f55ac5a7b6a0" isCustomImage="false">
+            <name language_code="en" value="Land Based" source="DM"/>
+        </listItem>
+        <listItem keyRef="waterbased" dmUuid="1e3588ca53fc4a118ff76927b0ced28b" isActive="true" id="91cd2bca-0bb1-4bbf-ab99-4626c6a10dbc" isCustomImage="false">
+            <name language_code="en" value="Water Based" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="dd48e036-57ce-4cd4-b101-7b9bc310773a" attributeKey="threat" displayMode="TEXT" isDefault="true" attributeUuid="a6e5c90fc4bb4e55890ae1656d7f4f67">
+        <treeNode keyRef="none" hkeyRef="none." dmUuid="0e1f4a0fe95a46bb8ac1fc83e302813b" isActive="true" id="82123cae-ba37-4bee-bbf2-91cd73586ada" isCustomImage="false">
+            <name language_code="en" value="None" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="residentialcommercialdevelopment" hkeyRef="residentialcommercialdevelopment." dmUuid="191434147384474094d7015a52e369db" isActive="true" id="68761290-fe8c-4a96-a21a-72fe05868558" isCustomImage="false">
+            <name language_code="en" value="Residential &amp; Commercial Development" source="DM"/>
+            <children keyRef="housingurbanareas" hkeyRef="residentialcommercialdevelopment.housingurbanareas." dmUuid="fbbfb5b6da9f40978d3b02f0746e35d2" isActive="true" id="ee257f15-7b3a-4f56-a88b-6cb60b560454" isCustomImage="false">
+                <name language_code="en" value="Housing &amp; Urban Areas" source="DM"/>
+            </children>
+            <children keyRef="commericalindustrialareas" hkeyRef="residentialcommercialdevelopment.commericalindustrialareas." dmUuid="aeb8535c5dc44dc585dccddf64336aa3" isActive="true" id="0ca12fd9-65fc-4997-a05f-23ab5c7fee8f" isCustomImage="false">
+                <name language_code="en" value="Commercial &amp; Industrial Areas" source="DM"/>
+            </children>
+            <children keyRef="tourismrecreationareas" hkeyRef="residentialcommercialdevelopment.tourismrecreationareas." dmUuid="c58ba5a018ed45c59f37c779f9cc69a2" isActive="true" id="56c9b740-9d16-466a-a3ce-c6e60186c6b8" isCustomImage="false">
+                <name language_code="en" value="Tourism &amp; Recreation Areas" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="agricultureaquaculture" hkeyRef="agricultureaquaculture." dmUuid="9df42de53f2147eb8c4eb748f349f99d" isActive="true" id="36c44cc8-62f5-45e9-9e2b-991769e1814e" isCustomImage="false">
+            <name language_code="en" value="Agriculture &amp; Aquaculture" source="DM"/>
+            <children keyRef="annualperennialnontimbercrops" hkeyRef="agricultureaquaculture.annualperennialnontimbercrops." dmUuid="846b19a8ffb34c588ee17ee231f191b8" isActive="true" id="57565d39-6f3f-406b-a7ed-d677f7f47e92" isCustomImage="false">
+                <name language_code="en" value="Annual &amp; Perennial Non-Timber Crops" source="DM"/>
+            </children>
+            <children keyRef="woodpulpplantations" hkeyRef="agricultureaquaculture.woodpulpplantations." dmUuid="1a4af9f661d54db69a88f1ceec56017b" isActive="true" id="b0d788cb-eaf3-4628-945e-a9e87563d54e" isCustomImage="false">
+                <name language_code="en" value="Wood &amp; Pulp Plantations" source="DM"/>
+            </children>
+            <children keyRef="livestockfarmingranching" hkeyRef="agricultureaquaculture.livestockfarmingranching." dmUuid="7936551746f44868990b6a79d3a583f0" isActive="true" id="b8fd58be-fed6-4c9a-bb49-b4430d4cfe5b" isCustomImage="false">
+                <name language_code="en" value="Livestock Farming &amp; Ranching" source="DM"/>
+            </children>
+            <children keyRef="marinefreshwateraquaculture" hkeyRef="agricultureaquaculture.marinefreshwateraquaculture." dmUuid="9bf5dbbdd44447bab6a7bbe7b2708fe4" isActive="true" id="2e8241d3-b877-4ddd-8411-ccaac0e311f5" isCustomImage="false">
+                <name language_code="en" value="Marine &amp; Freshwater Aquaculture" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="energyproductionmining" hkeyRef="energyproductionmining." dmUuid="e3004f2e1aa046d7bf5cb3707f5f4209" isActive="true" id="e63bd65e-bc01-4abf-bbbe-88f5b11896b6" isCustomImage="false">
+            <name language_code="en" value="Energy Production &amp; Mining" source="DM"/>
+            <children keyRef="oilgasdrlling" hkeyRef="energyproductionmining.oilgasdrlling." dmUuid="36c6d87774264868ac96947c12807cb6" isActive="true" id="5c82384b-742c-488d-9590-3a8a4065261d" isCustomImage="false">
+                <name language_code="en" value="Oil &amp; Gas Drilling" source="DM"/>
+            </children>
+            <children keyRef="miningquarrying" hkeyRef="energyproductionmining.miningquarrying." dmUuid="667066e60bb8463fa217d2d4e4394a9a" isActive="true" id="3911f60f-8247-4327-be4b-fbcf8344482d" isCustomImage="false">
+                <name language_code="en" value="Mining &amp; Quarrying" source="DM"/>
+            </children>
+            <children keyRef="renewableenergy" hkeyRef="energyproductionmining.renewableenergy." dmUuid="71757284289940c28152092115b1eaf1" isActive="true" id="64318a19-cda4-40ed-b987-831b04fa8ee8" isCustomImage="false">
+                <name language_code="en" value="Renewable Energy" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="transportationservicecorridors" hkeyRef="transportationservicecorridors." dmUuid="6bdba1ac3d9f4871ad3615aac6abfb54" isActive="true" id="ab7eacee-46d3-482a-b686-2076f75eb3e0" isCustomImage="false">
+            <name language_code="en" value="Transportation &amp; Service Corridors" source="DM"/>
+            <children keyRef="roadsrailroads" hkeyRef="transportationservicecorridors.roadsrailroads." dmUuid="f22a48c3dbb84b2ea19a13a841c547ff" isActive="true" id="4e5b4ca3-d003-4093-9614-b0ed1783e159" isCustomImage="false">
+                <name language_code="en" value="Roads &amp; Railroads" source="DM"/>
+            </children>
+            <children keyRef="utilityservicelines" hkeyRef="transportationservicecorridors.utilityservicelines." dmUuid="391cfd2783224ed78cd289c5fef3df90" isActive="true" id="933d4aab-0284-4a5c-b5c1-636cdd155a4e" isCustomImage="false">
+                <name language_code="en" value="Utility &amp; Service Lines" source="DM"/>
+            </children>
+            <children keyRef="shippinglanes" hkeyRef="transportationservicecorridors.shippinglanes." dmUuid="050d2799964e472382b11f098d2f5b7d" isActive="true" id="bbbe8878-f2b1-4f17-b992-e7716bf9a08a" isCustomImage="false">
+                <name language_code="en" value="Shipping Lanes" source="DM"/>
+            </children>
+            <children keyRef="flightpaths" hkeyRef="transportationservicecorridors.flightpaths." dmUuid="198c422ea0cd4cad9424e904a3198494" isActive="true" id="4f2f8b53-07cf-44c1-9818-72277b4d02d8" isCustomImage="false">
+                <name language_code="en" value="Flight Paths" source="DM"/>
+            </children>
+            <children keyRef="horsetrail" hkeyRef="transportationservicecorridors.horsetrail." dmUuid="b2c03d3a677644b38461ad110e6329b0" isActive="true" id="d30c9d1b-39d9-4901-801c-76f35a966411" isCustomImage="false">
+                <name language_code="en" value="Horse Trail" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="biologicalresourceuse" hkeyRef="biologicalresourceuse." dmUuid="597bdce5c3804e6cb645e8771108f53d" isActive="true" id="376be8fd-8486-4c70-89fb-1bdd59d9d101" isCustomImage="false">
+            <name language_code="en" value="Biological Resource Use" source="DM"/>
+            <children keyRef="huntingcollectingterrestrialanimals" hkeyRef="biologicalresourceuse.huntingcollectingterrestrialanimals." dmUuid="48de67aea48145debc9cb7658ff6ac51" isActive="true" id="c6edd0b4-cb73-4deb-b711-c35a45181f8d" isCustomImage="false">
+                <name language_code="en" value="Hunting" source="DM"/>
+            </children>
+            <children keyRef="gatheringterrestrialplants" hkeyRef="biologicalresourceuse.gatheringterrestrialplants." dmUuid="aa2ae970108b4d6893ab27fe4298eee4" isActive="true" id="a3922e25-de8e-479a-ada0-a90449bb1f80" isCustomImage="false">
+                <name language_code="en" value="NTFP collection" source="DM"/>
+            </children>
+            <children keyRef="loggingwoodharvesting" hkeyRef="biologicalresourceuse.loggingwoodharvesting." dmUuid="c79f863bf3db4962b498b923276548df" isActive="true" id="d1bac584-cd22-4538-992a-a27a86720ff9" isCustomImage="false">
+                <name language_code="en" value="Logging &amp; Wood Harvesting" source="DM"/>
+            </children>
+            <children keyRef="fishingharvestingaquaticresources" hkeyRef="biologicalresourceuse.fishingharvestingaquaticresources." dmUuid="1ee1ed0e4a6848099c12f51bfc252e8a" isActive="true" id="35a1f703-e19e-40d3-a062-4cdca326b9e9" isCustomImage="false">
+                <name language_code="en" value="Fishing &amp; Harvesting Aquatic Resources" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="naturalsystemmodifications" hkeyRef="naturalsystemmodifications." dmUuid="ed000e642bf748a787f94461e7a5106b" isActive="true" id="f1dab5a5-4812-4142-bb73-22717643b372" isCustomImage="false">
+            <name language_code="en" value="Natural System Modifications" source="DM"/>
+            <children keyRef="firefiresuppression" hkeyRef="naturalsystemmodifications.firefiresuppression." dmUuid="206d78f9f5fd4bfeb194844bc1c842a5" isActive="true" id="559c5427-6b32-4289-9641-a3a6a3837be7" isCustomImage="false">
+                <name language_code="en" value="Fire &amp; Fire Suppression" source="DM"/>
+            </children>
+            <children keyRef="damswatermanagementuse" hkeyRef="naturalsystemmodifications.damswatermanagementuse." dmUuid="c14017ad79c948c6a187ba61a9336459" isActive="true" id="43b1bcc1-2ae4-4578-a536-852ebd643f44" isCustomImage="false">
+                <name language_code="en" value="Dams &amp; Water Management/Use" source="DM"/>
+            </children>
+            <children keyRef="otherecosystemmodifications" hkeyRef="naturalsystemmodifications.otherecosystemmodifications." dmUuid="54bafa5f039d4fbda5b45b434d6eceed" isActive="true" id="cffc4a05-7638-4e7a-8c29-9cc7fb1ab48a" isCustomImage="false">
+                <name language_code="en" value="Other Ecosystem Modifications" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="invasiveotherproblematicspeciesgenes" hkeyRef="invasiveotherproblematicspeciesgenes." dmUuid="1622589c309a425f838fcbac86873e76" isActive="true" id="bc07d0e1-c62b-4549-8234-cd0bb16e842c" isCustomImage="false">
+            <name language_code="en" value="Invasive &amp; Other Problematic Species &amp; Genes" source="DM"/>
+            <children keyRef="invasivenonnativealienspecies" hkeyRef="invasiveotherproblematicspeciesgenes.invasivenonnativealienspecies." dmUuid="7db840d5fe48487a960dfab848498eb9" isActive="true" id="226d22ca-d34d-4d68-a7d8-7af2141e3d42" isCustomImage="false">
+                <name language_code="en" value="Invasive Non-Native/Alien Species" source="DM"/>
+            </children>
+            <children keyRef="problematicnativespecies" hkeyRef="invasiveotherproblematicspeciesgenes.problematicnativespecies." dmUuid="f14069f4b8bf40e4a3232be8c944a72d" isActive="true" id="cff54317-85a7-4ac6-98b1-6e02a0478ae9" isCustomImage="false">
+                <name language_code="en" value="Problematic Native Species" source="DM"/>
+            </children>
+            <children keyRef="introducedgeneticmaterial" hkeyRef="invasiveotherproblematicspeciesgenes.introducedgeneticmaterial." dmUuid="92020772ff4841c58d5f18b081dcbd09" isActive="true" id="9458a2f3-0c9b-4ba6-97d2-584917629137" isCustomImage="false">
+                <name language_code="en" value="Introduced Genetic Material" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="pollution" hkeyRef="pollution." dmUuid="d8f80533a8c24c27a26729330450ae80" isActive="true" id="2cae3bc4-4ee8-4dea-97e3-390dd625ebeb" isCustomImage="false">
+            <name language_code="en" value="Pollution" source="DM"/>
+            <children keyRef="householdsewageurbanwastewater" hkeyRef="pollution.householdsewageurbanwastewater." dmUuid="9b7eb755e9834674bf200d6ade6453a2" isActive="true" id="71f4e01f-5061-400e-975b-39d335b63501" isCustomImage="false">
+                <name language_code="en" value="Household Sewage &amp; Urban Waste Water" source="DM"/>
+            </children>
+            <children keyRef="industrialmilitaryeffluents" hkeyRef="pollution.industrialmilitaryeffluents." dmUuid="489945e39c8c4df180a5c24325507a47" isActive="true" id="6861edaa-3b36-4881-a2a8-749f0f142066" isCustomImage="false">
+                <name language_code="en" value="Industrial &amp; Military Effluents" source="DM"/>
+            </children>
+            <children keyRef="agriculturalforestryeffluents" hkeyRef="pollution.agriculturalforestryeffluents." dmUuid="9efcad9198364a51a32cfa7555787f13" isActive="true" id="c380f91f-93bf-4a30-a6bb-0451eaf44081" isCustomImage="false">
+                <name language_code="en" value="Agricultural &amp; Forestry Effluents" source="DM"/>
+            </children>
+            <children keyRef="garbagesolidwaste" hkeyRef="pollution.garbagesolidwaste." dmUuid="e77d6899bec249789ceb2221ea6c53cc" isActive="true" id="eeae2f52-a5a4-4e34-995e-acb6b73e4156" isCustomImage="false">
+                <name language_code="en" value="Garbage &amp; Solid Waste" source="DM"/>
+            </children>
+            <children keyRef="airbornepollutants" hkeyRef="pollution.airbornepollutants." dmUuid="d4e7bae09128490595f42a6eeda6ee2c" isActive="true" id="67dff6ca-65ee-47a3-bc7b-4cdeccf68e9e" isCustomImage="false">
+                <name language_code="en" value="Air-Borne Pollutants" source="DM"/>
+            </children>
+            <children keyRef="excessenergy" hkeyRef="pollution.excessenergy." dmUuid="bc9a533c6c9445bf92d4c33cddf318f6" isActive="true" id="33cb9082-a671-4019-8537-ef669ddd6d2b" isCustomImage="false">
+                <name language_code="en" value="Excess Energy" source="DM"/>
+            </children>
+        </treeNode>
+        <treeNode keyRef="climatechangesevereweather" hkeyRef="climatechangesevereweather." dmUuid="8d5996854d4b4462a9e9be8e64ce19e2" isActive="true" id="250f660a-cc08-4bce-b661-6727d767de69" isCustomImage="false">
+            <name language_code="en" value="Climate Change &amp; Severe Weather" source="DM"/>
+            <children keyRef="habitatshiftingalteration" hkeyRef="climatechangesevereweather.habitatshiftingalteration." dmUuid="a5d69060363d4090b41d8c8bdb634c23" isActive="true" id="230ba28d-697a-4d06-a06d-4e725eaa87a4" isCustomImage="false">
+                <name language_code="en" value="Habitat Shifting &amp; Alteration" source="DM"/>
+            </children>
+            <children keyRef="droughts" hkeyRef="climatechangesevereweather.droughts." dmUuid="2abac0b074ed4d77a0be99aafe8099a8" isActive="true" id="dba3c0e8-5fcd-480e-bb1a-848c1deaaf38" isCustomImage="false">
+                <name language_code="en" value="Droughts" source="DM"/>
+            </children>
+            <children keyRef="temperatureextremes" hkeyRef="climatechangesevereweather.temperatureextremes." dmUuid="b8f417c6eb264626a6af757307cf985e" isActive="true" id="19b81fd2-efa3-454d-8b6b-9f79874f5ecd" isCustomImage="false">
+                <name language_code="en" value="Temperature Extremes" source="DM"/>
+            </children>
+            <children keyRef="stormsflooding" hkeyRef="climatechangesevereweather.stormsflooding." dmUuid="a5eab30d939a415291798895c8070de2" isActive="true" id="8a38c165-4357-4caf-a5e6-b228ca31c69f" isCustomImage="false">
+                <name language_code="en" value="Storms &amp; Flooding" source="DM"/>
+            </children>
+        </treeNode>
+    </attributeConfig>
+    <attributeConfig id="e19a6b14-4d6c-4943-a9c7-e023e9563d66" attributeKey="species" displayMode="TEXT" isDefault="true" attributeUuid="2389593093a14c83855d50771f175f2b">
+        <treeNode keyRef="chordata_rl" hkeyRef="chordata_rl." dmUuid="a8aa8fcb53ae4e50a00c6b079ecfa48e" isActive="true" id="81081e96-02d5-4076-9353-c6329935fbe3" isCustomImage="false">
+            <name language_code="en" value="CHORDATA" source="DM"/>
+            <children keyRef="mammalia_rl" hkeyRef="chordata_rl.mammalia_rl." dmUuid="54db0e557d9041079e630822a2b49f2b" isActive="true" id="d1e712c0-bef9-4406-8e87-9b4c6d8b0618" imageFile="tn_img1_d1e712c0bef944068e879b4c6d8b0618.svg" isCustomImage="false">
+                <name language_code="en" value="MAMMALIA" source="DM"/>
+                <children keyRef="cetartiodactyla_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl." dmUuid="b03123ec32884b1c97a001493f66cb13" isActive="true" id="470999e9-44c3-4c89-aacd-97a22d1c1dee" imageFile="tn_img1_470999e944c34c89aacd97a22d1c1dee.svg" isCustomImage="false">
+                    <name language_code="en" value="CETARTIODACTYLA" source="DM"/>
+                    <children keyRef="bovidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl." dmUuid="7dd83c4065674344a77e28dc771b0a18" isActive="true" id="97836162-d38c-44f0-a544-8a82525f4228" imageFile="tn_img1_97836162d38c44f0a5448a82525f4228.svg" isCustomImage="false">
+                        <name language_code="en" value="BOVIDAE" source="DM"/>
+                        <children keyRef="cephalophus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl." dmUuid="49314616277a4208b1260e848e009dda" isActive="true" id="597b6843-7e0a-4c90-9e9c-71677eaf44f8" imageFile="tn_img1_597b68437e0a4c909e9c71677eaf44f8.svg" isCustomImage="false">
+                            <name language_code="en" value="Cephalophus" source="DM"/>
+                            <children keyRef="cephalophusdorsalis_rl4139" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusdorsalis_rl4139." dmUuid="246ac7441d41463f988b14179e30bc82" isActive="true" id="4236e211-7f5e-4ddc-a32a-4e6eae1c3f1e" imageFile="tn_img1_4236e2117f5e4ddca32a4e6eae1c3f1e.svg" isCustomImage="false">
+<name language_code="en" value="Cephalophus dorsalis (Bay Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophusleucogaster_rl4141" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusleucogaster_rl4141." dmUuid="a03013f9029d444cb60c7317704a2693" isActive="true" id="5936c6ac-8e35-430e-9f13-5c85f070cbc6" isCustomImage="false">
+<name language_code="en" value="Cephalophus leucogaster (White-bellied Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophusnigrifrons_rl4146" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophusnigrifrons_rl4146." dmUuid="431dd3d54b134787a006e6b1e60d141b" isActive="true" id="edd95293-ecf5-4668-9efb-814c348c9880" isCustomImage="false">
+<name language_code="en" value="Cephalophus nigrifrons (Black-fronted Duiker)" source="DM"/>
+                            </children>
+                            <children keyRef="cephalophussilvicultor_rl4150" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.cephalophus_rl.cephalophussilvicultor_rl4150." dmUuid="94f8d882d7854e7cb3c03723ae80ed11" isActive="true" id="ca8948cf-a667-49cd-80b5-097770d92113" imageFile="tn_img1_ca8948cfa66749cd80b5097770d92113.svg" isCustomImage="false">
+<name language_code="en" value="Cephalophus silvicultor (Yellow-backed Duiker)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="syncerus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.syncerus_rl." dmUuid="42c3b6307e7e4908aa83c5e98fd8a7d7" isActive="true" id="77211274-b095-439f-93c5-e93aaae9ede0" isCustomImage="false">
+                            <name language_code="en" value="Syncerus" source="DM"/>
+                            <children keyRef="synceruscaffer_rl21251" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.syncerus_rl.synceruscaffer_rl21251." dmUuid="76dbc46ab9d548adaf9d309161a58a97" isActive="true" id="7a860da7-6582-45d5-8182-a53e4ae75c78" imageFile="tn_img1_7a860da7658245d58182a53e4ae75c78.svg" isCustomImage="false">
+<name language_code="en" value="Syncerus caffer (African Buffalo)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="eudorcas_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.eudorcas_rl." dmUuid="ec2fcae9f94449eca5cfd2326184bd18" isActive="true" id="9fac213f-b120-4b4a-9655-e45d7501cb1c" isCustomImage="false">
+                            <name language_code="en" value="Eudorcas" source="DM"/>
+                            <children keyRef="eudorcasthomsonii_rl8982" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.bovidae_rl.eudorcas_rl.eudorcasthomsonii_rl8982." dmUuid="2151e8876ee2438e8a8ceef9237fae0d" isActive="true" id="37ed166b-ac83-49e4-a8a0-395d2f2a8325" isCustomImage="false">
+<name language_code="en" value="Eudorcas thomsonii (Thomson's Gazelle)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="suidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl." dmUuid="fce34470ea8648fc929da745f4d55ace" isActive="true" id="53ce539b-bb7f-4341-a17c-991a5ea4e002" imageFile="tn_img1_53ce539bbb7f4341a17c991a5ea4e002.svg" isCustomImage="false">
+                        <name language_code="en" value="SUIDAE" source="DM"/>
+                        <children keyRef="potamochoerus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl." dmUuid="468b90954c0045679d6b58135088fa9e" isActive="true" id="2d8f255f-8ff2-4686-b90f-4c31517d4f39" isCustomImage="false">
+                            <name language_code="en" value="Potamochoerus" source="DM"/>
+                            <children keyRef="potamochoerusporcus_rl41771" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl.potamochoerusporcus_rl41771." dmUuid="989851148e424446bf544fa05edbcef0" isActive="true" id="6db6a3b5-d100-42f6-b818-9c017021957b" imageFile="tn_img1_6db6a3b5d10042f6b8189c017021957b.svg" isCustomImage="false">
+<name language_code="en" value="Potamochoerus porcus (Red River Hog)" source="DM"/>
+                            </children>
+                            <children keyRef="potamochoeruslarvatus_rl41770" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.suidae_rl.potamochoerus_rl.potamochoeruslarvatus_rl41770." dmUuid="3f10b88645fc492993712ee230d0faa5" isActive="true" id="a6fc4579-d427-4caa-baa7-025b3c1e0347" imageFile="tn_img1_a6fc4579d4274caabaa7025b3c1e0347.svg" isCustomImage="false">
+<name language_code="en" value="Potamochoerus larvatus (Bushpig)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="hippopotamidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl." dmUuid="7b9995c66f3646c6b74472c336b03ddb" isActive="true" id="072d521f-4fd9-40a9-9a90-7604a611e2f8" imageFile="tn_img1_072d521f4fd940a99a907604a611e2f8.svg" isCustomImage="false">
+                        <name language_code="en" value="HIPPOPOTAMIDAE" source="DM"/>
+                        <children keyRef="hippopotamus_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl.hippopotamus_rl." dmUuid="e0279bc8d76f4630bdc21fb029b5306d" isActive="true" id="665f0dee-15a7-4fa0-9ec1-ebfde8506b21" imageFile="tn_img1_665f0dee15a74fa09ec1ebfde8506b21.svg" isCustomImage="false">
+                            <name language_code="en" value="Hippopotamus" source="DM"/>
+                            <children keyRef="hippopotamusamphibius_rl10103" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.hippopotamidae_rl.hippopotamus_rl.hippopotamusamphibius_rl10103." dmUuid="c2d0988fe9fe43f4a2a6597eb45b088a" isActive="true" id="9122beb7-9f3c-495f-ae63-4a97c9cefb0f" imageFile="tn_img1_9122beb79f3c495fae634a97c9cefb0f.svg" isCustomImage="false">
+<name language_code="en" value="Hippopotamus amphibius (Common Hippopotamus, Hippopotamus, Large Hippo)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="giraffidae_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl." dmUuid="83f40679368e4e5192ded2202fed6485" isActive="true" id="3b437667-d400-49ae-ba86-16d00877125e" imageFile="tn_img1_3b437667d40049aeba8616d00877125e.svg" isCustomImage="false">
+                        <name language_code="en" value="GIRAFFIDAE" source="DM"/>
+                        <children keyRef="giraffa_rl" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl.giraffa_rl." dmUuid="9d7a857d87e7437ea32e0eba4f7b46b4" isActive="true" id="64a0e70b-6a77-45a8-ac51-e5774f76debd" imageFile="tn_img1_64a0e70b6a7745a8ac51e5774f76debd.svg" isCustomImage="false">
+                            <name language_code="en" value="Giraffa" source="DM"/>
+                            <children keyRef="giraffacamelopardalis_rl9194" hkeyRef="chordata_rl.mammalia_rl.cetartiodactyla_rl.giraffidae_rl.giraffa_rl.giraffacamelopardalis_rl9194." dmUuid="4ed91a68d9f14f1da10c56d2822e89dd" isActive="true" id="1c0cf271-2f9e-490e-804c-e2c408e5a960" imageFile="tn_img1_1c0cf2712f9e490e804ce2c408e5a960.svg" isCustomImage="false">
+<name language_code="en" value="Giraffa camelopardalis (Giraffe)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="primates_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl." dmUuid="5c7b31ee245e4ed38e8cac880a8cb6aa" isActive="true" id="484fc5b1-b521-4882-936d-82e7ef3e9d80" imageFile="tn_img1_484fc5b1b5214882936d82e7ef3e9d80.svg" isCustomImage="false">
+                    <name language_code="en" value="PRIMATES" source="DM"/>
+                    <children keyRef="cercopithecidae_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl." dmUuid="682610e075f446b8b6acb76dea0351ab" isActive="true" id="f600a84a-fc28-454b-9f4e-a3624c9ef148" imageFile="tn_img1_f600a84afc28454b9f4ea3624c9ef148.svg" isCustomImage="false">
+                        <name language_code="en" value="CERCOPITHECIDAE" source="DM"/>
+                        <children keyRef="cercopithecus_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl.cercopithecus_rl." dmUuid="eb7324079d9e4d3884311656f3a05258" isActive="true" id="fe1d440a-383c-4edc-ab8f-c25b558bd1aa" isCustomImage="false">
+                            <name language_code="en" value="Cercopithecus" source="DM"/>
+                            <children keyRef="cercopithecusnictitans_rl4224" hkeyRef="chordata_rl.mammalia_rl.primates_rl.cercopithecidae_rl.cercopithecus_rl.cercopithecusnictitans_rl4224." dmUuid="a1204f85c1804fa3b56891c4220a53bf" isActive="true" id="dffce9af-1696-4992-86d7-d1947fc502a5" isCustomImage="false">
+<name language_code="en" value="Cercopithecus nictitans (Putty-nosed Monkey, Greater Spot-nosed Guenon, Greater White-nosed Monkey, Spot-nosed Guenon, White-nosed Guenon)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                    <children keyRef="hominidae_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl." dmUuid="6b617ba2541e490db9e8e0f688c3bdd4" isActive="true" id="7f27b16d-966e-4093-8544-e5c29f5c31ad" imageFile="tn_img1_7f27b16d966e40938544e5c29f5c31ad.svg" isCustomImage="false">
+                        <name language_code="en" value="HOMINIDAE" source="DM"/>
+                        <children keyRef="gorilla_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl." dmUuid="80da41eb49c5485b938b1cc43769d4df" isActive="true" id="37c8f378-bed5-40ce-8546-5112d563bd11" imageFile="tn_img1_37c8f378bed540ce85465112d563bd11.svg" isCustomImage="false">
+                            <name language_code="en" value="Gorilla" source="DM"/>
+                            <children keyRef="gorillaberingeisspberingei_rl39999" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingeisspberingei_rl39999." dmUuid="1fa6a703dca94ef39cb090105902adf7" isActive="true" id="b8b57c36-f51a-4241-8c43-be913a0d6429" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei ssp. beringei (Mountain Gorilla)" source="DM"/>
+                            </children>
+                            <children keyRef="gorillaberingeisspgraueri_rl39995" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingeisspgraueri_rl39995." dmUuid="8d1e9147689542338742fb3c089e32d6" isActive="true" id="55df3249-334e-4e05-88bf-b694e9d2e436" imageFile="tn_img1_55df3249334e4e0588bfb694e9d2e436.svg" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei ssp. graueri (Eastern Lowland Gorilla, Grauer's Gorilla)" source="DM"/>
+                            </children>
+                            <children keyRef="gorillaberingei_rl39994" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.gorilla_rl.gorillaberingei_rl39994." dmUuid="46a58d178be94d5a905a1b412aceab7d" isActive="true" id="c73410e0-1ccb-49b8-80e0-d9bda6067255" isCustomImage="false">
+<name language_code="en" value="Gorilla beringei (Eastern Gorilla, Mountain Gorilla)" source="DM"/>
+                            </children>
+                        </children>
+                        <children keyRef="pan_rl" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl." dmUuid="58b48468e00a4b428463dd0534352756" isActive="true" id="d74dadca-0511-4df5-9a3e-f651547d418e" imageFile="tn_img1_d74dadca05114df59a3ef651547d418e.svg" isCustomImage="false">
+                            <name language_code="en" value="Pan" source="DM"/>
+                            <children keyRef="pantroglodytessspschweinfurthii_rl15937" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl.pantroglodytessspschweinfurthii_rl15937." dmUuid="6ca0fd6236064900973005e56fe5a037" isActive="true" id="307f17d6-3ab7-4b0a-a7d4-884b97e8f6d8" isCustomImage="false">
+<name language_code="en" value="Pan troglodytes ssp. schweinfurthii (Eastern Chimpanzee)" source="DM"/>
+                            </children>
+                            <children keyRef="pantroglodytes_rl15933" hkeyRef="chordata_rl.mammalia_rl.primates_rl.hominidae_rl.pan_rl.pantroglodytes_rl15933." dmUuid="368b7b2c7f534ac89fde6bc69aa10436" isActive="true" id="4da12903-ef5f-48ac-8231-8a8ca2c4bf98" imageFile="tn_img1_4da12903ef5f48ac82318a8ca2c4bf98.svg" isCustomImage="false">
+<name language_code="en" value="Pan troglodytes (Chimpanzee, Common Chimpanzee, Robust Chimpanzee)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="proboscidea_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl." dmUuid="bf18b0bfd9584a1a982d11d064494100" isActive="true" id="21632da5-cbed-43a5-bd4d-b5259d819c4d" imageFile="tn_img1_21632da5cbed43a5bd4db5259d819c4d.svg" isCustomImage="false">
+                    <name language_code="en" value="PROBOSCIDEA" source="DM"/>
+                    <children keyRef="elephantidae_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl." dmUuid="c319eb4be30647448755721019e7a95d" isActive="true" id="52e1c3fe-0052-43d1-adc8-3d4d05d17322" imageFile="tn_img1_52e1c3fe005243d1adc83d4d05d17322.svg" isCustomImage="false">
+                        <name language_code="en" value="ELEPHANTIDAE" source="DM"/>
+                        <children keyRef="loxodonta_rl" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl.loxodonta_rl." dmUuid="d407b33514f142699ff213cfc6887375" isActive="true" id="30df0524-6ed8-4a72-a74f-1990416a03ea" imageFile="tn_img1_30df05246ed84a72a74f1990416a03ea.svg" isCustomImage="false">
+                            <name language_code="en" value="Loxodonta" source="DM"/>
+                            <children keyRef="loxodontaafricana_rl12392" hkeyRef="chordata_rl.mammalia_rl.proboscidea_rl.elephantidae_rl.loxodonta_rl.loxodontaafricana_rl12392." dmUuid="9ba2799b83574166ada7add649bc9d51" isActive="true" id="c17a14d5-bfe4-472d-b6e8-0111f479a63a" imageFile="tn_img1_c17a14d5bfe4472db6e80111f479a63a.svg" isCustomImage="false">
+<name language_code="en" value="Loxodonta africana (African Elephant)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="carnivora_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl." dmUuid="0ed65bbde0ac4853913c1b900a5a7b5e" isActive="true" id="2b9a3708-af27-462a-8597-41db3f44217f" imageFile="tn_img1_2b9a3708af27462a859741db3f44217f.svg" isCustomImage="false">
+                    <name language_code="en" value="CARNIVORA" source="DM"/>
+                    <children keyRef="felidae_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl." dmUuid="03e2d39e28c14328b91cfdb40e772e7e" isActive="true" id="93953d94-17c7-4f98-b5f0-575ed47632bc" imageFile="tn_img1_93953d9417c74f98b5f0575ed47632bc.svg" isCustomImage="false">
+                        <name language_code="en" value="FELIDAE" source="DM"/>
+                        <children keyRef="panthera_rl" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl.panthera_rl." dmUuid="15c27c0dbb1e425482631b180c63245d" isActive="true" id="13a708db-a6de-4f73-9cf9-fc6905ff7978" isCustomImage="false">
+                            <name language_code="en" value="Panthera" source="DM"/>
+                            <children keyRef="pantherapardus_rl15954" hkeyRef="chordata_rl.mammalia_rl.carnivora_rl.felidae_rl.panthera_rl.pantherapardus_rl15954." dmUuid="eedad7508cb848728a853f13db5fad1d" isActive="true" id="374d25fa-1a10-4498-99e5-29aa0a21f2f1" imageFile="tn_img1_374d25fa1a10449899e529aa0a21f2f1.svg" isCustomImage="false">
+<name language_code="en" value="Panthera pardus (Leopard)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+                <children keyRef="perissodactyla_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl." dmUuid="b984585a358e485ba4ae7e262ed88c52" isActive="true" id="7234537f-cb60-46e5-a9c2-c8c8615d53ea" imageFile="tn_img1_7234537fcb6046e5a9c2c8c8615d53ea.svg" isCustomImage="false">
+                    <name language_code="en" value="PERISSODACTYLA" source="DM"/>
+                    <children keyRef="rhinocerotidae_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl." dmUuid="eb436d39dd934ea681c8bf6d994a4dc5" isActive="true" id="ebb73ff2-0096-4ce4-ac65-14cc9cc545a1" imageFile="tn_img1_ebb73ff200964ce4ac6514cc9cc545a1.svg" isCustomImage="false">
+                        <name language_code="en" value="RHINOCEROTIDAE" source="DM"/>
+                        <children keyRef="diceros_rl" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl.diceros_rl." dmUuid="cef7102bb6ce4900853e940b3962c5bc" isActive="true" id="c4608e30-fb5e-4a5a-9ce6-7d091a9253fc" isCustomImage="false">
+                            <name language_code="en" value="Diceros" source="DM"/>
+                            <children keyRef="dicerosbicornis_rl6557" hkeyRef="chordata_rl.mammalia_rl.perissodactyla_rl.rhinocerotidae_rl.diceros_rl.dicerosbicornis_rl6557." dmUuid="0c89827983e74cc89e0563748c680ee3" isActive="true" id="88e5496a-08eb-40c2-81aa-15dd1f8d76ea" imageFile="tn_img1_88e5496a08eb40c281aa15dd1f8d76ea.svg" isCustomImage="false">
+<name language_code="en" value="Diceros bicornis (Black Rhinoceros, Hook-lipped Rhinoceros)" source="DM"/>
+                            </children>
+                        </children>
+                    </children>
+                </children>
+            </children>
+        </treeNode>
+    </attributeConfig>
+    <attributeConfig id="10680ef8-377f-4544-9017-d46d03c979a7" attributeKey="actiontakenliveanimals" displayMode="TEXT" isDefault="true" attributeUuid="309a27eedea9439d8af0437d4de375cf">
+        <name language_code="en" value="Action Taken Live Animals" source="CM"/>
+        <listItem keyRef="confiscated" dmUuid="fad04fadf57845e8b24cf76de8994312" isActive="true" id="bdacba46-28db-4fbe-bc5b-439f2f592020" imageFile="li_img1_bdacba4628db4fbebc5b439f2f592020.svg" isCustomImage="false">
+            <name language_code="en" value="Confiscated" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="1f2c5535f6b3429a92792effb24188d3" isActive="true" id="e30f84ce-ec75-4722-80c7-acae4329302d" imageFile="li_img1_e30f84ceec75472280c7acae4329302d.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+        <listItem keyRef="observedonly" dmUuid="407064951c8f47df8eb5486fc67c8fb8" isActive="true" id="24ac9a1e-43b3-4028-8ea2-16d585e6cb7d" imageFile="li_img1_24ac9a1e43b340288ea216d585e6cb7d.svg" isCustomImage="false">
+            <name language_code="en" value="Observed Only" source="DM"/>
+        </listItem>
+        <listItem keyRef="released" dmUuid="5a8711dc15e8426fba1b6b598b7a95ec" isActive="true" id="3bb4f2cd-3a27-4a33-ad8f-0c0c37cac090" isCustomImage="false">
+            <name language_code="en" value="Released" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="90488e81-bf32-4ae1-8bc2-78270584d861" attributeKey="ageofsign" displayMode="TEXT" isDefault="true" attributeUuid="96f397453cfe434f8e41132b97491d40">
+        <name language_code="en" value="Age of Sign" source="CM"/>
+        <listItem keyRef="fresh" dmUuid="3817ef13f895479dbdbbbb950fec351e" isActive="true" id="68d1315a-0ea5-4d4d-8821-c84d007a0c15" imageFile="li_img1_68d1315a0ea54d4d8821c84d007a0c15.svg" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+        <listItem keyRef="recent" dmUuid="3295265656df4d5dac81db8cf00a045d" isActive="true" id="8dd5d62f-121b-426a-9295-174ba8270ac4" imageFile="li_img1_8dd5d62f121b426a9295174ba8270ac4.svg" isCustomImage="false">
+            <name language_code="en" value="Recent" source="DM"/>
+        </listItem>
+        <listItem keyRef="old" dmUuid="df2a76f72b194606a271188ed1cc094f" isActive="true" id="4de07dd2-027d-4397-8da3-cfbb00f42506" imageFile="li_img1_4de07dd2027d43978da3cfbb00f42506.svg" isCustomImage="false">
+            <name language_code="en" value="Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="veryold" dmUuid="bdb89b2c89124eda9b1c079d75344559" isActive="true" id="1a199591-9a56-4926-a057-f7e2d044332f" imageFile="li_img1_1a1995919a564926a057f7e2d044332f.svg" isCustomImage="false">
+            <name language_code="en" value="Very old" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="a04a8004a68744b2ad5bf874db3b41aa" isActive="true" id="b4021bd1-0fb5-47e7-9a86-50bf792e4bf6" imageFile="li_img1_b4021bd10fb547e79a8650bf792e4bf6.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="9d127b82-551d-4b3b-8364-a5e4516bdd6e" attributeKey="causeofdeath" displayMode="TEXT" isDefault="true" attributeUuid="b901636ea36a479c9b4e6ec73cd61e04">
+        <treeNode keyRef="natural" hkeyRef="natural." dmUuid="d36a1ceb96e44f789389a4fda54c6083" isActive="true" id="21adecff-ce00-483b-8462-fb4c5f2682a0" imageFile="tn_img1_21adecffce00483b8462fb4c5f2682a0.svg" isCustomImage="false">
+            <name language_code="en" value="Natural" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="legal" hkeyRef="legal." dmUuid="ebf8a5b05c9140a0b429f295bc27e03a" isActive="true" id="33755b0e-ab81-4b55-9254-6c8ae3c812f2" imageFile="tn_img1_33755b0eab814b5592546c8ae3c812f2.svg" isCustomImage="false">
+            <name language_code="en" value="Legal" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="illegal" hkeyRef="illegal." dmUuid="03bb6b4ea540471d9fef3f8b80782b9a" isActive="true" id="a70b4978-17f8-4506-a30c-8c47755b21a4" imageFile="tn_img1_a70b497817f84506a30c8c47755b21a4.svg" isCustomImage="false">
+            <name language_code="en" value="Illegal" source="DM"/>
+        </treeNode>
+        <treeNode keyRef="unknown" hkeyRef="unknown." dmUuid="4c031cf63cf3417aabfaa0c6422baf3a" isActive="true" id="f31eac65-8aa0-453c-b66a-d73bf675c3f8" imageFile="tn_img1_f31eac658aa0453cb66ad73bf675c3f8.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </treeNode>
+    </attributeConfig>
+    <attributeConfig id="61728e5e-5b93-4120-bcae-2bdc45b311ee" attributeKey="ageofanimalcarcass" displayMode="TEXT" isDefault="true" attributeUuid="6934e72a59054edda87151db65200e63">
+        <name language_code="en" value="Age of Animal Carcass" source="CM"/>
+        <listItem keyRef="fresh" dmUuid="5d90d95421234f4d8977f0ffc3955bca" isActive="true" id="e5888643-438d-4cb1-8e4c-cb5118719d25" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+        <listItem keyRef="recent" dmUuid="89a8e2e94a8b482f9c67f3d15e97a07c" isActive="true" id="44b54e26-b77d-47d4-8df6-9ecb0dac825e" isCustomImage="false">
+            <name language_code="en" value="Recent" source="DM"/>
+        </listItem>
+        <listItem keyRef="old" dmUuid="5836289bc2fd4f63b9c430f0c168a5a6" isActive="true" id="fe2f09be-c341-46d1-bbcb-fcae892c087d" isCustomImage="false">
+            <name language_code="en" value="Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="veryold" dmUuid="e5e0005b6c0a4ec5a6f2f99b6f251700" isActive="true" id="ff1a0463-1e65-421c-b8db-6b93d2132bfa" isCustomImage="false">
+            <name language_code="en" value="Very Old" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="70427a99240441448577651db72157b1" isActive="true" id="d36f7f2f-4b48-4b94-98c5-70bec2547798" imageFile="li_img1_d36f7f2f4b484b9498c570bec2547798.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="82fa2541-e987-4c26-97e8-251a9e010557" attributeKey="ageofanimal" displayMode="TEXT" isDefault="true" attributeUuid="994054b7212d442885396c1ff8fbf06d">
+        <name language_code="en" value="Age of Animal" source="CM"/>
+        <listItem keyRef="adult" dmUuid="a89a9e51d2554de295deff608e1177c3" isActive="true" id="e48e1c35-6284-4f98-ad8b-576e195bd0df" imageFile="li_img1_e48e1c3562844f98ad8b576e195bd0df.svg" isCustomImage="false">
+            <name language_code="en" value="Adult" source="DM"/>
+        </listItem>
+        <listItem keyRef="subadult" dmUuid="b6755899ba7248db9bb3cb6e016c80d5" isActive="true" id="0ad20a7d-dc6b-46ff-a4df-96ab5426fb27" imageFile="li_img1_0ad20a7ddc6b46ffa4df96ab5426fb27.svg" isCustomImage="false">
+            <name language_code="en" value="Sub-Adult" source="DM"/>
+        </listItem>
+        <listItem keyRef="juvenile" dmUuid="4335b3359101460cae2aad5ef56b792b" isActive="true" id="9cd0e01c-1992-4fbd-9b15-7b6ddc905278" imageFile="li_img1_9cd0e01c19924fbd9b157b6ddc905278.svg" isCustomImage="false">
+            <name language_code="en" value="Juvenile" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="09d733a7e3c9488da052e2c806cdc072" isActive="true" id="e002f63f-c7a7-4863-846a-20ce3a9b4cd0" imageFile="li_img1_e002f63fc7a74863846a20ce3a9b4cd0.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="30c02581-8626-402c-bf1d-223a879991e7" attributeKey="sex" displayMode="TEXT" isDefault="true" attributeUuid="c734b8a1340b4cef925c1ef6579e96f9">
+        <name language_code="en" value="Sex" source="CM"/>
+        <listItem keyRef="female" dmUuid="9bb327023ef142db8b77f15542cdec9b" isActive="true" id="dd48ec42-28f8-49a4-88be-600ff2a48210" imageFile="li_img1_dd48ec4228f849a488be600ff2a48210.svg" isCustomImage="false">
+            <name language_code="en" value="Female" source="DM"/>
+        </listItem>
+        <listItem keyRef="male" dmUuid="8342db9f2e884de5b385af77c4fbbc6a" isActive="true" id="b7010009-48ba-4347-b142-5608f835a730" imageFile="li_img1_b701000948ba4347b1425608f835a730.svg" isCustomImage="false">
+            <name language_code="en" value="Male" source="DM"/>
+        </listItem>
+        <listItem keyRef="unknown" dmUuid="85ab1cdc9eac4c2ea9fb82446fadd474" isActive="true" id="d43bc338-1b55-48bf-b765-206eacf9468c" imageFile="li_img1_d43bc3381b5548bfb765206eacf9468c.svg" isCustomImage="false">
+            <name language_code="en" value="Unknown" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="0eb97f55-8e36-4c52-adc4-5d5d0fdbfe06" attributeKey="actiontakenrcass" displayMode="TEXT" isDefault="true" attributeUuid="aeae58191c1142b0bbd9a494230a5b40">
+        <name language_code="en" value="Action Taken Animals" source="CM"/>
+        <listItem keyRef="confiscated" dmUuid="672350400f354965831a4d781bd86dde" isActive="true" id="33788553-42db-4684-bae1-663702824536" imageFile="li_img1_3378855342db4684bae1663702824536.svg" isCustomImage="false">
+            <name language_code="en" value="Confiscated" source="DM"/>
+        </listItem>
+        <listItem keyRef="destroyed" dmUuid="e0e1e3c06b524e7b87b72cf6f9fb0902" isActive="true" id="fd1c538e-1a7c-4d4c-a027-91840e9b895c" imageFile="li_img1_fd1c538e1a7c4d4ca02791840e9b895c.svg" isCustomImage="false">
+            <name language_code="en" value="Destroyed" source="DM"/>
+        </listItem>
+        <listItem keyRef="collected" dmUuid="7fc05f12eb744d71a7d468c3d3f9f38e" isActive="true" id="e5d7bf31-5b65-4297-a678-0daf94305438" imageFile="li_img1_e5d7bf315b654297a6780daf94305438.svg" isCustomImage="false">
+            <name language_code="en" value="Collected" source="DM"/>
+        </listItem>
+        <listItem keyRef="leftatscene" dmUuid="e000997dbdc7488493de7b026e8459bb" isActive="true" id="6d77a855-390f-461c-8c8d-e668fb927e74" imageFile="li_img1_6d77a855390f461c8c8de668fb927e74.svg" isCustomImage="false">
+            <name language_code="en" value="Left At Scene" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="17f334ec-1b21-4506-829c-34f9685267eb" attributeKey="trophymissing" displayMode="TEXT" isDefault="true" attributeUuid="e514e2dfbf02413d909ec197f8433e39">
+        <name language_code="en" value="Trophy missing" source="CM"/>
+        <listItem keyRef="none" dmUuid="0db732d057604b3eb1ae550ba2ce8120" isActive="true" id="7f1fc734-7527-44bd-a7c6-fe01f108f0f2" isCustomImage="false">
+            <name language_code="en" value="None" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="eef8746af1714760ba52d89b87c5abed" isActive="true" id="b80abe62-ce65-42b7-bab2-674cac2c7fb4" imageFile="li_img1_b80abe62ce6542b7bab2674cac2c7fb4.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="8ac6c363d5754702ad6e33bab7c75b32" isActive="true" id="86e3027a-79e8-4a0d-a0ce-cadd7423f4ce" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="3101089f4a264618b90a86c988ecac40" isActive="true" id="b397a6a3-fa68-49ab-a4b8-ab50e3ea7750" imageFile="li_img1_b397a6a3fa6849aba4b8ab50e3ea7750.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="9dcd8d15eba3440a919a9da44d33d2a7" isActive="true" id="56c6d8c0-b36f-47bc-b22d-16deefab398e" imageFile="li_img1_56c6d8c0b36f47bcb22d16deefab398e.svg" isCustomImage="false">
+            <name language_code="en" value="Horn or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2cf2937ec44344289bad88c470a80e23" isActive="true" id="c340ffca-b74e-412d-bfae-c1a7ca18bf7c" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="0a99f37075804a8ba0f66d52a399c06a" isActive="true" id="8f390014-cf79-4df7-af3a-89104c22ac7d" imageFile="li_img1_8f390014cf794df7af3a89104c22ac7d.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="25e5b956-699c-4fa2-b9b8-78240a5461f0" attributeKey="partremoved1" displayMode="TEXT" isDefault="true" attributeUuid="58c0354202864f2ea61ab70c721e3c15">
+        <name language_code="en" value="Part Removed 1" source="CM"/>
+        <listItem keyRef="horn" dmUuid="08d71b069b1c45ab971ea80536d0c529" isActive="true" id="05b04710-e125-41f0-b824-5a1669c6e99c" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="98c99579086645acbc1e48847c6e1961" isActive="true" id="c744cd54-b56b-41bd-94f8-a83715ee5290" imageFile="li_img1_c744cd54b56b41bd94f8a83715ee5290.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="606eb5c4f26842cd8ae031153535d774" isActive="true" id="5dfa946d-13f1-4fc7-9837-a99423b00257" imageFile="li_img1_5dfa946d13f14fc79837a99423b00257.svg" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="69488b3799e6446cbc5cff2573caa8f7" isActive="true" id="ac49184a-73b1-4c60-8dfe-5e2d444b9fbd" imageFile="li_img1_ac49184a73b14c608dfe5e2d444b9fbd.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="e3410dd4fece499bb41c4a3a79a24e1d" isActive="true" id="6d15c301-c51e-40cc-9b48-f5b82d9cb64a" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="5bb1fb29948e443b8e29e3fcdd2ac3e2" isActive="true" id="5bcb0b7d-908e-43cf-b0a8-11c63a1b034e" imageFile="li_img1_5bcb0b7d908e43cfb0a811c63a1b034e.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="1c34370f-0c82-4374-bac2-f9ea349d0daf" attributeKey="partremoved2" displayMode="TEXT" isDefault="true" attributeUuid="7ce9b973073a4860bae6de9b23dbd1e7">
+        <name language_code="en" value="Part Removed 2" source="CM"/>
+        <listItem keyRef="horn" dmUuid="0209969d5a42432e9964d2972245b3a5" isActive="true" id="da06d547-1929-4525-a33c-b815216ae635" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="6495cf80215f441787692ffb5eaae3b5" isActive="true" id="429de42f-9fe7-46f3-985d-d498a549a82c" imageFile="li_img1_429de42f9fe746f3985dd498a549a82c.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="mea" dmUuid="74351a6ee8b34c50818a2ea79ab8f860" isActive="true" id="ba705c67-ce7c-49ab-9da7-ca629c5f6dd5" isCustomImage="false">
+            <name language_code="en" value="Mea" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="1e114832f9c0456880d404052ec987b9" isActive="true" id="927007f8-ba23-4ac0-b101-d035276afd3a" imageFile="li_img1_927007f8ba234ac0b101d035276afd3a.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2e9a55c048a743fca654f2e01d98063b" isActive="true" id="3e0fb49f-2452-4784-86fd-edb5ef6750e8" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="41f9f7d3b7ba4b5c9dc41dadef312ba3" isActive="true" id="6fa5e3c3-62b3-4311-a813-fcf8aa5acd70" imageFile="li_img1_6fa5e3c362b34311a813fcf8aa5acd70.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="4e40f1ad-9c75-4e96-9558-f88edde0d872" attributeKey="partremoved3" displayMode="TEXT" isDefault="true" attributeUuid="54cee9d30409450889776de1fb0d24cc">
+        <name language_code="en" value="Part Removed 3" source="CM"/>
+        <listItem keyRef="horn" dmUuid="f43d1a4d32f54966a7d3ccaa48069fe5" isActive="true" id="88cbb655-a5d7-486f-88ee-6ca5c7a8a8cd" isCustomImage="false">
+            <name language_code="en" value="Horn" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="2e61af2e5e2e49ccacb664a2857638aa" isActive="true" id="7909276b-a84d-4313-b548-b06731d3d270" imageFile="li_img1_7909276ba84d4313b548b06731d3d270.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+        <listItem keyRef="tusk" dmUuid="2f0afe11b0054a90a5cd581fd4246588" isActive="true" id="650e9f5c-a237-40db-928e-1968dc2df417" imageFile="li_img1_650e9f5ca23740db928e1968dc2df417.svg" isCustomImage="false">
+            <name language_code="en" value="Tusk" source="DM"/>
+        </listItem>
+        <listItem keyRef="meat" dmUuid="f5cd34919c5646509763c94e9f9131d7" isActive="true" id="0e98088d-0c26-4e1b-8e16-76f8afd7e80b" imageFile="li_img1_0e98088d0c264e1b8e1676f8afd7e80b.svg" isCustomImage="false">
+            <name language_code="en" value="Meat" source="DM"/>
+        </listItem>
+        <listItem keyRef="hornorantler" dmUuid="4135c8a12e6c4e9794d881dc60224270" isActive="true" id="a48a283f-f379-4186-abb0-c3537a4a19c5" imageFile="li_img1_a48a283ff3794186abb0c3537a4a19c5.svg" isCustomImage="false">
+            <name language_code="en" value="Horn Or Antler" source="DM"/>
+        </listItem>
+        <listItem keyRef="fin" dmUuid="2018228d3c16462ab395ccdc1d196a79" isActive="true" id="ae394499-6ef5-42c8-a375-7fb355899128" isCustomImage="false">
+            <name language_code="en" value="Fin" source="DM"/>
+        </listItem>
+        <listItem keyRef="other" dmUuid="5fec3136ae1543b493f2e53956c0ad08" isActive="true" id="5850c108-85a2-4b8f-8aa2-e5bbc25fb8a9" imageFile="li_img1_5850c10885a24b8f8aa2e5bbc25fb8a9.svg" isCustomImage="false">
+            <name language_code="en" value="Other" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="42c6fd94-16cb-4d92-92ec-253e2dcf9d0c" attributeKey="typeofanimalparts" displayMode="TEXT" isDefault="true" attributeUuid="ea50ebb1c51f40f79e11b54e5ad8c0e0">
+        <name language_code="en" value="Type of Trophy" source="CM"/>
+        <listItem keyRef="tusks" dmUuid="4a1541fdff27457e8bcf6b0d32da6c14" isActive="true" id="70b91862-fe30-4475-b990-df57155c6789" imageFile="li_img1_70b91862fe304475b990df57155c6789.svg" isCustomImage="false">
+            <name language_code="en" value="Tusks" source="DM"/>
+        </listItem>
+        <listItem keyRef="horns" dmUuid="23bad49b3afa42a09a3dfb305d8b08b1" isActive="true" id="43637b5d-7a83-4700-a3ce-64898e450251" imageFile="li_img1_43637b5d7a834700a3ce64898e450251.svg" isCustomImage="false">
+            <name language_code="en" value="Horns" source="DM"/>
+        </listItem>
+        <listItem keyRef="canines" dmUuid="355d5c2c0b7d4d849d4b74494fc0642b" isActive="true" id="531802bc-c036-4cd7-addd-f5cf6d26a307" imageFile="li_img1_531802bcc0364cd7adddf5cf6d26a307.svg" isCustomImage="false">
+            <name language_code="en" value="Canines" source="DM"/>
+        </listItem>
+        <listItem keyRef="paws" dmUuid="023b0f0dcb354567ac747b36e0283b93" isActive="true" id="1ff33d65-7bb4-46a2-9d01-3744f8f3c9fe" imageFile="li_img1_1ff33d657bb446a29d013744f8f3c9fe.svg" isCustomImage="false">
+            <name language_code="en" value="Paws" source="DM"/>
+        </listItem>
+        <listItem keyRef="skin" dmUuid="10cdf6f856194b1d9d627cc91b6fdf2d" isActive="true" id="79b03a99-ca7b-4385-a8a5-943360b9853d" imageFile="li_img1_79b03a99ca7b4385a8a5943360b9853d.svg" isCustomImage="false">
+            <name language_code="en" value="Skin" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="333c5e58-0e2c-4118-b5df-1ea8575e0b0b" attributeKey="typeofbushmeat" displayMode="TEXT" isDefault="true" attributeUuid="313c5b0da5864f3eb87e5be1ae847c08">
+        <name language_code="en" value="Type of bushmeat" source="CM"/>
+        <listItem keyRef="whole" dmUuid="915a10ba39634567b3b67cc2362b78d3" isActive="true" id="f7ce66c5-0bc6-41d2-8222-485e5f2a85c1" imageFile="li_img1_f7ce66c50bc641d28222485e5f2a85c1.svg" isCustomImage="false">
+            <name language_code="en" value="Whole animal" source="DM"/>
+        </listItem>
+        <listItem keyRef="piece" dmUuid="5e18e6683d5c4f178664c9c31980ac48" isActive="true" id="f3560c62-de93-413a-827b-7f2a349e2d18" imageFile="li_img1_f3560c62de93413a827b7f2a349e2d18.svg" isCustomImage="false">
+            <name language_code="en" value="Piece" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <attributeConfig id="2f6f25d9-ab78-4902-9c94-e21ee8bef348" attributeKey="statusofbushmeat" displayMode="TEXT" isDefault="true" attributeUuid="be84b707f1484b248d0b902dfba34bef">
+        <name language_code="en" value="Status of bushmeat" source="CM"/>
+        <listItem keyRef="smoked" dmUuid="683d867397f940188b2f90583cead86c" isActive="true" id="307c8931-584c-401f-9226-46ff4e16a7a7" imageFile="li_img1_307c8931584c401f922646ff4e16a7a7.svg" isCustomImage="false">
+            <name language_code="en" value="Smoked" source="DM"/>
+        </listItem>
+        <listItem keyRef="fresh" dmUuid="9238073325504a5ea479efd577086733" isActive="true" id="b36fdd9f-62eb-470e-925f-74370491cd6f" imageFile="li_img1_b36fdd9f62eb470e925f74370491cd6f.svg" isCustomImage="false">
+            <name language_code="en" value="Fresh" source="DM"/>
+        </listItem>
+    </attributeConfig>
+    <extraData type="ct_profile">
+        <labelKey key="name">
+            <label language_code="en" value="Default"/>
+        </labelKey>
+    </extraData>
+    <extraData type="connect_ct_properties">
+        <stringKey key="ping_alert_type"/>
+        <integerKey key="ping_frequency" value="0"/>
+        <integerKey key="data_frequence"/>
+    </extraData>
+</ConfigurableModel>

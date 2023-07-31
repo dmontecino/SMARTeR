@@ -25,7 +25,9 @@
 #' @export
 #'
 #' @examples
-#' flat_conf_model("your_path/xml_file_name.xml", language_interest="en")
+#' path_conf_model <- system.file("extdata", "example_configurable_model.xml", package = "SMARTeR")
+#' 
+#' flat_conf_model(path_conf_model=path_conf_model, language_interest="en")
 #' 
 #' @details
 #' Currently, it is not possible to obtain the configurable model directly from
@@ -40,8 +42,9 @@
 #' xml file in your computer. Then run this function providing the corresponding 
 #' path.
 #' 
-#' Tree attributes of the configurable model are assumed to have roots and options
-#' (two levels top).
+#' For now, tree attributes of the configurable model are assumed to have roots 
+#' and options (two levels top). Otherwise you will get a woring output for tree
+#' attributes.
 
 # -----------------------------------------------------#
 # function to get a configurable model as a flat table #
@@ -432,7 +435,8 @@ if(any(grepl("LIST", att_data$att_type))){
           purrr::map(\(z) z %>% magrittr::equals(0) %>% all()) %>% # no option per root
           purrr::map_vec(all) # if all T then no options per root across tree attributes
     
-    if(!tree_nodes_roots_no_options){ # if there are root options
+    # if(!tree_nodes_roots_no_options){ # if there are root options
+    if(!all(tree_nodes_roots_no_options)){ # if there are root options
     
     root_options_key_temp<-
     purrr::map(tree_nodes_roots, \(x)
