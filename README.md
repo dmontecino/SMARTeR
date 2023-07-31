@@ -107,8 +107,8 @@ $`WCS Chile - Patrol Monitoring 1.0 [SMART]`$todo_patrullas
 ```
 
 
-So to load the data returned by the "todo_patrullas" query (spatial_query=TRUE);
-therefore, I can request the output as shp
+So the "todo_patrullas" query has (spatial_query=TRUE);
+therefore, I can request the output as shp:
 
 ```
 data_from_connect(
@@ -134,25 +134,29 @@ has a species attribute as a tree with two levels. Then this species attribute-o
 data model can be merged into the user's Data Model and the attribute becomes available. 
 The species tree attribute can be flattened to a list in SMART Desktop. Check the
 final step lo learn how to merge the species attribute data model created with this
-function to the data model in SMART Desktop at the end of this section.
+function with the data model in SMART Desktop at the end of this section.
 
-The species tree attribute has a key and a label. The key that the species attribute
-will have is provided through the argument 'species_attribute_key' that cannot have
-spaces, weird characters, or uppercase letters. The label is provided through the 
-argument 'species_in_language'. 
+The species tree attribute has a key and a label. The key is provided through the
+argument 'species_attribute_key' that cannot have spaces, weird characters, or 
+uppercase letters. The label is provided through the argument 'species_in_language'. 
 
 The attribute 'language' is the abbreviation of the language in which you are using
-the attribute and it has to consistent with the languages available in the data 
+the attribute and it has to be consistent with the languages available in the data 
 model in SMART Desktop. If your Conservation Area has as language "english" and
 "laotian", then the argument 'language' can be either "en" or "lo" but not "fr" 
 (french). To find the abbreviations check the options in your Conservation Area 
 Data Model on the top-left corner and click on the downward arrow.
 
 The first level of the species tree attribute is a taxonomy level (class, 
-order, family, etc.). The options of these taxonomy levels (e.g., 'aves', 
-'mammalia, etc.) also have keys and labels. The function has the 'first_tax_level'
-attribute to provide the first level taxonomy with the same key and label. Provide
-a character vector of the same length than species_key and species_label.
+order, family, etc.). The options of these taxonomy level (e.g., 'aves', 
+'mammalia, etc.) also have keys and labels. The function gives the same key and
+label for this first taxonomy label. To provide the first level taxonomy use the
+'first_tax_level' argument. Provide a character vector of the same length than 
+in 'species_key' and 'species_label' (see below).
+
+The second level is the species and each one of them also have keys and labels.
+Provide a character vector with the keys and labels using the 'species_key' and
+'species_label' arguments.
 
 ```
 first_tax_level<-c(rep('Aves', 3), rep("Mammalia", 3))
@@ -185,4 +189,4 @@ saved in your working directory. To add the attribute to your data model, open
 the Conservation Area, open the Data Model, find the "Merge Data Model" button 
 in the bottom left and select the "species_smarter_attribute.xml" file. Add the 
 attribute to the Category or Categories (search for the attribute usig the key
-provided in 'species_attribute_key'.
+provided in 'species_attribute_key').
