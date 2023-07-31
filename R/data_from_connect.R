@@ -62,7 +62,7 @@
 #'                          UTM_zone=NULL)
 #' 
 #' @seealso
-#' [queery_info()] to learn about the Conservation 
+#' [query_info()] to learn about the Conservation 
 #' Areas available in SMART Connect, the queries in each Conservation Area, the 
 #' type of each query, spatial data in the queries, and the options available to
 #' filter by date for each query.
