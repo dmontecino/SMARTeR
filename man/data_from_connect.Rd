@@ -94,6 +94,7 @@ data<-data_from_connect(server_url = server_url,
                            name_conservation_area = "Example Conservation Area [SMART]",
                            query_name = "Patrol_query",
                            type_output = "shp",
+                           directory = directory,
                            date_filter="waypointlastmodified",
                            start_date="2020-01-01", #YYYY-MM-DD
                            end_date="2023-07-31", #YYYY-MM-DD
