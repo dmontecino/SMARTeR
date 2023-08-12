@@ -24,6 +24,8 @@
 #' holding the query
 #' @param query_name A string with the name of the SMART query to run 
 #' (e.g., "query_name")
+#' @param directory a path to a directory with the proper permissions to write 
+#' a temp file with the spatial data
 #' @param type_output Either "csv" or "shp" to load the query data as 
 #' a tibble or sf object. Not all queries have spatial data. See details. 
 #' @param date_filter A string with the field establishing the start and 
@@ -53,6 +55,7 @@
 #' server_url <- Sys.getenv("EXAMPLE_CONNECT_URL")
 #' user <- Sys.getenv("EXAMPLE_CONNECT_USERNAME")
 #' password <-Sys.getenv("EXAMPLE_CONNECT_PASSWORD")
+#' directory <- Sys.getenv("EXAMPLE_DIRECTORY")
 #'                            
 #'data<-data_from_connect(server_url = server_url,
 #'                            user = user, 
@@ -78,6 +81,7 @@ data_from_connect<-function(server_url,
                             name_conservation_area,
                             query_name,
                             type_output,
+                            directory,
                             date_filter="waypointdate",
                             start_date=NULL, #YYYY-MM-DD as character
                             end_date=NULL, #YYYY-MM-DD as character
@@ -105,7 +109,8 @@ data_from_connect<-function(server_url,
   # --------------------------------------------------------------------------------------------------------- #
 
   dlshape=function(shploc, shpfile) {
-    tempdir <- tempdir()  # Create a temporary directory
+    # tempdir <- tempdir()  # Create a temporary directory
+    tempdir <- tempdir(tmpdir = directory)
     temp <- tempfile(tmpdir = tempdir) # Create a temporary file
     writeBin(shploc, temp) # Write shploc content to the temporary file
     utils::unzip(temp, exdir = tempdir) # Unzip the contents of the temporary file
