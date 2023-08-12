@@ -121,7 +121,7 @@ data_from_connect<-function(server_url,
     fp <- sf::read_sf(file.path(tempdir, shpfile)) # Read the shapefile using sf::read_sf
     unzipped_files <- list.files(".", pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
     file.remove(unzipped_files)
-    dir.remove(tempdir)# Remove the directory
+    unlink(tempdir, recursive = TRUE)# Remove the directory
     return(fp)}
   
   
