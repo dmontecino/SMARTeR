@@ -110,17 +110,15 @@ data_from_connect<-function(server_url,
   # --------------------------------------------------------------------------------------------------------- #
 
   dlshape=function(shploc, shpfile) {
-    tempdir <- tempdir(tmpdir = directory)
-    temp <- tempfile(tmpdir = tempdir)
+    # tempdir <- tempdir(tmpdir = directory)
+    temp <- tempfile()
     writeBin(shploc, temp)
-    utils::unzip(temp, exdir = tempdir)
-    fp <- sf::read_sf(file.path(tempdir, shpfile)) # Read the shapefile using sf::read_sf
+    utils::unzip(temp, exdir = directory) #Extract files from zip archive.
+    fp <- sf::read_sf(file.path(directory, shpfile)) # Read the shapefile using sf::read_sf
     unzipped_files <- list.files(directory, pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
     file.remove(unzipped_files)
     #unlink(tempdir, recursive = TRUE)# Remove the directory
     return(fp)}
-  
-  
   
   # -------------------------------------------------------------------------- #
   # go to Connect to find information about the requested query and run checks #
