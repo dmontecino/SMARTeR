@@ -15,7 +15,7 @@ xml2 (>= 1.3.4), zoo (>= 1.8.12) packages.
 
 # Install
 
-library(remotes) 
+library(remotes); 
 install_github("https://github.com/dmontecino/SMARTeR")
 
 # Run a query in SMART Connect and load the output in R:
