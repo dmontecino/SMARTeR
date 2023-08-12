@@ -290,8 +290,7 @@ data_from_connect<-function(server_url,
   if(!query_spatial &  type_output=="shp"){
     stop("Selected query does not have spatial information. To assess the
     queries in your conservation area has spatial data use the function
-    query_info first and check the 'spatial_query'
-    column")}
+    query_info first and check the value for the 'spatial_query' feature")}
   
   #> query typeKey is important to learn if they are executable from
   #> Connect (based on connect functionality) and if there is spatial 
@@ -307,12 +306,12 @@ data_from_connect<-function(server_url,
      dplyr::select(contains(date_filter)) %>% 
      dplyr::pull()){
     
-    stop("Selected query does not have the date_type option provided. 
+    stop("Selected query does not have the date_filter option provided. 
          Run the query_info function to assess the 
-         options available for your query type. 
+         values available for your query type. 
          To assess the query type, use the function
-         'query_info' first and check the 
-         'query_type' column")}
+         'query_info' first and check the values of the 
+         'date_filter_type:' features")}
   
   #----------------------------------------------#
   # create the api address of the specific query #
@@ -381,7 +380,8 @@ data_from_connect<-function(server_url,
     filename<-stringr::str_extract(data$response$headers$`content-disposition`, "(?<=\\=).*")
     filename<-stringr::str_replace(filename, ".zip", replacement = paste0(".",type_output))
     data = dlshape(shploc=data$response$content,
-                   shpfile=filename)}
+                   shpfile=filename)
+    data = data %>% janitor::clean_names()}
   
   #open the query data as tibble
   if(type_output=="csv"){
