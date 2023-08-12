@@ -134,7 +134,7 @@ out
 
 # Create a species attribute:
 
-Basically, the function 'create_species_function' creates a Data Model that only 
+Basically, the function 'create_species_attribute' creates a Data Model that only 
 has a species attribute as a tree with two taxonomic levels. Then this species 
 attribute-only data model can be merged into the user's Data Model and the attribute
 becomes available to be added to the Categories. The species tree attribute can be
@@ -194,8 +194,8 @@ The output of the function is an xml file named "species_smarter_attribute.xml"
 saved in your working directory. To add the attribute to your data model, open 
 the Conservation Area, open the Data Model, find the "Merge Data Model" button 
 in the bottom left and select the "species_smarter_attribute.xml" file. Add the 
-attribute to the Category or Categories (search for the attribute usig the key
-provided in 'species_attribute_key').
+attribute to the Category or Categories (search for the attribute using the key
+provided in the 'species_attribute_key' argument of the function).
 
 # Convert your Configurable Model to a flat table:
 
