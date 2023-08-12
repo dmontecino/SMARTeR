@@ -11,6 +11,7 @@ data_from_connect(
   name_conservation_area,
   query_name,
   type_output,
+  directory,
   date_filter = "waypointdate",
   start_date = NULL,
   end_date = NULL,
@@ -36,6 +37,9 @@ holding the query}
 
 \item{type_output}{Either "csv" or "shp" to load the query data as
 a tibble or sf object. Not all queries have spatial data. See details.}
+
+\item{directory}{a path to a directory with the proper permissions to write
+a temp file with the spatial data}
 
 \item{date_filter}{A string with the field establishing the start and
 end dates of the data of the query's output. Default is "waypointdate".
@@ -82,6 +86,7 @@ date filter options (the date_filter parameter of this function) use the
 server_url <- Sys.getenv("EXAMPLE_CONNECT_URL")
 user <- Sys.getenv("EXAMPLE_CONNECT_USERNAME")
 password <-Sys.getenv("EXAMPLE_CONNECT_PASSWORD")
+directory <- Sys.getenv("EXAMPLE_DIRECTORY")
                            
 data<-data_from_connect(server_url = server_url,
                            user = user, 
