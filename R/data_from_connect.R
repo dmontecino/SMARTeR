@@ -103,15 +103,6 @@ data_from_connect<-function(server_url,
   # --------------------------------------------------------------------------------------------------------- #
   # function to save the data as a temp, unzip it, and open it as a sf object when the type selected is "shp" #
   # --------------------------------------------------------------------------------------------------------- #
-  
-  # dlshape=function(shploc, shpfile) {
-  #   temp=tempfile()
-  #   writeBin(shploc, temp)
-  #   utils::unzip(temp)
-  #   fp <- sf::read_sf(shpfile)
-  #   unzipped_files <- list.files(".", pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
-  #   file.remove(unzipped_files)
-  #   return(fp)}
 
   dlshape=function(shploc, shpfile) {
     tempdir <- tempdir()  # Create a temporary directory
