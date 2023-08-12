@@ -110,16 +110,16 @@ data_from_connect<-function(server_url,
   # --------------------------------------------------------------------------------------------------------- #
 
   dlshape=function(shploc, shpfile) {
-    #tempdir <- tempdir()  # Create a temporary directory
-    #tempdir <- tempdir(tmpdir = directory)
-    temp <- tempfile(tmpdir = directory) # Create a temporary file
-    writeBin(shploc, temp) # Write shploc content to the temporary file
-    utils::unzip(temp, exdir = tempdir) # Unzip the contents of the temporary file
+    tempdir <- tempdir(tmpdir = directory)
+    temp <- tempfile(tmpdir = tempdir)
+    writeBin(shploc, temp)
+    utils::unzip(temp, exdir = tempdir)
     fp <- sf::read_sf(file.path(tempdir, shpfile)) # Read the shapefile using sf::read_sf
     unzipped_files <- list.files(directory, pattern = "\\.fix|\\.shp|\\.dbf|\\.shx|\\.prj", full.names = TRUE)
     file.remove(unzipped_files)
     #unlink(tempdir, recursive = TRUE)# Remove the directory
     return(fp)}
+  
   
   
   # -------------------------------------------------------------------------- #
