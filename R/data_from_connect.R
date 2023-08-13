@@ -25,7 +25,8 @@
 #' @param query_name A string with the name of the SMART query to run 
 #' (e.g., "query_name")
 #' @param directory a path to a directory with the proper permissions to write 
-#' a temp file with the spatial data
+#' a temp file with the spatial data. For now needed when the "shp
+#' output is selected
 #' @param type_output Either "csv" or "shp" to load the query data as 
 #' a tibble or sf object. Not all queries have spatial data. See details. 
 #' @param date_filter A string with the field establishing the start and 
