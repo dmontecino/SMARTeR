@@ -39,7 +39,8 @@ holding the query}
 a tibble or sf object. Not all queries have spatial data. See details.}
 
 \item{directory}{a path to a directory with the proper permissions to write
-a temp file with the spatial data}
+a temp file with the spatial data. For now needed when the "shp
+output is selected}
 
 \item{date_filter}{A string with the field establishing the start and
 end dates of the data of the query's output. Default is "waypointdate".
