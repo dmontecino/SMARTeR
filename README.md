@@ -201,8 +201,6 @@ provided in the 'species_attribute_key' argument of the function).
 
 # Convert your Configurable Model to a flat table:
 
-Only for configurable models WITHOUT nested Categories (for now).
-
 This is a function to present the Configurable Model with its Categories, Attributes, 
 and Options as a flat table. It can handle all types of Attributes. Keys and Labels
 for each Category, Attribute, and Options are also given. The attribute type is
@@ -249,5 +247,5 @@ a tibble with the following headers: "cat_key", "cat_label", "att_type", "att_ke
 The "cat", "att", "root" columns refer to Category, Attribute,
 and Tree information, respectively. The "key", "label", and "option" strings 
 refer to the corresponding key, the label, and the options available, respectively.
-The output only contains active Categories, Attributes, and Options. Keys do
+Keys do
 not change across languages.
