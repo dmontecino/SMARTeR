@@ -483,7 +483,7 @@ flat_conf_model<-function(
     tidyr::unnest(list) %>% 
     dplyr::select(-att_config_id) 
   
-  if(only_active==T){
+  if(only_active==TRUE){
     full<-full %>%
       dplyr::filter(att_active=="1.0" &
                       root_active=="true" &
