@@ -457,7 +457,7 @@ flat_conf_model<-function(
   
   tree_list_mlist<-
     purrr::map2(
-      purr::map(tree_root_option_data, \(y) y %>% 
+      purrr::map(tree_root_option_data, \(y) y %>% 
             dplyr::bind_rows() %>% 
             tidyr::unnest(c(option_key, option_label, option_active))), 
       purrr::map(list_mlist_option_data, \(x) x %>% dplyr::bind_rows()),
