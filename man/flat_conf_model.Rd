@@ -58,6 +58,6 @@ path_conf_model <- system.file("extdata", "example_configurable_model.xml", pack
 flat_conf_model(
 path_conf_model=path_conf_model, 
 language_interest="en",
-only_active=T)
+only_active=TRUE)
 
 }

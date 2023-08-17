@@ -21,7 +21,8 @@ usethis::use_mit_license()
 
 usethis::edit_r_environ()
 
-document()
+document() 
+
 
 usethis::use_package("dplyr", min_version = TRUE)
 usethis::use_package("rvest", min_version = TRUE)
