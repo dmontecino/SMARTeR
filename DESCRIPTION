@@ -1,6 +1,6 @@
 Package: SMARTeR
 Title: WORK WITH THE SPATIAL MONITORING AND REPORTING TOOL (SMART) DATA IN R
-Version: 0.9.0.0000
+Version: 0.9.1.0000
 Authors@R: c(
         person("Diego", "Montecino-Latorre", , "dmontecino@wcs.org", 
         role = c("aut", "cre"),
