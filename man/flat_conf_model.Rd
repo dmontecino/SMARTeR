@@ -4,7 +4,7 @@
 \alias{flat_conf_model}
 \title{Flat table of a Configurable Model in a specified language}
 \usage{
-flat_conf_model(path_conf_model, language_interest = "en", only_active = T)
+flat_conf_model(path_conf_model, language_interest = "en", only_active = TRUE)
 }
 \arguments{
 \item{path_conf_model}{the path to the xml file ending in "/xml_file_name.xml"}
