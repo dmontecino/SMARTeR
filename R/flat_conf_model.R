@@ -179,7 +179,7 @@ flat_conf_model<-function(
   ## KEYS
   
   cat_keys<-
-    map(cat_hkeys, \(y)
+    purrr::map(cat_hkeys, \(y)
         dplyr::tibble(V = 
                         purrr::map(y, \(x) strsplit(x = x, split = "[.]")[[1]]))  %>% 
           tidyr::unnest_wider(V, names_sep = ""))
@@ -457,7 +457,7 @@ flat_conf_model<-function(
   
   tree_list_mlist<-
     purrr::map2(
-      map(tree_root_option_data, \(y) y %>% 
+      purr::map(tree_root_option_data, \(y) y %>% 
             dplyr::bind_rows() %>% 
             tidyr::unnest(c(option_key, option_label, option_active))), 
       purrr::map(list_mlist_option_data, \(x) x %>% dplyr::bind_rows()),
