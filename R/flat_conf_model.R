@@ -32,7 +32,7 @@
 #' flat_conf_model(
 #' path_conf_model=path_conf_model, 
 #' language_interest="en",
-#' only_active=T)
+#' only_active=TRUE)
 #' 
 #' @details
 #' Currently, it is not possible to obtain the configurable model directly from
