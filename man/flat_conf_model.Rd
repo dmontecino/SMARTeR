@@ -4,7 +4,7 @@
 \alias{flat_conf_model}
 \title{Flat table of a Configurable Model in a specified language}
 \usage{
-flat_conf_model(path_conf_model, language_interest = "en")
+flat_conf_model(path_conf_model, language_interest = "en", only_active = T)
 }
 \arguments{
 \item{path_conf_model}{the path to the xml file ending in "/xml_file_name.xml"}
@@ -13,17 +13,20 @@ flat_conf_model(path_conf_model, language_interest = "en")
 is the default value. If configurable model has more than one language, use
 this function once per language. The value for this argument must be consistent
 with one of the languages available for the configurable model.}
+
+\item{only_active}{a boolean to choose if the flat table should include only
+active attributes, tree roots, and options (TRUE) or everything (FALSE)}
 }
 \value{
 A tibble. The tibble has the following
 columns:
-"cat_key", "cat_label", "att_type", "att_key", "att_label",
-"root_key", "root_label", "att_option_key", and "att_option_label". The "cat",
-"att", "root" strings in the column headers refer to Category, Attribute,
-and Tree data, respectively. The "key", "label", and "option" strings refer to
-data regarding the key, the label, and the options available, respectively.
-The output only contains active Categories, Attributes, and Options. Keys do
-not change across languages.
+"cat_key_level_n", "cat_label_level_n", "att_key", "att_label", "att_type",
+"att_active", "root_key", "root_label", "root_active", "option_key", and
+"option_label", "option_active". The "cat", "att", "root", and "option"
+strings in the column headers refer to Category, Attribute, Tree and Option
+data, respectively. The "key", "label", and "option" strings refer to data
+regarding the keys and the labels, The "level_n" refers to the
+level of the nested Category. Keys do not change across languages.
 }
 \description{
 Function to create a flat table from a SMART Configurable Model downloaded
@@ -46,12 +49,15 @@ xml file in your computer. Then run this function providing the corresponding
 path.
 
 For now, tree attributes of the configurable model are assumed to have roots
-and options (two levels top). Otherwise you will get a woring output for tree
+and options (two levels top). Otherwise you will get a wrong output for tree
 attributes.
 }
 \examples{
 path_conf_model <- system.file("extdata", "example_configurable_model.xml", package = "SMARTeR")
 
-flat_conf_model(path_conf_model=path_conf_model, language_interest="en")
+flat_conf_model(
+path_conf_model=path_conf_model, 
+language_interest="en",
+only_active=T)
 
 }
