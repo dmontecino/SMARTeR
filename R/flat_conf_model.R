@@ -58,7 +58,7 @@
 flat_conf_model<-function(
     path_conf_model,
     language_interest="en",
-    only_active=T){
+    only_active=TRUE){
   
   
   #open conf model xml path
@@ -307,7 +307,7 @@ flat_conf_model<-function(
     
   }
   
-  if(dplyr::bind_rows(list_mlist_option_data) %>% nrow()){
+  if(dplyr::bind_rows(list_mlist_option_data) %>% nrow()==0){
     warning("No list or multilist attributes")}
   
   
