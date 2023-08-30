@@ -504,7 +504,7 @@ flat_conf_model<-function(
         attribute_data[[i]],
         tree_list_mlist[[i]],
         by = "att_config_id", 
-        relationship = "many-to-many")}
+        relationship = "many-to-many") %>% dplyr::distinct()}
   
   
   full<-
@@ -516,8 +516,8 @@ flat_conf_model<-function(
   
   if(only_active==TRUE){
     full<-full %>%
-      dplyr::filter(att_active=="1.0" &
-                      root_active=="true" &
+      dplyr::filter(att_active=="1.0" |
+                      root_active=="true" |
                       option_active=="true")}
   
   return(full)
