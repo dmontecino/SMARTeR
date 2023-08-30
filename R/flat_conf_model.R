@@ -251,7 +251,7 @@ flat_conf_model<-function(
   
   for(i in seq_along(list_mlist_att_data)){
     
-    if(nrow(list_mlist_att_data[[i]])>0){
+    if(nrow(list_mlist_att_data[[i]])>0){ # if there are list or mlist attributes
       
       list_mlist_option_data[[i]]<-vector(mode = "list", length = nrow(list_mlist_att_data[[i]]))
       
@@ -260,6 +260,13 @@ flat_conf_model<-function(
         list_mlist_option_data[[i]][[y]]<-
           
           #list options keys
+          
+          #if there are options then build the tibble
+          
+          if(length(xml2::xml_find_all(conf_model, 
+                                       paste0(".//*[@id[contains(., '", 
+                                              list_mlist_att_data[[i]]$att_config_id[y], "')]]")) %>% 
+                    xml2::xml_find_all(".//listItem"))>0){
           dplyr::tibble(
             
             att_config_id=    
@@ -268,6 +275,7 @@ flat_conf_model<-function(
                                         list_mlist_att_data[[i]]$att_config_id[y], "')]]")) %>% 
               xml2::xml_attr("id"),  
             
+            # if there are options for the list, then get them, otherwise NA
             
             option_key=    
               xml2::xml_find_all(conf_model, 
@@ -296,6 +304,13 @@ flat_conf_model<-function(
                                         list_mlist_att_data[[i]]$att_config_id[y], "')]]")) %>% 
               xml2::xml_find_all(".//listItem")  %>% 
               xml2::xml_attr("isActive"))
+          
+          }else{ # if there are not options 
+            list_mlist_option_data[[i]][[y]]<-dplyr::tibble(
+              att_config_id=NA,
+              option_key= NA, 
+              option_label=NA,
+              option_active=NA)}
       }
     }else{
       
@@ -338,6 +353,13 @@ flat_conf_model<-function(
       for(y in seq(nrow(tree_att_data[[i]]))){
         
         tree_root_option_data[[i]][[y]]<-
+          
+          # if the tree has options then proceed
+          if(length(xml2::xml_find_all(conf_model, 
+                                       paste0(".//*[@id[contains(., '", 
+                                              tree_att_data[[i]]$att_config_id[y], "')]]")) %>% 
+                    xml2::xml_find_all(".//treeNode"))>0){
+          
           
           #list options keys
           dplyr::tibble(
@@ -436,7 +458,16 @@ flat_conf_model<-function(
             
           )
         
-        
+          }else{
+            tree_root_option_data[[i]][[y]]<-dplyr::tibble(
+              att_config_id=NA,
+              root_key=NA,
+              root_label=NA,
+              root_active=NA,
+              option_key= NA, 
+              option_label=NA,
+              option_active=NA)
+          }
       }
     }else{
       
