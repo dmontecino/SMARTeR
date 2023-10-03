@@ -207,7 +207,10 @@ flat_conf_model<-function(
                                att_label=
                                  x %>% 
                                  xml2::xml_find_all("attribute/name") %>% 
-                                 xml2::xml_attr("value"),
+                                 xml2::xml_attr("value") %>% 
+                                 magrittr::extract(x %>% 
+                                                     xml2::xml_find_all("attribute/name") %>% 
+                                                     xml2::xml_attr("language_code")==language_interest),
                                
                                att_type=
                                  x %>% 
@@ -383,8 +386,7 @@ flat_conf_model<-function(
               xml2::xml_find_all(conf_model, 
                                  paste0(".//*[@id[contains(., '", 
                                         tree_att_data[[i]]$att_config_id[y], "')]]")) %>% 
-              xml2::xml_find_all(".//treeNode")  %>% 
-              xml2::xml_child("name") %>% 
+              xml2::xml_find_all(".//treeNode/name")  %>% 
               xml2::xml_attrs() %>% 
               dplyr::bind_rows() %>% 
               dplyr::filter(language_code==language_interest) %>% 
