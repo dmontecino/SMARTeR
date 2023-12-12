@@ -150,41 +150,53 @@ query_info<-function(
   #get the data from the queries in the query folders or in folders within query 
   #folders
   for(i in seq_along(api.queries.3)){
+    # for(i in 3){
     
     counter <- 1
+  
+  # the while understands that there are subfolders nested with data
+  # while(!all(is.na(api.queries.3[[i]][[counter]]$subFolders) | 
+  #            is.null(api.queries.3[[i]][[counter]]$subFolders))){ 
+  
+  if("subFolders"%in%colnames(api.queries.3[[i]][[counter]]) &
+     !all(is.na(api.queries.3[[i]][[counter]]$subFolders))){ 
     
-    # the while understands that there are subfolders nested with data
-    while(!all(is.na(api.queries.3[[i]][[counter]]$subFolders) | 
-               is.null(api.queries.3[[i]][[counter]]$subFolders))){ 
-      #> if not all subfolders are empty or
-      #> if at least one CA has a subfolder
+    #> if not all subfolders are empty or
+    #> if at least one CA has a subfolder
+    
+    api.queries.3[[i]][[counter+1]]<-
+      #queries per folder
+      api.queries.3[[i]][[counter]] %>% 
+      dplyr::select(folder, subFolders) %>% 
+      tidyr::unnest(subFolders) %>% 
+      tidyr::unnest_wider(subFolders) %>% 
       
-      api.queries.3[[i]][[counter+1]]<-
-        #queries per folder
-        api.queries.3[[i]][[counter]] %>% 
-        dplyr::select(subFolders) %>% 
-        tidyr::unnest(subFolders) %>% 
-        tidyr::unnest_wider(subFolders) %>% 
-        dplyr::relocate(subFolders, .after = last_col()) %>% 
-        dplyr::rename(folder=name) %>% 
-        dplyr::select(-caUuid) %>% 
-        tidyr::unnest(items, keep_empty = T) %>% 
-        tidyr::unnest_wider(items) %>% 
-        dplyr::select(-c( type, id, isShared, folderUuid, iconName, isCcaa, conservationArea)) %>% 
-        dplyr::rename(query_name=name) %>% 
-        dplyr::distinct() %>% 
-        dplyr::filter_all(dplyr::any_vars(!is.na(.)))
-
-      #create the full path to each query
-      api.queries.3[[i]][[counter+1]]$folder<-
-        paste0(rep(api.queries.3[[i]][[counter]]$folder,  
-                   purrr::map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
-               "/",
-               api.queries.3[[i]][[counter+1]]$folder)
+      dplyr::distinct() %>% 
+      dplyr::mutate(folder=paste0(folder, "/", name)) %>% 
+      # dplyr::rename(query_name=name) %>% 
       
-      
-      counter <- counter + 1
-    }
+      # dplyr::relocate(subFolders, .after = last_col()) %>% 
+      # dplyr::rename(folder=name) %>% 
+      dplyr::select(-caUuid, -subFolders, -name) %>% 
+      tidyr::unnest(items, keep_empty = T) %>% 
+      tidyr::unnest_wider(items) %>% 
+      dplyr::select(-c( type, id, isShared, folderUuid, iconName, isCcaa, conservationArea)) %>% 
+      dplyr::rename(query_name=name) %>% 
+      # dplyr::distinct() %>% 
+      dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+    
+    
+    #create the full path to each query
+    # api.queries.3[[i]][[counter+1]]$folder<-
+    #   paste0(rep(api.queries.3[[i]][[counter]]$folder,  
+    #              purrr::map_vec(api.queries.3[[i]][[counter]]$subFolders, length)),
+    #          "/",
+    #          api.queries.3[[i]][[counter+1]]$folder)
+    
+    
+    counter <- counter + 1
+    
+  }
     
     
   }
