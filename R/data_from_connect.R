@@ -62,7 +62,7 @@
 #'                            user = user, 
 #'                            password = password,
 #'                            name_conservation_area = "Example Conservation Area [SMART]",
-#'                            query_name = "Patrol_observation_query",
+#'                            query_name = "Illegal logging observations",
 #'                            type_output = "shp",
 #'                            directory = directory,
 #'                            date_filter="waypointlastmodified",
