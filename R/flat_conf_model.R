@@ -518,7 +518,7 @@ flat_conf_model<-function(
   
   if(only_active==TRUE){
     full<-full %>%
-      dplyr::filter(att_active=="1.0|2.0" |
+      dplyr::filter(att_active%in%c("1.0", "2.0") |
                       root_active=="true" |
                       option_active=="true")}
   
