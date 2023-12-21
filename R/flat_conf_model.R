@@ -409,7 +409,8 @@ flat_conf_model<-function(
               xml2::xml_find_all(".//treeNode")  %>% 
               purrr::map(\(x) x %>% 
                            xml2::xml_find_all(".//children") %>% 
-                           xml2::xml_attr("keyRef")),
+                           xml2::xml_attr("keyRef")) %>% 
+              purrr::map(\(x) if(length(x)==0){"NA"}else{x}),
             
             
             #option labels
@@ -440,7 +441,7 @@ flat_conf_model<-function(
                     dplyr::filter(language_code == language_interest) %>% 
                     dplyr::pull(value)
                 } else {
-                  result <- as.character()
+                  result <- "NA"#as.character()
                 }
                 
                 return(result)
@@ -455,7 +456,9 @@ flat_conf_model<-function(
               xml2::xml_find_all(".//treeNode")  %>% 
               purrr::map(\(x) x %>% 
                            xml2::xml_find_all(".//children") %>% 
-                           xml2::xml_attr("isActive"))
+                           xml2::xml_attr("isActive")) %>% 
+              purrr::map(\(x) if(length(x)==0){"NA"}else{x})
+            
             
             
           )
@@ -483,7 +486,6 @@ flat_conf_model<-function(
         option_active=NA)}
     
   }
-  
   
   # Create full dataset
   
