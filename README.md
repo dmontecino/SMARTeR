@@ -7,12 +7,6 @@ run a query from SMART Connect and load the output in your R session, and conver
 a Configurable model into a flat table with the corresponding Categories, Attributes,
 and options (for multilist, lists, and tree attributes).
 
-
-The package uses the dplyr (>= 1.1.2), janitor (>= 2.2.0), jsonlite (>= 1.8.5),
-lubridate (>= 1.9.2), magrittr (>= 2.0.3), purrr (>= 1.0.1), rvest (>= 1.0.3),
-sf (>= 1.0.13), stringr (>= 1.5.0), tibble (>= 3.2.1), tidyr (>= 1.3.0), 
-xml2 (>= 1.3.4), zoo (>= 1.8.12) packages. 
-
 # Install
 
 ```
