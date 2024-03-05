@@ -12,7 +12,9 @@
 #' Conservation Area, and their properties such as query type, spatial 
 #' information availability (the type_output parameter of this function), and 
 #' date filter options (the date_filter parameter of this function) use the 
-#' "query_info" function first. Avoid empty query folders.
+#' "query_info" function first. Avoid empty query folders. 
+#' To save the data as shp or geojson after opened as an sf object in R, see the
+#' functions in the sf and geojsonio packages and others.
 #'
 #' @param server_url A string with the URL of the SMART Connect server 
 #' (e.g., "https://wcshealth.smartconservationtools.org/server" )
@@ -27,8 +29,9 @@
 #' @param directory a path to a directory with the proper permissions to write 
 #' a temp file with the spatial data. For now needed when the "shp
 #' output is selected
-#' @param type_output Either "csv" or "shp" to load the query data as 
-#' a tibble or sf object. Not all queries have spatial data. See details. 
+#' @param type_output Either "csv", "shp", or "geojson". The former loads the 
+#' query data as a tibble; the later two as an sf object. Not all queries have
+#' spatial data. See details. 
 #' @param date_filter A string with the field establishing the start and 
 #' end dates of the data of the query's output. Default is "waypointdate". 
 #' See details.
@@ -290,9 +293,14 @@ data_from_connect<-function(server_url,
     dplyr::pull(spatial_query)
   
   
-  if(!query_spatial &  type_output=="shp"){
-    stop("Selected query does not have spatial information. To assess the
-    queries in your conservation area has spatial data use the function
+  if(!query_spatial & type_output=="shp"){
+    stop("Selected query does not have spatial information. To assess which
+    queries in your conservation area have spatial data use the function
+    query_info first and check the value for the 'spatial_query' feature")}
+  
+  if(!query_spatial & type_output=="geojson"){
+    stop("Selected query does not have spatial information. To assess which
+    queries in your conservation area have spatial data use the function
     query_info first and check the value for the 'spatial_query' feature")}
   
   #> query typeKey is important to learn if they are executable from
@@ -346,11 +354,22 @@ data_from_connect<-function(server_url,
                type_output, 
                "&date_filter=",
                date_filter,
-               "&srdi",
+               "&srdi=",
                srid,
-               UTM_zone)[1])     
+               UTM_zone)[1],    
   
-  
+
+        type_output=="geojson" ~
+        paste0(server_url, 
+               "/connect/query/api/", 
+               query.api.number,
+               "?format=",
+               type_output, 
+               "&date_filter=",
+               date_filter,
+               "&srdi=",
+               srid,
+               UTM_zone)[1])
   
   # add the filter dates if provided
   
@@ -363,7 +382,7 @@ data_from_connect<-function(server_url,
   end_date_full<-if(!is.null(end_date)){
     paste0("&end_date=", 
            #stringr::str_glue("{lubridate::year(end_date)}-{lubridate::month(end_date)}-{lubridate::day(end_date)}"), 
-           paste(lubridate::year(start_date), lubridate::month(start_date), lubridate::day(start_date),  sep = "-"),
+           paste(lubridate::year(end_date), lubridate::month(end_date), lubridate::day(end_date),  sep = "-"),
            "%2023%3A59%3A59")}
   
   
@@ -377,20 +396,29 @@ data_from_connect<-function(server_url,
   
   data = rvest::session_jump_to(logged.in.connect, api_address)
   
+  #open the query data as geojson data
+  if(type_output=="geojson"){
+    data <- httr::content(data$response, as = "parsed") %>% 
+            geojsonio::as.json() %>% 
+            geojsonio::geojson_sf()
+    
+    data <- data %>% janitor::clean_names()}
   
   #open the query data as spatial data
   if(type_output=="shp"){
-    filename<-stringr::str_extract(data$response$headers$`content-disposition`, "(?<=\\=).*")
-    filename<-stringr::str_replace(filename, ".zip", replacement = paste0(".",type_output))
-    data = dlshape(shploc=data$response$content,
+    filename<-stringr::str_extract(data$response$headers$`content-disposition`, 
+                                   "(?<=\\=).*")
+    filename<-stringr::str_replace(filename, ".zip", 
+                                   replacement = paste0(".",type_output))
+    data <- dlshape(shploc=data$response$content,
                    shpfile=filename)
-    data = data %>% janitor::clean_names()}
+    data <- data %>% janitor::clean_names()}
   
   #open the query data as tibble
   if(type_output=="csv"){
     
-    data = data$response %>% rvest::read_html() %>% rvest::html_text()
-    data = utils::read.csv(text=data, sep="," )
-    data = data %>% janitor::clean_names()}
+    data <- data$response %>% rvest::read_html() %>% rvest::html_text()
+    data <- utils::read.csv(text=data, sep=",")
+    data <- data %>% janitor::clean_names()}
   
   return(data)}

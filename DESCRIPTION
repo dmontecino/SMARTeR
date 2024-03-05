@@ -25,6 +25,8 @@ URL: https://github.com/dmontecino/SMARTeR
 BugReports: https://github.com/dmontecino/SMARTeR/issues
 Imports: 
     dplyr (>= 1.1.2),
+    geojsonio (>= 0.11.3),
+    httr (>= 1.4.7),
     janitor (>= 2.2.0),
     jsonlite (>= 1.8.5),
     lubridate (>= 1.9.2),

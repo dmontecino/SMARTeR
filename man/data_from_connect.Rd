@@ -35,8 +35,9 @@ holding the query}
 \item{query_name}{A string with the name of the SMART query to run
 (e.g., "query_name")}
 
-\item{type_output}{Either "csv" or "shp" to load the query data as
-a tibble or sf object. Not all queries have spatial data. See details.}
+\item{type_output}{Either "csv", "shp", or "geojson". The former loads the
+query data as a tibble; the later two as an sf object. Not all queries have
+spatial data. See details.}
 
 \item{directory}{a path to a directory with the proper permissions to write
 a temp file with the spatial data. For now needed when the "shp
@@ -81,6 +82,8 @@ Conservation Area, and their properties such as query type, spatial
 information availability (the type_output parameter of this function), and
 date filter options (the date_filter parameter of this function) use the
 "query_info" function first. Avoid empty query folders.
+To save the data as shp or geojson after opened as an sf object in R, see the
+functions in the sf and geojsonio packages and others.
 }
 \examples{
 

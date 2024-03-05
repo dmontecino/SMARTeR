@@ -37,6 +37,8 @@ usethis::use_package("sf", min_version = TRUE)
 usethis::use_package("tibble", min_version = TRUE)
 usethis::use_package("utils", min_version = TRUE)
 usethis::use_package("lubridate", min_version = TRUE)
+usethis::use_package("geojsonio", min_version = TRUE)
+usethis::use_package("httr", min_version = TRUE)
 
 usethis::use_pipe()
 
