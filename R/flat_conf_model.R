@@ -518,13 +518,16 @@ flat_conf_model<-function(
     tidyr::unnest(list) %>% 
     dplyr::select(-att_config_id) 
   
+
   if(only_active==TRUE){
-    full<-full %>%
-      dplyr::filter(att_active%in%c("1.0", "2.0") |
-                      root_active=="true" |
-                      option_active=="true")}
+  full %>%
+    dplyr::slice(
+      unique(
+        which(full$att_active%in%c("1.0", "2.0")),
+        which(full$root_active=="true"),
+      which(full$option_active=="true")))
   
-  return(full)
+  return(full)}
   
 } # end of function
 
