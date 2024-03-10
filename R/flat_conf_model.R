@@ -520,12 +520,12 @@ flat_conf_model<-function(
   
 
   if(only_active==TRUE){
-  full %>%
-    dplyr::slice(
-      unique(
-        which(full$att_active%in%c("1.0", "2.0")),
-        which(full$root_active=="true"),
-      which(full$option_active=="true")))
+  full <-full %>%
+            dplyr::slice(
+              unique(
+                which(full$att_active%in%c("1.0", "2.0")),
+                which(full$root_active=="true"),
+                which(full$option_active=="true")))
   
   return(full)}
   
