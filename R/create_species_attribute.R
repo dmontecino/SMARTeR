@@ -133,7 +133,7 @@ doc %>%
 doc%>% 
   xml2::xml_child("attributes/attribute") %>% 
   xml2::xml_set_attrs(c(
-    "key"=gsub("\\s+", "_", species_attribute_key),
+    "key"=gsub("[^a-zA-Z]", "", species_attribute_key),
     "isrequired"="true",
     "type"="TREE"))
 
