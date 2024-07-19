@@ -166,7 +166,7 @@ for(i in seq(sheets)){
       xml2::xml_child("attributes/attribute")%>%
       xml2::xml_child(i + length(language)) %>%
       xml2::xml_add_child("children") %>%
-      xml2::xml_set_attrs(c(key=gsub("\\s+", "_", 
+      xml2::xml_set_attrs(c(key=gsub("[^a-zA-Z]", "", 
                                      tolower(sheets[[i]][y,"species_key"])),
                           isactive="1"))}}
 
