@@ -526,7 +526,7 @@ flat_conf_model<-function(
     full <- full %>% dplyr::filter(!(att_type=="TREE" & root_active=="false"))  
   }
   
-  return(full)}
+  return(full)
   
 } # end of function
 
