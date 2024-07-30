@@ -520,12 +520,11 @@ flat_conf_model<-function(
   
 
   if(only_active==TRUE){
-  full <-full %>%
-            dplyr::slice(
-              unique(
-                which(full$att_active%in%c("1.0", "2.0")),
-                which(full$root_active=="true"),
-                which(full$option_active=="true")))
+    full <- full %>% dplyr::filter(att_active%in%c("1.0", "2.0")) 
+    full <- full %>% dplyr::filter(!(att_type=="MLIST" & option_active=="false"))
+    full <- full %>% dplyr::filter(!(att_type=="LIST" & option_active=="false"))  
+    full <- full %>% dplyr::filter(!(att_type=="TREE" & root_active=="false"))  
+  }
   
   return(full)}
   
