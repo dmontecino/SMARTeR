@@ -160,11 +160,45 @@ flat_conf_model<-function(
        or your 'language_interest' parameter is wrong")}
       
       #> store the value for all parents of each node
-      result[[i]][z]<-out
       
+      #result[[i]][z]<-out
+      if(length(out)>1){result[[i]][z] <- paste0(out, collapse = ", ")}
+      if(length(out)==1){result[[i]][z] <- out}
+    }
+  }
+  
+  result<-unique(result)
+  
+  expand_commas <- function(A) {
+    result <- list()
+    
+    for (vec in A) {
+      # find which elements contain a comma
+      comma_idx <- grep(",", vec)
+      
+      if (length(comma_idx) == 0) {
+        # no comma in this vector — keep as-is
+        result[[length(result) + 1]] <- vec
+      } else {
+        # split each comma-containing element into parts
+        # (if more than one such element exists, this handles the first one;
+        #  extend with expand.grid if you need full cartesian expansion)
+        idx <- comma_idx[1]
+        parts <- trimws(strsplit(vec[idx], ",")[[1]])
+        
+        for (p in parts) {
+          new_vec <- vec
+          new_vec[idx] <- p
+          result[[length(result) + 1]] <- new_vec
+        }
+      }
     }
     
+    result
   }
+  
+  
+  result <- expand_commas(result)
   
   #> labels as tibble
   cat_labels<-purrr::map_dfr(purrr::map(result, rev), 
