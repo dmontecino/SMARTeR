@@ -167,7 +167,7 @@ flat_conf_model<-function(
     }
   }
   
-  result<-unique(result)
+  result<-unique(result) #
   
   expand_commas <- function(A) {
     result <- list()
